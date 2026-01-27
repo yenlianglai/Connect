@@ -110,7 +110,7 @@ class ContextExtractor:
                 segment=segment, 
                 session_id=session_id,
                 existing_nodes=existing_nodes,
-                entry_point_id=session_id # Always start taxonomy walk inside the session category
+                entry_point_id="cat_root"  # Start from root to navigate to proper domain categories (cat_software_eng, cat_business, etc.)
             )
             
             if new_nodes: existing_nodes.extend(new_nodes)

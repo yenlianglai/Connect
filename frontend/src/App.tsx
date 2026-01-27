@@ -1,13 +1,26 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback, lazy, Suspense } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { Toaster, toast } from 'react-hot-toast';
 import { ChevronRight, Home, ChevronLeft, Menu, Network, Plus } from 'lucide-react';
-import { getGraphData, getAllSessions, triggerEvolution, deleteSession, type Node as MnemoNode } from './api';
+import { getGraphData, getAllSessions, triggerEvolution, deleteSession, extractContext, refreshMemory, type Node as MnemoNode, type GraphData } from './api';
 import Chat from './components/Chat';
-import GraphView from './components/GraphView';
 import ChatSidebar from './components/ChatSidebar';
 import Sidebar from './components/Sidebar';
-import NodeEditor from './components/NodeEditor';
+import { Zap, RefreshCw, GitMerge } from 'lucide-react';
+
+// Dynamic imports for heavy components - reduces initial bundle size
+const GraphView = lazy(() => import('./components/GraphView'));
+const NodeEditor = lazy(() => import('./components/NodeEditor'));
+
+// Loading component for lazy-loaded components
+const ComponentLoader: React.FC = () => (
+  <div className="absolute inset-0 flex items-center justify-center z-20 bg-[#1a1a1a]/60 backdrop-blur-md">
+    <div className="flex flex-col items-center gap-3">
+      <div className="w-12 h-12 border-2 border-purple-500/30 border-t-purple-500 rounded-full animate-spin"></div>
+      <span className="text-sm font-medium text-[#888888] tracking-widest uppercase">Loading...</span>
+    </div>
+  </div>
+);
 
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -15,6 +28,42 @@ import { twMerge } from 'tailwind-merge';
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+// Helper function to extract node ID from link source/target
+const getNodeId = (nodeOrId: string | { id: string }): string => {
+  return typeof nodeOrId === 'object' ? nodeOrId.id : nodeOrId;
+};
+
+// Helper function to filter graph data by focus
+const filterGraphByFocus = (graphData: GraphData, currentFocusId: string): GraphData | null => {
+  if (currentFocusId === 'cat_root') return graphData;
+
+  const descendants = new Set<string>([currentFocusId]);
+  const queue = [currentFocusId];
+  
+  while (queue.length > 0) {
+    const parentId = queue.shift()!;
+    graphData.links.forEach(link => {
+      const sourceId = getNodeId(link.source);
+      const targetId = getNodeId(link.target);
+      if (targetId === parentId && (link.edge_label === 'SUB_CATEGORY_OF' || link.edge_label === 'BELONGS_TO')) {
+        if (!descendants.has(sourceId)) {
+          descendants.add(sourceId);
+          queue.push(sourceId);
+        }
+      }
+    });
+  }
+
+  return {
+    nodes: graphData.nodes.filter(n => descendants.has(n.id)),
+    links: graphData.links.filter(l => {
+      const sourceId = getNodeId(l.source);
+      const targetId = getNodeId(l.target);
+      return descendants.has(sourceId) && descendants.has(targetId);
+    })
+  };
+};
 
 function App() {
   const queryClient = useQueryClient();
@@ -44,106 +93,79 @@ function App() {
     refetchInterval: 60000,
   });
 
-  const refreshAllData = () => {
+  const refreshAllData = useCallback(() => {
     queryClient.invalidateQueries({ queryKey: ['graphData'] });
     queryClient.invalidateQueries({ queryKey: ['sessions'] });
-  };
+  }, [queryClient]);
 
   const focusedGraphData = useMemo(() => {
     if (!graphData) return null;
-    if (currentFocusId === 'cat_root') return graphData;
-
-    // Filter nodes that are descendants of currentFocusId or the focus node itself
-    const descendants = new Set<string>([currentFocusId]);
-    const queue = [currentFocusId];
-    
-    // Simple iterative find descendants (since graph is a tree vertically)
-    while (queue.length > 0) {
-      const parentId = queue.shift()!;
-      graphData.links.forEach(link => {
-        const sId = typeof link.source === 'object' ? (link.source as any).id : link.source;
-        const tId = typeof link.target === 'object' ? (link.target as any).id : link.target;
-        if (tId === parentId && (link.edge_label === 'SUB_CATEGORY_OF' || link.edge_label === 'BELONGS_TO')) {
-          if (!descendants.has(sId)) {
-            descendants.add(sId);
-            queue.push(sId);
-          }
-        }
-      });
-    }
-
-    return {
-      nodes: graphData.nodes.filter(n => descendants.has(n.id)),
-      links: graphData.links.filter(l => {
-        const sId = typeof l.source === 'object' ? (l.source as any).id : l.source;
-        const tId = typeof l.target === 'object' ? (l.target as any).id : l.target;
-        return descendants.has(sId) && descendants.has(tId);
-      })
-    };
+    return filterGraphByFocus(graphData, currentFocusId);
   }, [graphData, currentFocusId]);
 
-  const handleNodeClick = (node: MnemoNode) => {
+  const handleNodeClick = useCallback((node: MnemoNode) => {
     setSelectedNode(node);
-    // Switch to editor tab when a node is clicked
     setActiveTab('editor');
-  };
+  }, []);
 
-  const handleCreateNode = () => {
-    // Clear selection and open editor in create mode
+  const handleCreateNode = useCallback(() => {
     setSelectedNode(null);
     setActiveTab('editor');
-  };
+  }, []);
 
-  const handleZoomInto = (categoryId: string) => {
+  const handleZoomInto = useCallback((categoryId: string) => {
     if (categoryId === currentFocusId) return;
     setFocusStack(prev => [...prev, categoryId]);
     setSelectedNode(null);
-  };
+  }, [currentFocusId]);
 
-  const handleGoBack = () => {
-    if (focusStack.length > 1) {
-      setFocusStack(prev => prev.slice(0, -1));
-      setSelectedNode(null);
-    }
-  };
+  const handleGoBack = useCallback(() => {
+    setFocusStack(prev => {
+      if (prev.length > 1) {
+        setSelectedNode(null);
+        return prev.slice(0, -1);
+      }
+      return prev;
+    });
+  }, []);
 
-  const handleGoHome = () => {
+  const handleGoHome = useCallback(() => {
     setFocusStack(['cat_root']);
     setSelectedNode(null);
-  };
+  }, []);
 
-  const handleNewMessage = () => {
+  const handleNewMessage = useCallback(() => {
     refreshAllData();
-  };
+  }, [refreshAllData]);
 
-  const handleNewSession = () => {
+  const handleNewSession = useCallback(() => {
     setSessionId('');
     setSelectedNode(null);
     setNewTopicConfig(null);
     setFocusStack(['cat_root']); 
     setActiveTab('chat');
-    setSidebarOpen(false); // Close sidebar on mobile after selecting
-  };
+    setSidebarOpen(false);
+  }, []);
 
-  const handleSessionCreated = (id: string) => {
+  const handleSessionCreated = useCallback((id: string) => {
     handleZoomInto(id);
     refreshAllData();
     toast.success('Topic anchor created. Starting learning...');
-  };
+  }, [handleZoomInto, refreshAllData]);
 
-  const handleDeleteSession = async (id: string) => {
+  const handleDeleteSession = useCallback(async (id: string) => {
     const tid = toast.loading(`Deleting session...`);
     try {
       await deleteSession(id);
       toast.success('Session deleted', { id: tid });
-      if (sessionId === id) setSessionId('');
+      setSessionId(prev => prev === id ? '' : prev);
       refreshAllData();
     } catch (err) {
       toast.error('Failed to delete session', { id: tid });
     }
-  };
+  }, [refreshAllData]);
 
-  const handleStartSessionHere = (node: MnemoNode) => {
+  const handleStartSessionHere = useCallback((node: MnemoNode) => {
     setSessionId('');
     setSelectedNode(null);
     setNewTopicConfig({
@@ -152,9 +174,9 @@ function App() {
     });
     setActiveTab('chat');
     toast.success(`New topic session targeted under: ${node.name || node.id}`);
-  };
+  }, []);
 
-  const handleEvolveSubtree = async (categoryId: string) => {
+  const handleEvolveSubtree = useCallback(async (categoryId: string) => {
     setIsEvolvingSubtree(true);
     const tid = toast.loading(`Evolving subtree ${categoryId}...`);
     try {
@@ -166,7 +188,56 @@ function App() {
     } finally {
       setIsEvolvingSubtree(false);
     }
-  };
+  }, [refreshAllData]);
+
+  const handleToggleSidebar = useCallback(() => {
+    setSidebarOpen(prev => !prev);
+  }, []);
+
+  const handleSelectSession = useCallback((id: string) => {
+    setSessionId(id);
+    setActiveTab('chat');
+    setSidebarOpen(false);
+  }, []);
+
+  const handleSetActiveTabChat = useCallback(() => {
+    setActiveTab('chat');
+  }, []);
+
+  const handleSetActiveTabGraph = useCallback(() => {
+    setActiveTab('graph');
+  }, []);
+
+  const handleCloseSidebar = useCallback(() => {
+    setSelectedNode(null);
+  }, []);
+
+  const handleSelectNode = useCallback((id: string) => {
+    if (!id) {
+      setSelectedNode(null);
+    } else {
+      refreshAllData();
+      const findAndSelectNode = () => {
+        const node = graphData?.nodes.find(n => n.id === id);
+        if (node) {
+          setSelectedNode(node);
+        }
+      };
+      findAndSelectNode();
+      setTimeout(findAndSelectNode, 300);
+    }
+  }, [graphData, refreshAllData]);
+
+  const handleNodeDeleted = useCallback(() => {
+    setSelectedNode(null);
+    setActiveTab('graph');
+    refreshAllData();
+  }, [refreshAllData]);
+
+  const availableCategories = useMemo(() => 
+    graphData?.nodes.filter(n => n.type === 'category') || [], 
+    [graphData]
+  );
 
   return (
     <div className="flex h-screen w-screen bg-[#171717] text-[#d4d4d4] font-sans overflow-hidden">
@@ -178,15 +249,11 @@ function App() {
         <ChatSidebar
           sessions={sessionsData?.sessions || []}
           currentSessionId={sessionId}
-          onSelectSession={(id) => {
-            setSessionId(id);
-            setActiveTab('chat');
-            setSidebarOpen(false); // Close on mobile
-          }}
+          onSelectSession={handleSelectSession}
           onNewSession={handleNewSession}
           onDeleteSession={handleDeleteSession}
           isOpen={sidebarOpen}
-          onToggle={() => setSidebarOpen(!sidebarOpen)}
+          onToggle={handleToggleSidebar}
         />
 
         {/* Main Content Area */}
@@ -195,7 +262,7 @@ function App() {
           <div className="h-14 px-4 lg:px-6 flex items-center justify-between border-b border-[#2d2d2d] bg-[#171717] shrink-0">
             <div className="flex items-center gap-3">
               <button
-                onClick={() => setSidebarOpen(!sidebarOpen)}
+                onClick={handleToggleSidebar}
                 className="lg:hidden p-2 hover:bg-[#262626] rounded-lg transition-colors text-[#8c8c8c] hover:text-[#d4d4d4]"
               >
                 <Menu size={20} />
@@ -206,7 +273,7 @@ function App() {
             {/* Tab Switcher */}
             <div className="flex items-center gap-1 p-1 bg-[#1a1a1a] rounded-lg border border-[#2d2d2d]">
               <button
-                onClick={() => setActiveTab('chat')}
+                onClick={handleSetActiveTabChat}
                 className={cn(
                   "flex items-center gap-2 px-4 py-2 rounded-md transition-all text-sm font-medium",
                   activeTab === 'chat'
@@ -217,7 +284,7 @@ function App() {
                 <span>Chat</span>
               </button>
               <button
-                onClick={() => setActiveTab('graph')}
+                onClick={handleSetActiveTabGraph}
                 className={cn(
                   "flex items-center gap-2 px-4 py-2 rounded-md transition-all text-sm font-medium",
                   activeTab === 'graph'
@@ -230,6 +297,83 @@ function App() {
               </button>
             </div>
           </div>
+
+          {/* Controls Bar - Extract, Refresh, Evolve buttons */}
+          {activeTab === 'chat' && (
+            <div className="px-4 lg:px-6 py-2 flex items-center gap-2 border-b border-[#2d2d2d] bg-[#171717] shrink-0">
+              <button
+                onClick={async () => {
+                  if (!sessionId) {
+                    toast.error("No active session to extract from!");
+                    return;
+                  }
+                  const tid = toast.loading("Extracting...");
+                  try {
+                    await extractContext(sessionId);
+                    toast.success("Extraction scheduled!", { id: tid });
+                    refreshAllData();
+                  } catch (error) {
+                    toast.error("Failed to trigger extraction", { id: tid });
+                  }
+                }}
+                disabled={!sessionId}
+                className={cn(
+                  "flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium transition-all",
+                  "bg-[#262626] hover:bg-[#333333] text-[#d4d4d4] border border-[#333333]",
+                  !sessionId && "opacity-30 cursor-not-allowed"
+                )}
+              >
+                <Zap size={14} />
+                <span>Extract</span>
+              </button>
+
+              <button
+                onClick={async () => {
+                  if (!sessionId) {
+                    toast.error("No active session to refresh!");
+                    return;
+                  }
+                  const tid = toast.loading("Refreshing...");
+                  try {
+                    await refreshMemory(sessionId);
+                    toast.success("Memory refresh scheduled!", { id: tid });
+                    refreshAllData();
+                  } catch (error) {
+                    toast.error("Failed to trigger refresh", { id: tid });
+                  }
+                }}
+                disabled={!sessionId}
+                className={cn(
+                  "flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium transition-all",
+                  "bg-[#262626] hover:bg-[#333333] text-[#d4d4d4] border border-[#333333]",
+                  !sessionId && "opacity-30 cursor-not-allowed"
+                )}
+              >
+                <RefreshCw size={14} />
+                <span>Refresh</span>
+              </button>
+
+              <button
+                onClick={async () => {
+                  const tid = toast.loading("Evolving...");
+                  try {
+                    await triggerEvolution();
+                    toast.success("Evolution triggered!", { id: tid });
+                    refreshAllData();
+                  } catch (error) {
+                    toast.error("Failed to trigger evolution", { id: tid });
+                  }
+                }}
+                className={cn(
+                  "flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium transition-all",
+                  "bg-[#262626] hover:bg-[#333333] text-[#d4d4d4] border border-[#333333]"
+                )}
+              >
+                <GitMerge size={14} />
+                <span>Evolve</span>
+              </button>
+            </div>
+          )}
 
           {/* Content Area */}
           <main className="flex-1 overflow-hidden relative">
@@ -273,56 +417,34 @@ function App() {
                   </div>
                 )}
 
-                {isGraphLoading && !graphData && (
-                  <div className="absolute inset-0 flex items-center justify-center z-20 bg-[#1a1a1a]/60 backdrop-blur-md">
-                    <div className="flex flex-col items-center gap-3">
-                      <div className="w-12 h-12 border-2 border-purple-500/30 border-t-purple-500 rounded-full animate-spin"></div>
-                      <span className="text-sm font-medium text-[#888888] tracking-widest uppercase">Initializing Graph</span>
-                    </div>
-                  </div>
+                {isGraphLoading && !graphData ? (
+                  <ComponentLoader />
+                ) : (
+                  <Suspense fallback={<ComponentLoader />}>
+                    <GraphView
+                      data={focusedGraphData}
+                      onNodeClick={handleNodeClick}
+                      onZoomInto={handleZoomInto}
+                      onNodeUpdated={refreshAllData}
+                      currentFocusId={currentFocusId}
+                      activeSessionId={sessionId}
+                      retrievedNodeIds={retrievedNodeIds}
+                    />
+                  </Suspense>
                 )}
-
-                <GraphView
-                  data={focusedGraphData}
-                  onNodeClick={handleNodeClick}
-                  onZoomInto={handleZoomInto}
-                  onNodeUpdated={() => refreshAllData()}
-                  currentFocusId={currentFocusId}
-                  activeSessionId={sessionId}
-                  retrievedNodeIds={retrievedNodeIds}
-                />
               </div>
             ) : activeTab === 'editor' ? (
               /* Editor View */
               <div className="h-full overflow-hidden">
-                <NodeEditor
-                  selectedNode={selectedNode}
-                  onNodeUpdated={() => refreshAllData()}
-                  currentFocusId={currentFocusId}
-                  onSelectNode={(id) => {
-                    if (!id) {
-                      setSelectedNode(null);
-                    } else {
-                      // Refresh graph data to get the newly created node
-                      refreshAllData();
-                      // Find and select the node once graph data is available
-                      const findAndSelectNode = () => {
-                        const node = graphData?.nodes.find(n => n.id === id);
-                        if (node) {
-                          setSelectedNode(node);
-                        }
-                      };
-                      // Try immediately, then after a short delay for async refresh
-                      findAndSelectNode();
-                      setTimeout(findAndSelectNode, 300);
-                    }
-                  }}
-                  onNodeDeleted={() => {
-                    setSelectedNode(null);
-                    setActiveTab('graph');
-                    refreshAllData();
-                  }}
-                />
+                <Suspense fallback={<ComponentLoader />}>
+                  <NodeEditor
+                    selectedNode={selectedNode}
+                    onNodeUpdated={refreshAllData}
+                    currentFocusId={currentFocusId}
+                    onSelectNode={handleSelectNode}
+                    onNodeDeleted={handleNodeDeleted}
+                  />
+                </Suspense>
               </div>
             ) : (
               /* Chat View - ChatGPT Style */
@@ -333,12 +455,12 @@ function App() {
                     <Sidebar
                       selectedNode={selectedNode}
                       graphData={graphData || null}
-                      onClose={() => setSelectedNode(null)}
+                      onClose={handleCloseSidebar}
                       onSelectNode={setSelectedNode}
                       onEvolveSubtree={handleEvolveSubtree}
                       isEvolving={isEvolvingSubtree}
                       onStartSessionHere={handleStartSessionHere}
-                      onNodeUpdated={() => refreshAllData()}
+                      onNodeUpdated={refreshAllData}
                     />
                   </div>
                 )}
@@ -353,7 +475,7 @@ function App() {
                     onSessionCreated={handleSessionCreated}
                     initialTopicName={newTopicConfig?.name}
                     initialParentId={newTopicConfig?.parentId}
-                    availableCategories={graphData?.nodes.filter(n => n.type === 'category') || []}
+                    availableCategories={availableCategories}
                   />
                 </div>
               </div>

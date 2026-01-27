@@ -1,11 +1,11 @@
 ---
-name: mnemo-coding-standards
-description: Coding standards and refactoring habits for the Mnemo project. Apply when writing, reviewing, or refactoring code to ensure consistency, maintainability, and clean architecture.
+name: connect-coding-standards
+description: Coding standards and refactoring habits for the Connect project. Apply when writing, reviewing, or refactoring code to ensure consistency, maintainability, and clean architecture.
 ---
 
-# Mnemo Coding Standards & Refactoring Habits
+# Connect Coding Standards & Refactoring Habits
 
-This skill defines the coding principles and refactoring patterns used throughout the Mnemo project. Apply these standards when writing new code, reviewing existing code, or refactoring.
+This skill defines the coding principles and refactoring patterns used throughout the Connect project. Apply these standards when writing new code, reviewing existing code, or refactoring.
 
 ## Core Principles
 
@@ -22,6 +22,7 @@ This skill defines the coding principles and refactoring patterns used throughou
 - **No Magic Numbers/Strings**: Use constants or configuration
 - **Explicit over Implicit**: Make intentions clear in code
 - **Fail Fast**: Validate inputs early, return errors immediately
+- **Expressive naming**: Use expressive function name rather than redundant docstring or comment
 
 ### 3. Expressive Naming
 - **Functions**: Use verb phrases that describe what they do

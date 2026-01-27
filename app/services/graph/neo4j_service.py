@@ -1,7 +1,10 @@
+# Standard library imports
 import logging
 from datetime import UTC, datetime
 from typing import Any
 
+# Third-party imports
+import httpx
 import numpy as np
 from google import genai
 from google.genai import types
@@ -10,10 +13,64 @@ from neo4j_graphrag.indexes import create_vector_index
 from neo4j_graphrag.retrievers import VectorCypherRetriever
 from neo4j_graphrag.types import RetrieverResultItem
 
+# Local imports
 from app.core.config import settings
 from app.models.nodes import Category, KnowledgeNode, Relationship, VerticalRelationshipType
 
 logger = logging.getLogger(__name__)
+
+
+class OllamaEmbedder:
+    """
+    Custom embedder using Ollama's embedding models.
+    Conforms to the interface expected by neo4j-graphrag.
+    """
+
+    def __init__(self):
+        self.base_url = settings.OLLAMA_BASE_URL
+        self.model = settings.OLLAMA_EMBEDDING_MODEL
+        self.dimension = settings.EMBEDDING_DIMENSION
+
+    def embed_query(self, text: str) -> list[float]:
+        """Embed a single string and return normalized vector."""
+        try:
+            with httpx.Client(timeout=60.0) as client:
+                response = client.post(
+                    f"{self.base_url}/api/embeddings",
+                    json={
+                        "model": self.model,
+                        "prompt": text,
+                    },
+                )
+                response.raise_for_status()
+                result = response.json()
+                
+                # Extract embedding vector
+                embedding_values = result.get("embedding", [])
+                if not embedding_values:
+                    raise ValueError("Empty embedding returned from Ollama")
+                
+                embedding_np = np.array(embedding_values)
+                
+                # Normalize the vector
+                norm = np.linalg.norm(embedding_np)
+                if norm > 0:
+                    embedding_np = embedding_np / norm
+                
+                # If dimension doesn't match, pad or truncate
+                if len(embedding_np) != self.dimension:
+                    if len(embedding_np) < self.dimension:
+                        # Pad with zeros
+                        padding = np.zeros(self.dimension - len(embedding_np))
+                        embedding_np = np.concatenate([embedding_np, padding])
+                    else:
+                        # Truncate
+                        embedding_np = embedding_np[:self.dimension]
+                
+                return embedding_np.tolist()
+        except Exception as e:
+            logger.error(f"Ollama embedding failed: {e}")
+            raise
 
 
 class GeminiEmbedder:
@@ -78,7 +135,14 @@ class GraphService:
         url = uri or settings.NEO4J_URI
         self.driver = AsyncGraphDatabase.driver(url, auth=auth)
         self.sync_driver = GraphDatabase.driver(url, auth=auth)
-        self.embedder = GeminiEmbedder()
+        
+        # Select embedder based on LLM_PROVIDER
+        if settings.LLM_PROVIDER == "ollama":
+            self.embedder = OllamaEmbedder()
+            logger.info(f"Using Ollama embedder with model: {settings.OLLAMA_EMBEDDING_MODEL}")
+        else:
+            self.embedder = GeminiEmbedder()
+            logger.info(f"Using Gemini embedder with model: {settings.GEMINI_EMBEDDING_MODEL}")
 
     async def close(self):
         """Closes the Neo4j driver connections."""
@@ -583,13 +647,13 @@ class GraphService:
 
     async def increment_category_counter(self, category_id: str) -> int:
         """Increments the insert_counter for a category and returns the new value."""
-        async def _inc(tx):
+        async def _inc(tx, cat_id: str):
             query = (
                 f"MATCH (c:{self.LABEL_CATEGORY} {{id: $id}}) "
                 "SET c.insert_counter = c.insert_counter + 1 "
                 "RETURN c.insert_counter as counter"
             )
-            result = await tx.run(query, id=category_id)
+            result = await tx.run(query, id=cat_id)
             record = await result.single()
             return record["counter"] if record else 0
 

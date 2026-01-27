@@ -25,7 +25,7 @@ class Settings(BaseSettings):
     NEO4J_PASSWORD: str = ""
 
     # LLM Settings
-    LLM_PROVIDER: str = "gemini"  # Default to gemini
+    LLM_PROVIDER: str = "ollama"  # Options: gemini, openai, ollama
     OPENAI_API_KEY: str = ""
     OPENAI_MODEL: str = "gpt-4o-mini"
     OPENAI_EMBEDDING_MODEL: str = "text-embedding-3-small"
@@ -35,6 +35,11 @@ class Settings(BaseSettings):
     GOOGLE_API_KEY: str = ""
     GEMINI_MODEL: str = "gemini-2.0-flash-lite"
     GOOGLE_GENAI_USE_VERTEXAI: bool = False
+
+    # Ollama Settings
+    OLLAMA_BASE_URL: str = "http://localhost:11434"
+    OLLAMA_MODEL: str = "llama3.2"
+    OLLAMA_EMBEDDING_MODEL: str = "qwen3-embedding:0.6b"
 
 
 settings = Settings()

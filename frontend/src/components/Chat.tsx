@@ -1,12 +1,29 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import { Send, Bot, X, Hash, Sparkles } from 'lucide-react';
-import { chat, createTopic, getSessionHistory, type ChatResponse, type Node as MnemoNode } from '../api';
+import { chatStream, createTopic, getSessionHistory, type Node as MnemoNode } from '../api';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+// Static empty state component - hoisted outside to prevent re-creation
+const EmptyState: React.FC<{ selectedCategoryCount: number }> = ({ selectedCategoryCount }) => (
+  <div className="h-full flex flex-col items-center justify-center text-[#434343] gap-6">
+    <div className="p-6 rounded-3xl bg-[#1a1a1a] border border-[#2d2d2d]">
+      <Sparkles size={48} strokeWidth={1.5} className="text-[#262626]" />
+    </div>
+    <div className="text-center space-y-2">
+      <p className="text-xl lg:text-2xl font-semibold text-[#d4d4d4]">How can I help you today?</p>
+      {selectedCategoryCount > 0 && (
+        <p className="text-base text-[#8c8c8c]">
+          Searching in {selectedCategoryCount} categor{selectedCategoryCount === 1 ? 'y' : 'ies'}
+        </p>
+      )}
+    </div>
+  </div>
+);
 
 interface Message {
   role: 'user' | 'assistant';
@@ -42,7 +59,7 @@ const Chat: React.FC<ChatProps> = ({
   const [categorySearchQuery, setCategorySearchQuery] = useState('');
   
   const scrollRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
   // Sync props if they change
   useEffect(() => {
@@ -88,15 +105,15 @@ const Chat: React.FC<ChatProps> = ({
     );
   }, [availableCategories, categorySearchQuery]);
 
-  const toggleCategory = (categoryId: string) => {
+  const toggleCategory = useCallback((categoryId: string) => {
     setSelectedCategoryIds(prev => 
       prev.includes(categoryId)
         ? prev.filter(id => id !== categoryId)
         : [...prev, categoryId]
     );
-  };
+  }, []);
 
-  const handleSend = async () => {
+  const handleSend = useCallback(async () => {
     if (!input.trim() || isLoading) return;
 
     const userMsg = input;
@@ -108,53 +125,105 @@ const Chat: React.FC<ChatProps> = ({
     setMessages((prev) => [...prev, { role: 'user', content: userMsg }]);
     setIsLoading(true);
 
+    // Add placeholder assistant message for streaming
+    setMessages((prev) => [...prev, { role: 'assistant', content: '' }]);
+
     try {
-      // If new session and topic name provided, create topic first
       if (isNewSession && initialTopicName) {
         const topicResponse = await createTopic({
           topic_name: initialTopicName,
           parent_category_id: initialParentId || 'cat_root',
-          initial_sub_categories: undefined // Can be added later if needed
+          initial_sub_categories: undefined
         });
         activeSessionId = topicResponse.session_id;
         setSessionId(activeSessionId);
-        if (onSessionCreated) onSessionCreated(activeSessionId);
+        onSessionCreated?.(activeSessionId);
       } else if (isNewSession) {
-        // Casual chat - create a simple session (no category node)
-        // The backend will auto-create a session for us
         activeSessionId = `session_${Math.random().toString(36).substr(2, 12)}`;
       }
       
-      // Now send the chat message
-      const response: ChatResponse = await chat(
-        userMsg, 
+      await chatStream(
+        userMsg,
         activeSessionId,
-        selectedCategoryIds.length > 0 ? selectedCategoryIds : undefined // category_ids for scoped search
+        selectedCategoryIds.length > 0 ? selectedCategoryIds : undefined,
+        // onChunk: append each chunk to the last assistant message
+        (chunk: string) => {
+          setMessages((prev) => {
+            const newMessages = [...prev];
+            const lastIndex = newMessages.length - 1;
+            if (lastIndex >= 0 && newMessages[lastIndex].role === 'assistant') {
+              newMessages[lastIndex] = {
+                ...newMessages[lastIndex],
+                content: newMessages[lastIndex].content + chunk,
+              };
+            }
+            return newMessages;
+          });
+        },
+        // onMetadata: handle session ID and retrieved nodes
+        (metadata) => {
+          if (isNewSession && !initialTopicName) {
+            setSessionId(metadata.session_id);
+          }
+          if (metadata.retrieved_node_ids) {
+            onRetrievedNodes?.(metadata.retrieved_node_ids);
+          }
+        },
+        // onError: handle errors
+        (errorMsg: string) => {
+          setMessages((prev) => {
+            const newMessages = [...prev];
+            const lastIndex = newMessages.length - 1;
+            if (lastIndex >= 0 && newMessages[lastIndex].role === 'assistant') {
+              newMessages[lastIndex] = {
+                ...newMessages[lastIndex],
+                content: `Error: ${errorMsg}`,
+              };
+            }
+            return newMessages;
+          });
+        }
       );
       
-      if (isNewSession && !initialTopicName) {
-        // Update session ID from response for casual chats
-        setSessionId(response.session_id);
-      }
-      
-      if (response.retrieved_node_ids && onRetrievedNodes) {
-        onRetrievedNodes(response.retrieved_node_ids);
-      }
-      
-      setMessages((prev) => [...prev, { role: 'assistant', content: response.response }]);
       onNewMessage();
-    } catch (error: any) {
-      const errorMsg = error.response?.data?.detail || error.message || 'Unknown error';
-      setMessages((prev) => [...prev, { role: 'assistant', content: `Error: ${errorMsg}` }]);
+    } catch (error: unknown) {
+      const errorMsg = error instanceof Error 
+        ? error.message 
+        : (error as { response?: { data?: { detail?: string } } }).response?.data?.detail || 'Unknown error';
+      setMessages((prev) => {
+        const newMessages = [...prev];
+        const lastIndex = newMessages.length - 1;
+        if (lastIndex >= 0 && newMessages[lastIndex].role === 'assistant') {
+          newMessages[lastIndex] = {
+            ...newMessages[lastIndex],
+            content: `Error: ${errorMsg}`,
+          };
+        }
+        return newMessages;
+      });
     } finally {
       setIsLoading(false);
       inputRef.current?.focus();
     }
-  };
+  }, [input, isLoading, sessionId, initialTopicName, initialParentId, selectedCategoryIds, onSessionCreated, onRetrievedNodes, onNewMessage, setSessionId]);
 
   const selectedCategories = useMemo(() => {
     return availableCategories.filter(cat => selectedCategoryIds.includes(cat.id));
   }, [availableCategories, selectedCategoryIds]);
+
+  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInput(e.target.value);
+    e.target.style.height = 'auto';
+    e.target.style.height = `${Math.min(e.target.scrollHeight, 160)}px`;
+  }, []);
+
+  const handleInputKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    // Don't submit if user is composing text with IME (e.g., 注音, Japanese, Korean)
+    if (e.key === 'Enter' && !e.shiftKey && !e.nativeEvent.isComposing) {
+      e.preventDefault();
+      handleSend();
+    }
+  }, [handleSend]);
 
   return (
     <div className="flex flex-col h-full bg-[#171717]">
@@ -246,19 +315,7 @@ const Chat: React.FC<ChatProps> = ({
       {/* Messages Area */}
       <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 lg:px-8 xl:px-12 py-8 lg:py-12 space-y-8 custom-scrollbar">
         {messages.length === 0 && !isLoading && (
-          <div className="h-full flex flex-col items-center justify-center text-[#434343] gap-6">
-            <div className="p-6 rounded-3xl bg-[#1a1a1a] border border-[#2d2d2d]">
-              <Sparkles size={48} strokeWidth={1.5} className="text-[#262626]" />
-            </div>
-            <div className="text-center space-y-2">
-              <p className="text-xl lg:text-2xl font-semibold text-[#d4d4d4]">How can I help you today?</p>
-              {selectedCategoryIds.length > 0 && (
-                <p className="text-base text-[#8c8c8c]">
-                  Searching in {selectedCategoryIds.length} categor{selectedCategoryIds.length === 1 ? 'y' : 'ies'}
-                </p>
-              )}
-            </div>
-          </div>
+          <EmptyState selectedCategoryCount={selectedCategoryIds.length} />
         )}
         
         {messages.map((msg, i) => (
@@ -290,14 +347,23 @@ const Chat: React.FC<ChatProps> = ({
                 ? "bg-[#262626] text-[#d4d4d4] border border-[#2d2d2d]"
                 : "bg-[#1a1a1a] text-[#d4d4d4]"
             )}>
-              <div className="prose prose-invert prose-lg max-w-none">
-                <p className="text-base lg:text-lg leading-relaxed whitespace-pre-wrap">{msg.content}</p>
-              </div>
+              {msg.role === 'assistant' && !msg.content && isLoading ? (
+                <div className="flex items-center gap-2">
+                  <div className="w-2.5 h-2.5 bg-purple-400 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                  <div className="w-2.5 h-2.5 bg-purple-400 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                  <div className="w-2.5 h-2.5 bg-purple-400 rounded-full animate-bounce"></div>
+                </div>
+              ) : (
+                <div className="prose prose-invert prose-lg max-w-none">
+                  <p className="text-base lg:text-lg leading-relaxed whitespace-pre-wrap">{msg.content}</p>
+                </div>
+              )}
             </div>
           </div>
         ))}
         
-        {isLoading && (
+        {/* Only show loading indicator if last message is not an assistant message (streaming) */}
+        {isLoading && (!messages.length || messages[messages.length - 1]?.role !== 'assistant') && (
           <div className="flex gap-4 lg:gap-6 max-w-4xl mr-auto">
             <div className="shrink-0 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
               <Bot size={22} className="lg:w-6 lg:h-6 text-purple-400" />
@@ -318,20 +384,10 @@ const Chat: React.FC<ChatProps> = ({
         <div className="max-w-4xl mx-auto">
           <div className="relative flex items-end bg-[#262626] border border-[#2d2d2d] rounded-2xl focus-within:border-purple-500/50 transition-all shadow-lg">
             <textarea
-              ref={inputRef as any}
+              ref={inputRef}
               value={input}
-              onChange={(e) => {
-                setInput(e.target.value);
-                // Auto-resize textarea
-                e.target.style.height = 'auto';
-                e.target.style.height = `${Math.min(e.target.scrollHeight, 160)}px`;
-              }}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                  e.preventDefault();
-                  handleSend();
-                }
-              }}
+              onChange={handleInputChange}
+              onKeyDown={handleInputKeyDown}
               placeholder="Message Mnemo..."
               rows={1}
               className="flex-1 bg-transparent px-6 py-4 lg:px-8 lg:py-5 text-base lg:text-lg text-[#d4d4d4] placeholder-[#595959] outline-none resize-none max-h-40 overflow-y-auto custom-scrollbar"

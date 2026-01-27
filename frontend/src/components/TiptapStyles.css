@@ -1,0 +1,167 @@
+/* Tiptap Editor Styles */
+.ProseMirror {
+  outline: none;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: #595959;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.ProseMirror h1 {
+  font-size: 2em;
+  font-weight: 700;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+}
+
+.ProseMirror h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+}
+
+.ProseMirror h3 {
+  font-size: 1.17em;
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  padding-left: 1.5em;
+  margin: 1em 0;
+}
+
+.ProseMirror li {
+  margin: 0.5em 0;
+}
+
+.ProseMirror blockquote {
+  border-left: 3px solid #6366f1;
+  padding-left: 1em;
+  margin: 1em 0;
+  font-style: italic;
+  color: #a3a3a3;
+}
+
+.ProseMirror code {
+  background-color: #1a1a1a;
+  color: #a78bfa;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+.ProseMirror pre {
+  background: #0d0d0d;
+  border: 1px solid #2d2d2d;
+  border-radius: 0.5rem;
+  padding: 1em;
+  margin: 1em 0;
+  overflow-x: auto;
+}
+
+.ProseMirror pre code {
+  background: transparent;
+  color: #d4d4d4;
+  padding: 0;
+}
+
+.ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1em 0;
+}
+
+.ProseMirror table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  width: 100%;
+}
+
+.ProseMirror table td,
+.ProseMirror table th {
+  border: 1px solid #2d2d2d;
+  padding: 0.5em;
+  text-align: left;
+}
+
+.ProseMirror table th {
+  background-color: #1a1a1a;
+  font-weight: 600;
+}
+
+.ProseMirror mark {
+  background-color: #fbbf24;
+  color: #000;
+  padding: 0.1em 0.2em;
+  border-radius: 0.2em;
+}
+
+.ProseMirror a {
+  color: #a78bfa;
+  text-decoration: underline;
+}
+
+.ProseMirror a:hover {
+  color: #c4b5fd;
+}
+
+.ProseMirror ul[data-type="taskList"] {
+  list-style: none;
+  padding: 0;
+}
+
+.ProseMirror ul[data-type="taskList"] li {
+  display: flex;
+  align-items: flex-start;
+  margin: 0.5em 0;
+}
+
+.ProseMirror ul[data-type="taskList"] li > label {
+  flex: 0 0 auto;
+  margin-right: 0.5rem;
+  user-select: none;
+}
+
+.ProseMirror ul[data-type="taskList"] li > div {
+  flex: 1 1 auto;
+}
+
+.ProseMirror hr {
+  border: none;
+  border-top: 2px solid #2d2d2d;
+  margin: 2em 0;
+}
+
+/* Drag Handle */
+.drag-handle {
+  position: absolute;
+  left: -24px;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  opacity: 0;
+  cursor: grab;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' style='fill: %23999'%3E%3Cpath d='M3,2 C2.44771525,2 2,2.44771525 2,3 C2,3.55228475 2.44771525,4 3,4 C3.55228475,4 4,3.55228475 4,3 C4,2.44771525 3.55228475,2 3,2 Z M3,6 C2.44771525,6 2,6.44771525 2,7 C2,7.55228475 2.44771525,8 3,8 C3.55228475,8 4,7.55228475 4,7 C4,6.44771525 3.55228475,6 3,6 Z M7,2 C6.44771525,2 6,2.44771525 6,3 C6,3.55228475 6.44771525,4 7,4 C7.55228475,4 8,3.55228475 8,3 C8,2.44771525 7.55228475,2 7,2 Z M7,6 C6.44771525,6 6,6.44771525 6,7 C6,7.55228475 6.44771525,8 7,8 C7.55228475,8 8,7.55228475 8,7 C8,6.44771525 7.55228475,6 7,6 Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: contain;
+  transition: opacity 0.2s;
+}
+
+.ProseMirror-focused .drag-handle,
+.drag-handle:hover {
+  opacity: 1;
+}
+
+/* Selection styles */
+.ProseMirror-selectednode {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}

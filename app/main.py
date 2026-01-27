@@ -1,14 +1,20 @@
+# Standard library imports
 import logging
 import uuid
 from contextlib import asynccontextmanager
+from datetime import UTC, datetime
 
+# Third-party imports
 from fastapi import BackgroundTasks, FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 
-from app.core.llm import invoke_llm
+# Local imports
+from app.core.llm import invoke_llm, invoke_llm_stream
 from app.core.logging import setup_logging
 from app.core.session.manager import session_manager
 from app.models.chat import ChatRequest, ChatResponse, CreateTopicRequest, CreateTopicResponse
+from app.models.nodes import Category, KnowledgeNode, Relationship, VerticalRelationshipType
 from app.prompts.memory import MEMORY_SYSTEM_PROMPT_PREFIX
 from app.services.evolver import memory_evolver
 from app.services.extractor import context_extractor
@@ -57,15 +63,23 @@ app.add_middleware(
 )
 
 
+# Constants
+SESSION_ID_PREFIX = "session_"
+CATEGORY_ID_PREFIX = "cat_"
+KNOWLEDGE_ID_PREFIX = "k-"
+ROOT_NODE_ID = "cat_root"
+DEFAULT_CATEGORY_NAME = "New Category"
+DEFAULT_NOTE_DESCRIPTION = "New Note"
+
+
 @app.post("/topics/create", response_model=CreateTopicResponse)
 async def create_topic(request: CreateTopicRequest):
     """
     Creates a new learning topic/session with a category node in the graph.
     This is a separate endpoint from chat - frontend decides when to create a topic.
     """
-    from app.models.nodes import Category, Relationship, VerticalRelationshipType
     
-    session_id = f"session_{uuid.uuid4().hex[:12]}"
+    session_id = f"{SESSION_ID_PREFIX}{uuid.uuid4().hex[:12]}"
     parent_category_id = request.parent_category_id
     
     # Determine level from parent
@@ -91,8 +105,9 @@ async def create_topic(request: CreateTopicRequest):
     # Create initial sub-categories if specified
     if request.initial_sub_categories:
         for sub_name in request.initial_sub_categories:
-            if not sub_name.strip(): continue
-            sub_id = f"cat_{uuid.uuid4().hex[:8]}"
+            if not sub_name.strip():
+                continue
+            sub_id = f"{CATEGORY_ID_PREFIX}{uuid.uuid4().hex[:8]}"
             await graph_service.create_category_node(Category(
                 id=sub_id, 
                 name=sub_name.strip(), 
@@ -173,6 +188,78 @@ async def chat(request: ChatRequest):
         session_id=session_id, 
         response=llm_response,
         retrieved_node_ids=retrieved_ids
+    )
+
+
+@app.post("/chat/stream")
+async def chat_stream(request: ChatRequest):
+    """
+    Streaming chat endpoint using Server-Sent Events (SSE).
+    Streams LLM response chunks as they are generated.
+    """
+    session_id = request.session_id
+    
+    # Fetch session - create if doesn't exist (casual chat)
+    session = await session_manager.get_session(session_id)
+    if not session:
+        await session_manager.create_session(session_id, metadata={"topic_name": session_id})
+        logger.info(f"Auto-created casual chat session: {session_id}")
+    
+    # Retrieve Context (Hybrid Memory)
+    memory_context, retrieved_ids = await memory_retriever.get_relevant_context(
+        session_id, 
+        request.message,
+        category_ids=request.category_ids
+    )
+    logger.info(f"Memory context retrieved: {memory_context[:200]}...")
+    
+    # Build history
+    history = []
+    if session:
+        history = [{"role": m.role, "content": m.content} for m in session.messages]
+
+    # Build Messages
+    messages = [
+        {"role": "system", "content": MEMORY_SYSTEM_PROMPT_PREFIX.format(context_text=memory_context)},
+        *history,
+        {"role": "user", "content": request.message},
+    ]
+    
+    # Persist user message immediately
+    await session_manager.add_message(session_id, "user", request.message)
+    
+    async def generate_stream():
+        """Generator function for streaming response"""
+        full_response = ""
+        
+        # Send initial metadata
+        import json
+        yield f"data: {json.dumps({'type': 'metadata', 'session_id': session_id, 'retrieved_node_ids': retrieved_ids})}\n\n"
+        
+        try:
+            # Stream LLM response
+            async for chunk in invoke_llm_stream(messages=messages):
+                full_response += chunk
+                # Send chunk as SSE
+                yield f"data: {json.dumps({'type': 'chunk', 'content': chunk})}\n\n"
+            
+            # Persist complete assistant message
+            await session_manager.add_message(session_id, "assistant", full_response)
+            
+            # Send completion signal
+            yield f"data: {json.dumps({'type': 'done'})}\n\n"
+        except Exception as e:
+            logger.error(f"Error in streaming chat: {e}", exc_info=True)
+            yield f"data: {json.dumps({'type': 'error', 'message': str(e)})}\n\n"
+    
+    return StreamingResponse(
+        generate_stream(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",  # Disable nginx buffering
+        }
     )
 
 
@@ -269,46 +356,54 @@ async def get_active_nodes(session_id: str):
 
 
 @app.patch("/nodes/knowledge/{node_id}")
-async def update_knowledge(node_id: str, data: dict):
+async def update_knowledge(node_id: str, data: dict) -> dict:
     """Updates a knowledge node's content, description, and tags."""
     content = data.get("content")
     description = data.get("description")
     tags = data.get("tags")
+    
     if content is None:
         return {"error": "Content is required"}, 400
+    
     await graph_service.update_knowledge_content(node_id, content, description, tags)
+    
     # Clear Redis cache for this node
-    client = await redis_service.get_client()
-    await client.delete(f"knowledge:{node_id}")
+    redis_client = await redis_service.get_client()
+    await redis_client.delete(f"knowledge:{node_id}")
+    
     return {"message": "Knowledge node updated successfully."}
 
 
 @app.patch("/nodes/category/{category_id}")
-async def update_category(category_id: str, data: dict):
+async def update_category(category_id: str, data: dict) -> dict:
     """Updates a category node's name and/or summary."""
     name = data.get("name")
     summary = data.get("summary")
+    
     await graph_service.update_category_properties(category_id, name, summary)
+    
     return {"message": "Category updated successfully."}
 
 
 
 
 @app.delete("/nodes/{node_id}")
-async def delete_node(node_id: str):
+async def delete_node(node_id: str) -> dict:
     """Manually delete a node and all its relationships."""
-    if node_id == "cat_root":
+    if node_id == ROOT_NODE_ID:
         return {"error": "The root node cannot be deleted."}, 403
         
     await graph_service.delete_node(node_id)
+    
     # Clear Redis cache
-    client = await redis_service.get_client()
-    await client.delete(f"knowledge:{node_id}")
+    redis_client = await redis_service.get_client()
+    await redis_client.delete(f"knowledge:{node_id}")
+    
     return {"message": "Node deleted successfully."}
 
 
 @app.post("/links")
-async def create_link(data: dict):
+async def create_link(data: dict) -> dict:
     """Manually create a relationship between two nodes."""
     source_id = data.get("source_id")
     target_id = data.get("target_id")
@@ -320,26 +415,22 @@ async def create_link(data: dict):
 
 
 @app.delete("/links")
-async def delete_link(source_id: str, target_id: str, rel_type: str):
+async def delete_link(source_id: str, target_id: str, rel_type: str) -> dict:
     """Manually delete a relationship between two nodes."""
     await graph_service.delete_manual_link(source_id, target_id, rel_type)
     return {"message": "Link deleted successfully."}
 
 
 @app.post("/nodes/knowledge")
-async def create_knowledge(data: dict, graph_svc: GraphService = Depends(get_graph_service)):
+async def create_knowledge(data: dict, graph_svc: GraphService = Depends(get_graph_service)) -> dict:
     """Manually create a new knowledge node."""
-    from app.models.nodes import KnowledgeNode
-    from datetime import datetime, UTC
-    
     # Generate a unique ID if not provided
-    import uuid
-    node_id = data.get("id", f"k-{uuid.uuid4().hex[:8]}")
+    node_id = data.get("id", f"{KNOWLEDGE_ID_PREFIX}{uuid.uuid4().hex[:8]}")
     
     new_node = KnowledgeNode(
         id=node_id,
         content=data.get("content", ""),
-        description=data.get("description", "New Note"),
+        description=data.get("description", DEFAULT_NOTE_DESCRIPTION),
         worth_of_learning=1.0,
         session_id=data.get("session_id"),
         created_at=datetime.now(UTC),
@@ -351,29 +442,24 @@ async def create_knowledge(data: dict, graph_svc: GraphService = Depends(get_gra
     # Link to parent if provided
     parent_id = data.get("parent_id")
     if parent_id:
-        await graph_svc.create_manual_link(parent_id, node_id, "BELONGS_TO")
+        await graph_svc.create_manual_link(parent_id, node_id, GraphService.REL_BELONGS_TO)
         
     return {"id": node_id, "status": "created"}
 
 
 @app.post("/nodes/category")
-async def create_category(data: dict, graph_svc: GraphService = Depends(get_graph_service)):
+async def create_category(data: dict, graph_svc: GraphService = Depends(get_graph_service)) -> dict:
     """Manually create a new category node with name-collision check."""
-    from app.models.nodes import Category
-    from datetime import datetime, UTC
-    import uuid
+    name = data.get("name", DEFAULT_CATEGORY_NAME)
+    parent_id = data.get("parent_id", ROOT_NODE_ID)
     
-    name = data.get("name", "New Category")
-    parent_id = data.get("parent_id", "cat_root")
-    
-    # 1. Basic name collision check (loose)
+    # Basic name collision check (loose)
+    # Note: This is a placeholder for future optimization with specific child-queries
     graph = await graph_svc.get_full_graph()
-    if any(n.name == name and n.type == 'category' for n in graph['nodes']):
-        # If we found a name match, check if it's already a child of the same parent
-        # This is an optimization point for future specific child-queries
-        pass 
+    if any(node.name == name and node.get("type") == "category" for node in graph["nodes"]):
+        pass  # Future: check if it's already a child of the same parent 
 
-    node_id = data.get("id", f"cat-{uuid.uuid4().hex[:8]}")
+    node_id = data.get("id", f"{CATEGORY_ID_PREFIX}{uuid.uuid4().hex[:8]}")
     
     new_cat = Category(
         id=node_id,
@@ -385,7 +471,7 @@ async def create_category(data: dict, graph_svc: GraphService = Depends(get_grap
     )
     
     await graph_svc.create_category_node(new_cat)
-    await graph_svc.create_manual_link(parent_id, node_id, "SUB_CATEGORY_OF")
+    await graph_svc.create_manual_link(parent_id, node_id, GraphService.REL_SUB_CATEGORY_OF)
         
     return {"id": node_id, "status": "created"}
 

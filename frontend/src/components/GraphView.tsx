@@ -11,22 +11,27 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// Helper to brighten/darken hex colors for gradients
-function brightenColor(hex: string, percent: number) {
-  const num = parseInt(hex.replace('#', ''), 16),
-    amt = Math.round(2.55 * percent),
-    R = (num >> 16) + amt,
-    G = (num >> 8 & 0x00FF) + amt,
-    B = (num & 0x0000FF) + amt;
+// Helper to extract node ID from link source/target
+const getLinkNodeId = (nodeOrId: string | { id: string }): string => {
+  return typeof nodeOrId === 'object' ? nodeOrId.id : nodeOrId;
+};
+
+// Helper to brighten/darken hex colors for gradients - hoisted outside component
+function brightenColor(hex: string, percent: number): string {
+  const num = parseInt(hex.replace('#', ''), 16);
+  const amt = Math.round(2.55 * percent);
+  const R = (num >> 16) + amt;
+  const G = (num >> 8 & 0x00FF) + amt;
+  const B = (num & 0x0000FF) + amt;
   return "#" + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 + (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 + (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
 }
 
-function darkenColor(hex: string, percent: number) {
-  const num = parseInt(hex.replace('#', ''), 16),
-    amt = Math.round(2.55 * percent),
-    R = (num >> 16) - amt,
-    G = (num >> 8 & 0x00FF) - amt,
-    B = (num & 0x0000FF) - amt;
+function darkenColor(hex: string, percent: number): string {
+  const num = parseInt(hex.replace('#', ''), 16);
+  const amt = Math.round(2.55 * percent);
+  const R = (num >> 16) - amt;
+  const G = (num >> 8 & 0x00FF) - amt;
+  const B = (num & 0x0000FF) - amt;
   return "#" + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 + (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 + (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
 }
 
@@ -79,25 +84,23 @@ const GraphView: React.FC<GraphViewProps> = ({
   const retrievedSet = useMemo(() => new Set(retrievedNodeIds), [retrievedNodeIds]);
 
   const handleCenter = useCallback(() => {
-    if (fgRef.current) {
-      fgRef.current.zoomToFit(400, 50);
-    }
+    fgRef.current?.zoomToFit(400, 50);
   }, []);
 
-  const handleDeleteNode = useCallback(async (node: any) => {
+  const handleDeleteNode = useCallback(async (node: { id: string; name?: string; description?: string }) => {
     if (!confirm(`Delete node "${node.name || node.description}" and all its links?`)) return;
     
     const tid = toast.loading('Deleting node...');
     try {
       await deleteNode(node.id);
       toast.success('Node deleted', { id: tid });
-      if (onNodeUpdated) onNodeUpdated();
+      onNodeUpdated?.();
     } catch (err) {
       toast.error('Failed to delete node', { id: tid });
     }
   }, [onNodeUpdated]);
 
-  const handleNodeRightClick = useCallback((node: any) => {
+  const handleNodeRightClick = useCallback((node: { id: string; name?: string; description?: string; type?: string; x?: number; y?: number; fx?: number; fy?: number }) => {
     if (node.id === 'cat_root') {
       toast.error("The Root node cannot be modified or deleted.");
       return;
@@ -158,7 +161,7 @@ const GraphView: React.FC<GraphViewProps> = ({
     });
   }, [handleDeleteNode]);
 
-  const handleLinkRightClick = useCallback((link: any) => {
+  const handleLinkRightClick = useCallback((link: { source: string | { id: string }; target: string | { id: string }; edge_label: string }) => {
     toast((t) => (
       <div className="flex flex-col gap-1 min-w-[140px]">
         <div className="text-[10px] font-bold text-[#595959] uppercase tracking-widest mb-1 px-1 border-b border-[#2d2d2d] pb-1">
@@ -173,11 +176,11 @@ const GraphView: React.FC<GraphViewProps> = ({
             if (!confirm(`Delete relationship "${link.edge_label}"?`)) return;
             const tid = toast.loading('Removing link...');
             try {
-              const sourceId = typeof link.source === 'object' ? link.source.id : link.source;
-              const targetId = typeof link.target === 'object' ? link.target.id : link.target;
+              const sourceId = getLinkNodeId(link.source);
+              const targetId = getLinkNodeId(link.target);
               await deleteLink(sourceId, targetId, link.edge_label);
               toast.success('Link removed', { id: tid });
-              if (onNodeUpdated) onNodeUpdated();
+              onNodeUpdated?.();
             } catch (err) {
               toast.error('Failed to remove link', { id: tid });
             }
@@ -202,14 +205,14 @@ const GraphView: React.FC<GraphViewProps> = ({
     });
   }, [onNodeUpdated]);
 
-  const finalizeLink = async (relType: string) => {
+  const finalizeLink = useCallback(async (relType: string) => {
     if (!linkingSource || !pendingLinkTarget) return;
     
     const tid = toast.loading(`Creating ${relType} link...`);
     try {
       await createLink(linkingSource.id, pendingLinkTarget.id, relType);
       toast.success('Link created!', { id: tid });
-      if (onNodeUpdated) onNodeUpdated();
+      onNodeUpdated?.();
     } catch (err) {
       toast.error('Failed to create link', { id: tid });
     } finally {
@@ -221,7 +224,7 @@ const GraphView: React.FC<GraphViewProps> = ({
       setPendingLinkTarget(null);
       setMousePos(null);
     }
-  };
+  }, [linkingSource, pendingLinkTarget, onNodeUpdated]);
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     if (linkingSource && fgRef.current) {
@@ -251,6 +254,50 @@ const GraphView: React.FC<GraphViewProps> = ({
       }))
     };
   }, [data, currentFocusId]);
+
+  // Memoized callbacks for ForceGraph2D props
+  const getLinkDirectionalParticles = useCallback((link: { source: string | { id: string }; target: string | { id: string } }) => {
+    const sourceId = getLinkNodeId(link.source);
+    const targetId = getLinkNodeId(link.target);
+    const isActive = retrievedSet.has(sourceId) || retrievedSet.has(targetId) || sourceId === activeSessionId || targetId === activeSessionId;
+    return isActive ? 2 : 0;
+  }, [retrievedSet, activeSessionId]);
+
+  const getLinkDirectionalParticleWidth = useCallback((link: { source: string | { id: string }; target: string | { id: string } }) => {
+    const sourceId = getLinkNodeId(link.source);
+    const targetId = getLinkNodeId(link.target);
+    return (sourceId === activeSessionId || targetId === activeSessionId) ? 3 : 1.5;
+  }, [activeSessionId]);
+
+  const getLinkDirectionalParticleSpeed = useCallback((link: { source: string | { id: string }; target: string | { id: string } }) => {
+    const sourceId = getLinkNodeId(link.source);
+    const targetId = getLinkNodeId(link.target);
+    return (sourceId === activeSessionId || targetId === activeSessionId) ? 0.005 : 0.003; 
+  }, [activeSessionId]);
+
+  const getLinkDirectionalParticleColor = useCallback((link: { source: string | { id: string }; target: string | { id: string } }) => {
+    const sourceId = getLinkNodeId(link.source);
+    const targetId = getLinkNodeId(link.target);
+    return (sourceId === activeSessionId || targetId === activeSessionId) ? "rgba(167, 139, 250, 0.6)" : "rgba(34, 211, 238, 0.4)";
+  }, [activeSessionId]);
+
+  const getLinkWidth = useCallback((link: { source: string | { id: string }; target: string | { id: string }; edge_label: string }) => {
+    const sourceId = getLinkNodeId(link.source);
+    const targetId = getLinkNodeId(link.target);
+    const isRetrieved = retrievedSet.has(sourceId) || retrievedSet.has(targetId);
+    const isHovered = hoverNode && (sourceId === hoverNode.id || targetId === hoverNode.id);
+    return (link.edge_label === 'RELATED' ? 1.5 : 2.5) * (isRetrieved || isHovered ? 1.5 : 1);
+  }, [retrievedSet, hoverNode]);
+
+  const getLinkColor = useCallback((link: { source: string | { id: string }; target: string | { id: string }; color: string }) => {
+    if (hoverNode) {
+      const sourceId = getLinkNodeId(link.source);
+      const targetId = getLinkNodeId(link.target);
+      if (sourceId === hoverNode.id || targetId === hoverNode.id) return '#ffffff';
+      return 'rgba(255,255,255,0.05)';
+    }
+    return link.color;
+  }, [hoverNode]);
 
   if (!data) return null;
 
@@ -304,45 +351,12 @@ const GraphView: React.FC<GraphViewProps> = ({
         linkDirectionalArrowLength={3}
         linkDirectionalArrowRelPos={1}
         linkCurvature={0.15}
-        linkDirectionalParticles={(link: any) => {
-          const sourceId = typeof link.source === 'object' ? link.source.id : link.source;
-          const targetId = typeof link.target === 'object' ? link.target.id : link.target;
-          const isActive = retrievedSet.has(sourceId) || retrievedSet.has(targetId) || sourceId === activeSessionId || targetId === activeSessionId;
-          return isActive ? 2 : 0; // Fewer particles
-        }}
-        linkDirectionalParticleWidth={(link: any) => {
-          const sourceId = typeof link.source === 'object' ? link.source.id : link.source;
-          const targetId = typeof link.target === 'object' ? link.target.id : link.target;
-          return (sourceId === activeSessionId || targetId === activeSessionId) ? 3 : 1.5; // Smaller particles
-        }}
-        linkDirectionalParticleSpeed={(link: any) => {
-          const sourceId = typeof link.source === 'object' ? link.source.id : link.source;
-          const targetId = typeof link.target === 'object' ? link.target.id : link.target;
-          // MUCH slower speed (0.003-0.006 instead of 0.006-0.012)
-          return (sourceId === activeSessionId || targetId === activeSessionId) ? 0.005 : 0.003; 
-        }}
-        linkDirectionalParticleColor={(link: any) => {
-          const sourceId = typeof link.source === 'object' ? link.source.id : link.source;
-          const targetId = typeof link.target === 'object' ? link.target.id : link.target;
-          // Use rgba for softer, ethereal particles
-          return (sourceId === activeSessionId || targetId === activeSessionId) ? "rgba(167, 139, 250, 0.6)" : "rgba(34, 211, 238, 0.4)";
-        }}
-        linkWidth={(link: any) => {
-          const sourceId = typeof link.source === 'object' ? link.source.id : link.source;
-          const targetId = typeof link.target === 'object' ? link.target.id : link.target;
-          const isRetrieved = retrievedSet.has(sourceId) || retrievedSet.has(targetId);
-          const isHovered = hoverNode && (sourceId === hoverNode.id || targetId === hoverNode.id);
-          return (link.edge_label === 'RELATED' ? 1.5 : 2.5) * (isRetrieved || isHovered ? 1.5 : 1);
-        }}
-        linkColor={(link: any) => {
-          if (hoverNode) {
-            const sourceId = typeof link.source === 'object' ? link.source.id : link.source;
-            const targetId = typeof link.target === 'object' ? link.target.id : link.target;
-            if (sourceId === hoverNode.id || targetId === hoverNode.id) return '#ffffff';
-            return 'rgba(255,255,255,0.05)';
-          }
-          return link.color;
-        }}
+        linkDirectionalParticles={getLinkDirectionalParticles}
+        linkDirectionalParticleWidth={getLinkDirectionalParticleWidth}
+        linkDirectionalParticleSpeed={getLinkDirectionalParticleSpeed}
+        linkDirectionalParticleColor={getLinkDirectionalParticleColor}
+        linkWidth={getLinkWidth}
+        linkColor={getLinkColor}
         onNodeClick={(node: any) => {
           if (linkingSource) {
             if (node.id === linkingSource.id) {

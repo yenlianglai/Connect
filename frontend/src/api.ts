@@ -88,6 +88,86 @@ export const chat = async (
   return response.data;
 };
 
+export interface StreamChunk {
+  type: 'metadata' | 'chunk' | 'done' | 'error';
+  content?: string;
+  session_id?: string;
+  retrieved_node_ids?: string[];
+  message?: string;
+}
+
+export const chatStream = async (
+  message: string,
+  session_id: string,
+  category_ids: string[] | undefined,
+  onChunk: (chunk: string) => void,
+  onMetadata?: (metadata: { session_id: string; retrieved_node_ids?: string[] }) => void,
+  onError?: (error: string) => void
+): Promise<string> => {
+  const response = await fetch(`${API_BASE_URL}/chat/stream`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      message,
+      session_id,
+      category_ids,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  const reader = response.body?.getReader();
+  const decoder = new TextDecoder();
+  let buffer = '';
+  let fullResponse = '';
+
+  if (!reader) {
+    throw new Error('No response body reader available');
+  }
+
+  while (true) {
+    const { done, value } = await reader.read();
+    
+    if (done) break;
+
+    buffer += decoder.decode(value, { stream: true });
+    const lines = buffer.split('\n');
+    buffer = lines.pop() || '';
+
+    for (const line of lines) {
+      if (line.startsWith('data: ')) {
+        try {
+          const data: StreamChunk = JSON.parse(line.slice(6));
+          
+          if (data.type === 'metadata') {
+            onMetadata?.({
+              session_id: data.session_id || session_id,
+              retrieved_node_ids: data.retrieved_node_ids,
+            });
+          } else if (data.type === 'chunk' && data.content) {
+            fullResponse += data.content;
+            onChunk(data.content);
+          } else if (data.type === 'done') {
+            return fullResponse;
+          } else if (data.type === 'error') {
+            const errorMsg = data.message || 'Unknown error';
+            onError?.(errorMsg);
+            throw new Error(errorMsg);
+          }
+        } catch (e) {
+          console.error('Error parsing SSE data:', e);
+        }
+      }
+    }
+  }
+
+  return fullResponse;
+};
+
 export const extractContext = async (session_id: string) => {
   const response = await api.post(`/extract/${session_id}`);
   return response.data;
