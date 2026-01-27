@@ -1,0 +1,6072 @@
+{
+  "messages": [
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月22日 星期一上午9:33:45 [UTC]",
+      "text": "Updated room membership.",
+      "topic_id": "jw0FQa_SuvI",
+      "message_id": "AAAA6qq3vTU/jw0FQa_SuvI/jw0FQa_SuvI"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月22日 星期一上午9:40:24 [UTC]",
+      "text": "@全部 各位好，會議後待辦事項，整個HR chatbot服務上線預期在Q1底前 \n1. 數據中心提供機器規格\n2. MIS提供log規格與Chatgpt目前服務的原始碼",
+      "topic_id": "keLfpQW_emo",
+      "message_id": "AAAA6qq3vTU/keLfpQW_emo/keLfpQW_emo"
+    },
+    {
+      "creator": {
+        "name": "Hortin WANG(王誌偉)",
+        "email": "hortinwang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二凌晨2:08:04 [UTC]",
+      "text": "@Johnny LIN(林育廷) \n @Joy LIU(劉辰慧) \n @Brown HSU(許仲廷) \n可以幫我邀這三位進來嗎?",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👍"
+          },
+          "reactor_emails": [
+            "pennylo@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "eKIfSByV5kM",
+      "message_id": "AAAA6qq3vTU/eKIfSByV5kM/eKIfSByV5kM"
+    },
+    {
+      "creator": {
+        "name": "Hortin WANG(王誌偉)",
+        "email": "hortinwang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二凌晨2:08:06 [UTC]",
+      "text": "Updated room membership.",
+      "topic_id": "PiU8rPW25zw",
+      "message_id": "AAAA6qq3vTU/PiU8rPW25zw/PiU8rPW25zw"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二凌晨2:24:54 [UTC]",
+      "text": "Hi, \n1. 機器規格再麻煩您們提供。\n2. 關於DB，集團chatGPT這邊用的是google memorystore for redis，是NOSQL做短期記憶，目前只有存入google sheet做QA紀錄。\n可能要討論一下程式你們想要怎麼接，我會提供gitlab原始碼給你們看。",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "pennylo@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "LEJV9i9nins",
+      "message_id": "AAAA6qq3vTU/LEJV9i9nins/LEJV9i9nins"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二凌晨2:36:15 [UTC]",
+      "text": "gitlab原始碼需要的有哪些同仁，在跟我說，我邀請",
+      "topic_id": "ZkjG0x0S2mw",
+      "message_id": "AAAA6qq3vTU/ZkjG0x0S2mw/ZkjG0x0S2mw"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二凌晨2:55:24 [UTC]",
+      "text": "Updated room membership.",
+      "topic_id": "2KdIEYoTKvU",
+      "message_id": "AAAA6qq3vTU/2KdIEYoTKvU/2KdIEYoTKvU"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二凌晨2:56:45 [UTC]",
+      "text": "gitlab原始碼可否幫我們邀請這些人 感謝🙏\nweiwu@gamania.com\nyorkchien@gamania.com\nhowardwang@gamania.com\nwaynelin@gamania.com\nalberthsu@gamania.com\ntrainchen@gamania.com",
+      "topic_id": "Ap-YN7SN_so",
+      "message_id": "AAAA6qq3vTU/Ap-YN7SN_so/Ap-YN7SN_so"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二凌晨3:05:00 [UTC]",
+      "text": "https://gitlab.gamania.com/johnnylin/gamaniachatgpt-example",
+      "annotations": [
+        {
+          "start_index": 0,
+          "length": 59,
+          "url_metadata": {
+            "title": "Johnny LIN 林育廷 / GamaniaChatGPT example · GitLab",
+            "snippet": "GitLab Enterprise Edition",
+            "image_url": "https://lh6.googleusercontent.com/proxy/4H_KQuJOrzpgqrkFGCE62kRK73yALDx_JIRVszZBUTtXrMnHKdp_t6vuevYmGpF2lxifji6_N9JO9D4MfvkhQQc8GwJ6ZWk4-GEY3nhYqqXlCrzeUFkLOv3m1ngdP0swPrPUJDKA1Hy-NNv1xdBxSSL4DQt3B_LTsZxMXrpIqVSN79hp6f7m",
+            "url": {
+              "private_do_not_access_or_else_safe_url_wrapped_value": "https://gitlab.gamania.com/johnnylin/gamaniachatgpt-example"
+            }
+          }
+        }
+      ],
+      "topic_id": "De6bDbVvfYc",
+      "message_id": "AAAA6qq3vTU/De6bDbVvfYc/De6bDbVvfYc"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二凌晨3:05:18 [UTC]",
+      "text": "有權限的話需要申請gitlab帳號，我直接公開出來好了",
+      "topic_id": "ZI5WaTKDG6I",
+      "message_id": "AAAA6qq3vTU/ZI5WaTKDG6I/ZI5WaTKDG6I"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二凌晨3:06:24 [UTC]",
+      "text": "感謝 🙏",
+      "topic_id": "1pM-kbbM9MU",
+      "message_id": "AAAA6qq3vTU/1pM-kbbM9MU/1pM-kbbM9MU"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二凌晨4:13:43 [UTC]",
+      "text": "Hi Johnny\n機器規格的部份我們會在這一兩週評估，盡快給您們。另外想請問目前Gamania ChatGPT是以n1-standard-32的規格去服務嗎？\nLog DB的部分昨天討論似乎是會和GamaniaGPT共用DB（?），這樣存入google sheet這段應該也會共用邏輯，那我們這邊收到的Google Chat Log是否也要修改成和ChatGPT API相同的schema再存入Log DB，以方便後續做google sheet的轉存？\n\n另外想詢問昨天有提到部署上線後VM的權限會收回由MIS做後續的管理，未來若有迭代需求會需要上單處理。但在我們的系統中會有一個vector DB用來儲存HR整理的回答資訊給LLM做參考，這個DB想像上會有比較高頻率的資料迭代需求，這樣的情況下是否也都要採上單再處理的方式呢？還是有辦法直接開一個防火牆規則給我們做DB內資料的更動呢？謝謝～～",
+      "annotations": [
+        {
+          "start_index": 10,
+          "length": 71,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 10,
+          "length": 218,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 81,
+          "length": 147,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        }
+      ],
+      "topic_id": "T7qbUeWnHd4",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "Hi, \n1. 機器規格再麻煩您們提供。\n2. 關於DB，集團chatGPT這邊用的是google memorystore for redis，是NOSQL做短期記憶，目前只有存入google sheet做QA紀錄。\n可能要討論一下程式你們想要怎麼接，我會提供gitlab原始碼給你們看。"
+      },
+      "message_id": "AAAA6qq3vTU/T7qbUeWnHd4/T7qbUeWnHd4"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨5:06:28 [UTC]",
+      "text": "你們的向量DB要用什麼方式迭代？會有其他程式？\n我們的gpt 用得是k8s所以規格是變動的。\nDB我這邊存的是OpenAI message josn格式而已key:value，我不太曉得你們共用的話要存什麼？",
+      "topic_id": "U1t7bwcgrZM",
+      "message_id": "AAAA6qq3vTU/U1t7bwcgrZM/U1t7bwcgrZM"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨5:48:44 [UTC]",
+      "text": "對目前初步構想是會有一支放在我們這裡的程式去打建在VM裡的向量DB做迭代，但這部分目前僅是構想還要看防火牆規則是否能允許這麼做。另外早上有稍微看了你們提供的架構圖，在資料迭代的部分你們是直接從Google chat UI上傳文件去做更新是嗎？ \n\n然後Log DB的部分我們同樣是要存json format的VertexAI response，我好奇的是我們的程式是要直接去連你們已經在使用的memorystore for redis去做log的儲存嗎？（如果是這樣我們應該要把VertexAI的response修改成和OpenAI一樣的schema讓後續轉google sheet這段不用修改）還是說Log DB的部分前面提到的redis是給我們參考而已，而我們如果要存Log應該要自己建log DB和設計後續長期儲存的邏輯？",
+      "topic_id": "IT_9NRdERiQ",
+      "message_id": "AAAA6qq3vTU/IT_9NRdERiQ/IT_9NRdERiQ"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨6:05:07 [UTC]",
+      "text": "你們適用vertexAI嗎?那format應該會完全不一樣",
+      "topic_id": "0eGRpr6m2_Y",
+      "message_id": "AAAA6qq3vTU/0eGRpr6m2_Y/0eGRpr6m2_Y"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨6:05:23 [UTC]",
+      "text": "你指的log是甚麼？",
+      "topic_id": "V7ADE1Fp6Hs",
+      "message_id": "AAAA6qq3vTU/V7ADE1Fp6Hs/V7ADE1Fp6Hs"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨6:06:47 [UTC]",
+      "text": "集團這支目前沒有資料需要做迭代，但曾經試過使用google sheet、google docs定期抓資料進DB的方式。",
+      "topic_id": "NqRQuHuRDGc",
+      "message_id": "AAAA6qq3vTU/NqRQuHuRDGc/NqRQuHuRDGc"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨6:07:22 [UTC]",
+      "text": "目前的gpt只做訊息的短期記憶，沒有做長期記憶的地方",
+      "topic_id": "ZiCjuP9jGiU",
+      "message_id": "AAAA6qq3vTU/ZiCjuP9jGiU/ZiCjuP9jGiU"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨6:08:17 [UTC]",
+      "text": "如果你們需要長期記憶的大數據分析，那可以一起討論要存在哪邊",
+      "topic_id": "WrOx8CdEvag",
+      "message_id": "AAAA6qq3vTU/WrOx8CdEvag/WrOx8CdEvag"
+    },
+    {
+      "message_state": "DELETED",
+      "deleted_date": "2024年1月23日 星期二清晨6:11:45 [UTC]",
+      "topic_id": "4DlTIwgkjBo",
+      "deletion_metadata": {
+        "deletion_type": "CREATOR"
+      },
+      "message_id": "AAAA6qq3vTU/4DlTIwgkjBo/4DlTIwgkjBo"
+    },
+    {
+      "message_state": "DELETED",
+      "deleted_date": "2024年1月23日 星期二清晨6:15:53 [UTC]",
+      "topic_id": "f3HAzCxiYr8",
+      "deletion_metadata": {
+        "deletion_type": "CREATOR"
+      },
+      "message_id": "AAAA6qq3vTU/f3HAzCxiYr8/f3HAzCxiYr8"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨6:14:17 [UTC]",
+      "text": "可以看需要甚麼類型的DB，重新建立一個，因為集團這支不會用到。",
+      "topic_id": "a3r0aIgRgQs",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "如果你們需要長期記憶的大數據分析，那可以一起討論要存在哪邊"
+      },
+      "message_id": "AAAA6qq3vTU/a3r0aIgRgQs/a3r0aIgRgQs"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨6:16:17 [UTC]",
+      "text": "我的log指的就是Vertex的response，裡面包含但不限於user_id、user_query、return_response等等 其實就是前面有提到你們會存到Google sheet做紀錄的那些內容",
+      "topic_id": "HsK_qPXZzUc",
+      "message_id": "AAAA6qq3vTU/HsK_qPXZzUc/HsK_qPXZzUc"
+    },
+    {
+      "creator": {
+        "name": "Hortin WANG(王誌偉)",
+        "email": "hortinwang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨6:17:57 [UTC]",
+      "text": "長久規劃，還是可以另外開一個共用DB的",
+      "topic_id": "V_mAnouepas",
+      "message_id": "AAAA6qq3vTU/V_mAnouepas/V_mAnouepas"
+    },
+    {
+      "creator": {
+        "name": "Hortin WANG(王誌偉)",
+        "email": "hortinwang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨6:18:08 [UTC]",
+      "text": "不一定要走Google Sheet的模式",
+      "topic_id": "b7z3jSOARFc",
+      "message_id": "AAAA6qq3vTU/b7z3jSOARFc/b7z3jSOARFc"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨6:21:30 [UTC]",
+      "text": "那就是看你們的需求了",
+      "topic_id": "9EFsPMk48sQ",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Wei WU(吳晨瑋)",
+          "email": "weiwu@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "我的log指的就是Vertex的response，裡面包含但不限於user_id、user_query、return_response等等 其實就是前面有提到你們會存到Google sheet做紀錄的那些內容"
+      },
+      "message_id": "AAAA6qq3vTU/9EFsPMk48sQ/9EFsPMk48sQ"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨6:21:59 [UTC]",
+      "text": "我們沒有需求，所以沒有這樣子的DB",
+      "topic_id": "-Gbjio0kROY",
+      "message_id": "AAAA6qq3vTU/-Gbjio0kROY/-Gbjio0kROY"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨6:23:03 [UTC]",
+      "text": "VM跟DB都在同個環境的話，如果是GCP上防火牆就不用太擔心，DB帳號密碼而已",
+      "topic_id": "lceoNEwNQfY",
+      "message_id": "AAAA6qq3vTU/lceoNEwNQfY/lceoNEwNQfY"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨6:29:39 [UTC]",
+      "text": "了解，那response儲存的部分我們討論一下再決定好了，主要也是以可以方便提供給HR做分析為主，似乎google sheet也是一個可行的選項",
+      "topic_id": "1ZvCdSIwvOo",
+      "message_id": "AAAA6qq3vTU/1ZvCdSIwvOo/1ZvCdSIwvOo"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年1月23日 星期二清晨6:38:55 [UTC]",
+      "text": "1. 集團短期記憶是用redis, 一來比較便宜, 二來可以設定message過期時間, 控制cost成本也不會讓AI邏輯過亂。\n2. 因為我們目前沒有RAG或fine turning的需求，所以沒有開vector DB。\n3. 測試時曾經接過postgreSQL for vector做RAG程式上也沒甚麼問題(資料精度有問題)。也試過接Azure AI服務，搜尋出來的資料沒問題但資料整理困難。\n4. google chat 有30秒回應限制，超過會無回應，AI非常容易超過，所以只能使用非同步方式。\n5. 因為是私人聊天室，需要解決併發的問題，我們是使用k8s控制(3個前端、6個後端)，所有步驟都會異步在後端做排程執行。\n6. 解決LLM速率上限的問題，需要做loadblance，集團這邊目前只有做retry更換別的線路，還做不到loadblance。",
+      "reactions": [
+        {
+          "emoji": {
+            "custom_emoji": {
+              "shortcode": ":laser-slow-party-blob:",
+              "state": "EMOJI_ENABLED",
+              "creator_user_id": {
+                "name": "An YANG(楊庭安)",
+                "email": "anyang@gamania.com",
+                "user_type": "Human"
+              },
+              "owner_customer_id": "0rgajda",
+              "create_time": "2023年11月27日 星期一上午9:50:27 [UTC]",
+              "content_type": "image/gif"
+            }
+          },
+          "reactor_emails": [
+            "weiwu@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "_wOKHxLleRs",
+      "message_id": "AAAA6qq3vTU/_wOKHxLleRs/_wOKHxLleRs"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年2月22日 星期四凌晨3:16:40 [UTC]",
+      "text": "@全部 數據這邊稍晚會約下週MIS與HR可以的時間 來確認HR chatbot 機器, 資料存放方式與費用是否符合需求預期，請問要發給哪些同仁與會呢？",
+      "topic_id": "JJCSfJNPO_w",
+      "message_id": "AAAA6qq3vTU/JJCSfJNPO_w/JJCSfJNPO_w"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年3月1日 星期五凌晨1:53:21 [UTC]",
+      "text": "@全部 早安 原訂今天下午的會議會先取消，針對去識別的化的議題人資還需要一些時間溝通討論，待下週明朗後另約會議時間 謝謝🙇",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "anguswang@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "buIAwHwkbfg",
+      "message_id": "AAAA6qq3vTU/buIAwHwkbfg/buIAwHwkbfg"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年3月1日 星期五凌晨2:13:33 [UTC]",
+      "text": "Updated room membership.",
+      "topic_id": "sqTFGAVavGk",
+      "message_id": "AAAA6qq3vTU/sqTFGAVavGk/sqTFGAVavGk"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年3月15日 星期五凌晨2:33:30 [UTC]",
+      "text": "@全部 請問目前知道機器規格的需求是甚麼嗎？如果會議上討論，我們沒辦法直接即時知道較準確的金額，只能使用gcp計算機計算",
+      "topic_id": "ZGORoNYYLZo",
+      "message_id": "AAAA6qq3vTU/ZGORoNYYLZo/ZGORoNYYLZo"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年3月15日 星期五凌晨3:07:25 [UTC]",
+      "text": "Hi Johnny，我們這邊初估機器規格需要n1-standard-4，硬碟可以採用50G SSD。另外會需要一個service account去使用google drive, vertex ai, google chat, cloud function這四個api的權限。",
+      "topic_id": "fgGuQX2wWzI",
+      "message_id": "AAAA6qq3vTU/fgGuQX2wWzI/fgGuQX2wWzI"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年3月15日 星期五凌晨3:10:48 [UTC]",
+      "text": "這邊先記錄，會議上再討論\n機器費用每個月US$102.09\nAPI服務就不可估了",
+      "topic_id": "Jx27qwPA_cY",
+      "message_id": "AAAA6qq3vTU/Jx27qwPA_cY/Jx27qwPA_cY"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年3月15日 星期五凌晨3:40:38 [UTC]",
+      "text": "API的部分我們之前也有稍微粗略估計（以daily request 6000次，使用者每次query長度30個字去計算，應該算非常高估了），每月金額大概如下可以給大家參考：\nVertex AI $ 148.93\nCloud Function：$6.91\nGoogle Chat：no additional cost\nGoogle Drive：no additional cost",
+      "topic_id": "JEu_fAwYYfs",
+      "message_id": "AAAA6qq3vTU/JEu_fAwYYfs/JEu_fAwYYfs"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年3月19日 星期二清晨5:12:45 [UTC]",
+      "text": "Dears, 我GCP要先開那些人的權限？",
+      "topic_id": "VNn2CNLgICM",
+      "message_id": "AAAA6qq3vTU/VNn2CNLgICM/VNn2CNLgICM"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年3月19日 星期二清晨5:17:32 [UTC]",
+      "text": "我需要 weiwu@gamania.com",
+      "topic_id": "6TbYaKvTKz0",
+      "message_id": "AAAA6qq3vTU/6TbYaKvTKz0/6TbYaKvTKz0"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年3月19日 星期二清晨5:24:53 [UTC]",
+      "text": "好的",
+      "topic_id": "HSFMQKv6I78",
+      "message_id": "AAAA6qq3vTU/HSFMQKv6I78/HSFMQKv6I78"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年3月19日 星期二清晨5:28:33 [UTC]",
+      "text": "感謝🙏🏻",
+      "topic_id": "t8mcp47tLGE",
+      "message_id": "AAAA6qq3vTU/t8mcp47tLGE/t8mcp47tLGE"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月27日 星期四凌晨4:17:51 [UTC]",
+      "text": "Dears, wei說你們要申請上架內部marketplace，需要一些資訊在上架前設定好\n32x32圖像\n48x48\n96x96\n128x128\n220x140\n螢幕截圖3張\n服務條款網址\n隱私權政策網址\n支援網址\n簡短說明\n詳細說明",
+      "annotations": [
+        {
+          "start_index": 46,
+          "length": 72,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 46,
+          "length": 8,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 54,
+          "length": 6,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 60,
+          "length": 6,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 66,
+          "length": 8,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 74,
+          "length": 8,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 82,
+          "length": 7,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 89,
+          "length": 7,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 96,
+          "length": 8,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 104,
+          "length": 5,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 109,
+          "length": 5,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 114,
+          "length": 4,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        }
+      ],
+      "topic_id": "CaVLT_wu0v8",
+      "message_id": "AAAA6qq3vTU/CaVLT_wu0v8/CaVLT_wu0v8"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月27日 星期四凌晨4:18:41 [UTC]",
+      "text": "應用程式名稱及圖像，已經訂定了嗎？",
+      "topic_id": "_OXq90X0oZo",
+      "message_id": "AAAA6qq3vTU/_OXq90X0oZo/_OXq90X0oZo"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月27日 星期四清晨5:47:11 [UTC]",
+      "text": "已經訂了\n應用程式名稱：HR工具人\n圖像：",
+      "attached_files": [
+        {
+          "original_name": "HR工具人.jpg",
+          "export_name": "File-HR工具人.jpg"
+        }
+      ],
+      "topic_id": "rHIK_rKh258",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "應用程式名稱及圖像，已經訂定了嗎？"
+      },
+      "message_id": "AAAA6qq3vTU/rHIK_rKh258/rHIK_rKh258"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月27日 星期四清晨5:50:19 [UTC]",
+      "text": "想問一下，服務條款網址和隱私權政策網址這兩部分，之前都是用什麼方式處理呀？",
+      "topic_id": "rxdRyyO15ns",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "Dears, wei說你們要申請上架內部marketplace，需要一些資訊在上架前設定好\n32x32圖像\n48x48\n96x96\n128x128\n220x140\n螢幕截圖3張\n服務條款網址\n隱私權政策網址\n支援網址\n簡短說明\n詳細說明",
+        "annotations": [
+          {
+            "start_index": 46,
+            "length": 72,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST"
+            }
+          },
+          {
+            "start_index": 46,
+            "length": 8,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST_ITEM"
+            }
+          },
+          {
+            "start_index": 54,
+            "length": 6,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST_ITEM"
+            }
+          },
+          {
+            "start_index": 60,
+            "length": 6,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST_ITEM"
+            }
+          },
+          {
+            "start_index": 66,
+            "length": 8,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST_ITEM"
+            }
+          },
+          {
+            "start_index": 74,
+            "length": 8,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST_ITEM"
+            }
+          },
+          {
+            "start_index": 82,
+            "length": 7,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST_ITEM"
+            }
+          },
+          {
+            "start_index": 89,
+            "length": 7,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST_ITEM"
+            }
+          },
+          {
+            "start_index": 96,
+            "length": 8,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST_ITEM"
+            }
+          },
+          {
+            "start_index": 104,
+            "length": 5,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST_ITEM"
+            }
+          },
+          {
+            "start_index": 109,
+            "length": 5,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST_ITEM"
+            }
+          },
+          {
+            "start_index": 114,
+            "length": 4,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST_ITEM"
+            }
+          }
+        ]
+      },
+      "message_id": "AAAA6qq3vTU/rxdRyyO15ns/rxdRyyO15ns"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月27日 星期四清晨5:51:47 [UTC]",
+      "text": "我們是用google docs給一些連結",
+      "topic_id": "FzbP5AQ--Wo",
+      "message_id": "AAAA6qq3vTU/FzbP5AQ--Wo/FzbP5AQ--Wo"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月27日 星期四清晨5:54:31 [UTC]",
+      "text": "有chat-gpt上線時的範例嗎",
+      "topic_id": "nKmsnzhyhE0",
+      "message_id": "AAAA6qq3vTU/nKmsnzhyhE0/nKmsnzhyhE0"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月27日 星期四清晨5:56:52 [UTC]",
+      "text": "當時候沒有寫文件範例，但可以直接在商店裡看到",
+      "attached_files": [
+        {
+          "original_name": "image.png",
+          "export_name": "File-image.png"
+        }
+      ],
+      "topic_id": "H8ebKCGawx0",
+      "message_id": "AAAA6qq3vTU/H8ebKCGawx0/H8ebKCGawx0"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月27日 星期四清晨5:59:51 [UTC]",
+      "text": "嗯嗯我剛剛有找到 GamaniaGPT的\n1.  免責聲明 \n2.  服務提醒",
+      "annotations": [
+        {
+          "start_index": 25,
+          "length": 4,
+          "drive_metadata": {
+            "id": "12jzFzs60ek0NITjYI7xLT0QjTjqhV_NFy9CqishNWJw",
+            "title": "免責聲明",
+            "thumbnail_url": ""
+          },
+          "interaction_data": {
+            "url": {
+              "private_do_not_access_or_else_safe_url_wrapped_value": "https://docs.google.com/document/d/12jzFzs60ek0NITjYI7xLT0QjTjqhV_NFy9CqishNWJw/edit#heading\u003dh.g1rpi5yvdez9"
+            }
+          }
+        }
+      ],
+      "topic_id": "cHHI6ROCKg8",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "我們是用google docs給一些連結"
+      },
+      "message_id": "AAAA6qq3vTU/cHHI6ROCKg8/cHHI6ROCKg8"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月27日 星期四清晨6:03:07 [UTC]",
+      "text": "好的 感謝我們請HR協助準備",
+      "topic_id": "acwUHOzTp2g",
+      "message_id": "AAAA6qq3vTU/acwUHOzTp2g/acwUHOzTp2g"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月27日 星期四清晨6:03:09 [UTC]",
+      "text": "我幫你們換一下圖像",
+      "topic_id": "wEIBU_OKZ8A",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Wei WU(吳晨瑋)",
+          "email": "weiwu@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "已經訂了\n應用程式名稱：HR工具人\n圖像：",
+        "attached_files": [
+          {
+            "original_name": "HR工具人.jpg",
+            "export_name": "File-HR工具人.jpg"
+          }
+        ]
+      },
+      "message_id": "AAAA6qq3vTU/wEIBU_OKZ8A/wEIBU_OKZ8A"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月27日 星期四清晨6:03:42 [UTC]",
+      "text": "okok感謝",
+      "topic_id": "QXZF5D9yZxk",
+      "message_id": "AAAA6qq3vTU/QXZF5D9yZxk/QXZF5D9yZxk"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月27日 星期四清晨6:18:00 [UTC]",
+      "text": "我們的圖像是有寄給品牌審核，不曉得你們是否需要？",
+      "topic_id": "dwU0tTRielM",
+      "message_id": "AAAA6qq3vTU/dwU0tTRielM/dwU0tTRielM"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月27日 星期四清晨6:32:06 [UTC]",
+      "text": "好的 我們確認一下 \n先提供支援連結：HR工具人-問題回報",
+      "annotations": [
+        {
+          "start_index": 19,
+          "length": 10,
+          "url_metadata": {
+            "title": "Google Forms: Sign-in",
+            "snippet": "Access Google Forms with a personal Google account or Google Workspace account (for business use).",
+            "image_url": "",
+            "url": {
+              "private_do_not_access_or_else_safe_url_wrapped_value": "https://forms.gle/hykcvrMas94poSME7"
+            }
+          }
+        }
+      ],
+      "topic_id": "Pc1cZhKfzKo",
+      "message_id": "AAAA6qq3vTU/Pc1cZhKfzKo/Pc1cZhKfzKo"
+    },
+    {
+      "message_state": "DELETED",
+      "deleted_date": "2024年6月28日 星期五凌晨2:48:07 [UTC]",
+      "topic_id": "8qVVd71o1iU",
+      "deletion_metadata": {
+        "deletion_type": "CREATOR"
+      },
+      "message_id": "AAAA6qq3vTU/8qVVd71o1iU/8qVVd71o1iU"
+    },
+    {
+      "message_state": "DELETED",
+      "deleted_date": "2024年6月28日 星期五凌晨2:48:03 [UTC]",
+      "topic_id": "xIz_kQB0Wrg",
+      "deletion_metadata": {
+        "deletion_type": "CREATOR"
+      },
+      "message_id": "AAAA6qq3vTU/xIz_kQB0Wrg/xIz_kQB0Wrg"
+    },
+    {
+      "message_state": "DELETED",
+      "deleted_date": "2024年6月28日 星期五凌晨2:48:00 [UTC]",
+      "topic_id": "v_OzFyyQNCk",
+      "deletion_metadata": {
+        "deletion_type": "CREATOR"
+      },
+      "message_id": "AAAA6qq3vTU/v_OzFyyQNCk/v_OzFyyQNCk"
+    },
+    {
+      "message_state": "DELETED",
+      "deleted_date": "2024年6月28日 星期五凌晨2:47:58 [UTC]",
+      "topic_id": "bpSDQ4kcW20",
+      "deletion_metadata": {
+        "deletion_type": "CREATOR"
+      },
+      "message_id": "AAAA6qq3vTU/bpSDQ4kcW20/bpSDQ4kcW20"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨2:50:40 [UTC]",
+      "text": "@Penny LO(羅珮瑜) @Wei WU(吳晨瑋) \n不曉得現在的頭像是HR決定的嗎？\n目前我們這邊正在規劃一個統一的頭像，打算未來就更換裡面的字就好。\n讓同性質的內部應用程式的風格不要太多。",
+      "attached_files": [
+        {
+          "original_name": "ic_應用商店.png",
+          "export_name": "File-ic_應用商店.png"
+        }
+      ],
+      "topic_id": "Qp2v97Ne3DE",
+      "message_id": "AAAA6qq3vTU/Qp2v97Ne3DE/Qp2v97Ne3DE"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨2:51:05 [UTC]",
+      "text": "這個是我們的頭像，目前還在調整給品牌審核",
+      "topic_id": "XzBc4b7vzSQ",
+      "message_id": "AAAA6qq3vTU/XzBc4b7vzSQ/XzBc4b7vzSQ"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨2:51:06 [UTC]",
+      "text": "目前頭像是HR提供",
+      "topic_id": "5Dh6z9TtIrA",
+      "message_id": "AAAA6qq3vTU/5Dh6z9TtIrA/5Dh6z9TtIrA"
+    },
+    {
+      "creator": {
+        "name": "Angus WANG(王俊程)",
+        "email": "anguswang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨2:51:23 [UTC]",
+      "text": "HR的窗口？",
+      "topic_id": "J-NpEbnh8TE",
+      "message_id": "AAAA6qq3vTU/J-NpEbnh8TE/J-NpEbnh8TE"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨2:51:29 [UTC]",
+      "text": "grace",
+      "topic_id": "NOM7KLL06hY",
+      "message_id": "AAAA6qq3vTU/NOM7KLL06hY/NOM7KLL06hY"
+    },
+    {
+      "creator": {
+        "name": "Angus WANG(王俊程)",
+        "email": "anguswang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨2:51:37 [UTC]",
+      "text": "好的",
+      "topic_id": "ynHYFkqDqY0",
+      "message_id": "AAAA6qq3vTU/ynHYFkqDqY0/ynHYFkqDqY0"
+    },
+    {
+      "creator": {
+        "name": "Angus WANG(王俊程)",
+        "email": "anguswang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨2:51:41 [UTC]",
+      "text": "謝謝",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "🙇"
+          },
+          "reactor_emails": [
+            "pennylo@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "RlD8naFZKTM",
+      "message_id": "AAAA6qq3vTU/RlD8naFZKTM/RlD8naFZKTM"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨3:13:16 [UTC]",
+      "text": "另外螢幕截圖HR提供這三張，是否也有相關規範？",
+      "attached_files": [
+        {
+          "original_name": "HR工具人_正確問答.jpg",
+          "export_name": "File-HR工具人_正確問答.jpg"
+        }
+      ],
+      "topic_id": "eUsd2dRUxhI",
+      "message_id": "AAAA6qq3vTU/eUsd2dRUxhI/eUsd2dRUxhI"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨3:13:24 [UTC]",
+      "attached_files": [
+        {
+          "original_name": "HR工具人_清除紀錄.jpg",
+          "export_name": "File-HR工具人_清除紀錄.jpg"
+        }
+      ],
+      "topic_id": "qs_zrAcnxvE",
+      "message_id": "AAAA6qq3vTU/qs_zrAcnxvE/qs_zrAcnxvE"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨3:13:31 [UTC]",
+      "attached_files": [
+        {
+          "original_name": "HR工具人_回應讚.jpg",
+          "export_name": "File-HR工具人_回應讚.jpg"
+        }
+      ],
+      "topic_id": "jYKbZoCUcmo",
+      "message_id": "AAAA6qq3vTU/jYKbZoCUcmo/jYKbZoCUcmo"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨3:16:24 [UTC]",
+      "text": "這個我們跟HR討論一下",
+      "topic_id": "ebVaE8EIssQ",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Penny LO(羅珮瑜)",
+          "email": "pennylo@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "另外螢幕截圖HR提供這三張，是否也有相關規範？",
+        "attached_files": [
+          {
+            "original_name": "HR工具人_正確問答.jpg",
+            "export_name": "File-HR工具人_正確問答.jpg"
+          }
+        ]
+      },
+      "message_id": "AAAA6qq3vTU/ebVaE8EIssQ/ebVaE8EIssQ"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨3:16:36 [UTC]",
+      "text": "感謝",
+      "topic_id": "wQEwsf3MQ0Y",
+      "message_id": "AAAA6qq3vTU/wQEwsf3MQ0Y/wQEwsf3MQ0Y"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨3:35:22 [UTC]",
+      "text": "我們這邊沒有特別規範，那個螢幕截圖會在這個位置，看HR想放甚麼這樣",
+      "attached_files": [
+        {
+          "original_name": "image.png",
+          "export_name": "File-image.png"
+        }
+      ],
+      "topic_id": "cEKPfnkGDug",
+      "message_id": "AAAA6qq3vTU/cEKPfnkGDug/cEKPfnkGDug"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨3:36:03 [UTC]",
+      "text": "頭像就放我們訂定的，其他就看你們跟HR怎麼討論",
+      "topic_id": "YxCv7XygZBM",
+      "message_id": "AAAA6qq3vTU/YxCv7XygZBM/YxCv7XygZBM"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨3:36:49 [UTC]",
+      "text": "Ok 那就以人資提供的那些截圖",
+      "topic_id": "qPbC2ppQbLY",
+      "message_id": "AAAA6qq3vTU/qPbC2ppQbLY/qPbC2ppQbLY"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨3:37:07 [UTC]",
+      "text": "但頭像改了是不是要重新截圖",
+      "topic_id": "xYcDajTb6mQ",
+      "message_id": "AAAA6qq3vTU/xYcDajTb6mQ/xYcDajTb6mQ"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨3:37:28 [UTC]",
+      "text": "恩，需要",
+      "topic_id": "Bgb97p3PWqI",
+      "message_id": "AAAA6qq3vTU/Bgb97p3PWqI/Bgb97p3PWqI"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨3:37:39 [UTC]",
+      "text": "等我們頭像訂了，在截圖一次",
+      "topic_id": "XJbEabgOsXo",
+      "message_id": "AAAA6qq3vTU/XJbEabgOsXo/XJbEabgOsXo"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨3:37:47 [UTC]",
+      "text": "不然不太一致",
+      "topic_id": "gDscTVSwKTE",
+      "message_id": "AAAA6qq3vTU/gDscTVSwKTE/gDscTVSwKTE"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨3:37:55 [UTC]",
+      "text": "好的～",
+      "topic_id": "ztn7zI5kS-0",
+      "message_id": "AAAA6qq3vTU/ztn7zI5kS-0/ztn7zI5kS-0"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨3:38:17 [UTC]",
+      "text": "簡短說明：集團人力資源室與大數據團隊合作的新服務「HR工具人」，期待提供同仁更即時到位的服務。\n詳細說明：\n1. 「HR工具人」主要提供公司規章制度相關協助，目前未連結個人資料，因此與個人資訊相關的部分，目前無法回答\n2. 「HR工具人」儘量提供同仁最完善準確地回答，但回答內容如果有錯誤或遺漏，將以集團人力資源室規章辦法為準\n3. 若因回覆因連結度太高失準，使用者可透過\"/clearMemory\"指令清除聊天軌跡校正\n4. 我們將持續優化進步，非常感謝 !\n\n支援連結：HR工具人-問題回報",
+      "annotations": [
+        {
+          "start_index": 0,
+          "length": 5,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 48,
+          "length": 5,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 232,
+          "length": 4,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 237,
+          "length": 10,
+          "url_metadata": {
+            "title": "Google Forms: Sign-in",
+            "snippet": "Access Google Forms with a personal Google account or Google Workspace account (for business use).",
+            "image_url": "",
+            "url": {
+              "private_do_not_access_or_else_safe_url_wrapped_value": "https://forms.gle/hykcvrMas94poSME7"
+            }
+          }
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👍"
+          },
+          "reactor_emails": [
+            "johnnylin@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "1Po59yvSNUo",
+      "message_id": "AAAA6qq3vTU/1Po59yvSNUo/1Po59yvSNUo"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨3:59:37 [UTC]",
+      "text": "HR同意放這個，裡面的字會換成HR字樣",
+      "reactions": [
+        {
+          "emoji": {
+            "custom_emoji": {
+              "shortcode": ":okay:",
+              "state": "EMOJI_ENABLED",
+              "creator_user_id": {
+                "name": "Anonymous User",
+                "user_type": "Unknown"
+              },
+              "owner_customer_id": "0rgajda",
+              "create_time": "2023年9月5日 星期二凌晨2:26:55 [UTC]",
+              "content_type": "image/png"
+            }
+          },
+          "reactor_emails": [
+            "weiwu@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "qJhNH4-X9os",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "@Penny LO(羅珮瑜) @Wei WU(吳晨瑋) \n不曉得現在的頭像是HR決定的嗎？\n目前我們這邊正在規劃一個統一的頭像，打算未來就更換裡面的字就好。\n讓同性質的內部應用程式的風格不要太多。",
+        "attached_files": [
+          {
+            "original_name": "ic_應用商店.png",
+            "export_name": "File-ic_應用商店.png"
+          }
+        ]
+      },
+      "message_id": "AAAA6qq3vTU/qJhNH4-X9os/qJhNH4-X9os"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨4:18:28 [UTC]",
+      "text": "HR想確認 若今天都把資料備妥 預計何時可上線呢？ 要準備發公告信出來",
+      "topic_id": "OeZTyhlUsP0",
+      "message_id": "AAAA6qq3vTU/OeZTyhlUsP0/OeZTyhlUsP0"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨4:19:12 [UTC]",
+      "text": "現在要先等品牌審核頭像",
+      "topic_id": "hJmFzKVY_M0",
+      "message_id": "AAAA6qq3vTU/hJmFzKVY_M0/hJmFzKVY_M0"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨4:19:39 [UTC]",
+      "text": "其他的資料提供之後就能馬上設定",
+      "topic_id": "YFMJXBzGk_M",
+      "message_id": "AAAA6qq3vTU/YFMJXBzGk_M/YFMJXBzGk_M"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五凌晨4:28:03 [UTC]",
+      "text": "感謝 請問這兩份文件是否可開複製內容權限給HR Grace呢？ 或是直接提供內容文案\n 服務提醒 \n 免責聲明",
+      "annotations": [
+        {
+          "start_index": 44,
+          "length": 4,
+          "drive_metadata": {
+            "id": "1GYNthWChGaBET9sjf3iRoW8Eugnp7ocetdU3ELyTPN8",
+            "title": "服務提醒",
+            "thumbnail_url": ""
+          },
+          "interaction_data": {
+            "url": {
+              "private_do_not_access_or_else_safe_url_wrapped_value": "https://docs.google.com/document/d/1GYNthWChGaBET9sjf3iRoW8Eugnp7ocetdU3ELyTPN8/edit#heading\u003dh.rdgxd25y0bb"
+            }
+          }
+        }
+      ],
+      "topic_id": "Uk4Nl6jFf8w",
+      "message_id": "AAAA6qq3vTU/Uk4Nl6jFf8w/Uk4Nl6jFf8w"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五清晨6:04:42 [UTC]",
+      "text": "這兩份是公開的，沒辦法複製嗎？",
+      "topic_id": "5PDeHlhcvXo",
+      "message_id": "AAAA6qq3vTU/5PDeHlhcvXo/5PDeHlhcvXo"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五清晨6:04:57 [UTC]",
+      "text": "但裡面的內容可能不適用HR工具人",
+      "topic_id": "AkF-58xkvnY",
+      "message_id": "AAAA6qq3vTU/AkF-58xkvnY/AkF-58xkvnY"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五清晨6:10:39 [UTC]",
+      "text": "HR有改用複製的建立了，內容部分我們在確認一下",
+      "topic_id": "r5MZsysgrRU",
+      "message_id": "AAAA6qq3vTU/r5MZsysgrRU/r5MZsysgrRU"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五清晨6:10:44 [UTC]",
+      "text": "只能看而已。\nHR有調整一版：\n 免責聲明",
+      "topic_id": "OY1e_vOWCek",
+      "message_id": "AAAA6qq3vTU/OY1e_vOWCek/OY1e_vOWCek"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五清晨6:11:05 [UTC]",
+      "text": "服務提醒",
+      "annotations": [
+        {
+          "start_index": 0,
+          "length": 0,
+          "drive_metadata": {
+            "id": "1QR2LERiXhiZ8R5qYU_MGa1oLv9C0mJbljiEssobVdnE",
+            "title": "服務提醒",
+            "thumbnail_url": ""
+          }
+        },
+        {
+          "start_index": 0,
+          "length": 4,
+          "drive_metadata": {
+            "id": "1QR2LERiXhiZ8R5qYU_MGa1oLv9C0mJbljiEssobVdnE",
+            "title": "服務提醒",
+            "thumbnail_url": ""
+          },
+          "interaction_data": {
+            "url": {
+              "private_do_not_access_or_else_safe_url_wrapped_value": "https://docs.google.com/document/d/1QR2LERiXhiZ8R5qYU_MGa1oLv9C0mJbljiEssobVdnE/edit"
+            }
+          }
+        }
+      ],
+      "topic_id": "6eqzWJaCU9w",
+      "message_id": "AAAA6qq3vTU/6eqzWJaCU9w/6eqzWJaCU9w"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年6月28日 星期五清晨6:11:16 [UTC]",
+      "text": "我覺得HR這份內容需要再調整一下",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "pennylo@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "k7NsKCknfK8",
+      "message_id": "AAAA6qq3vTU/k7NsKCknfK8/k7NsKCknfK8"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午8:47:12 [UTC]",
+      "text": "HR工具人程式、伺服器是可以馬上上線的狀態嗎?",
+      "topic_id": "9P_jB-F7ds4",
+      "message_id": "AAAA6qq3vTU/9P_jB-F7ds4/9P_jB-F7ds4"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午8:52:31 [UTC]",
+      "text": "對",
+      "topic_id": "8gJVYHVRS_E",
+      "message_id": "AAAA6qq3vTU/8gJVYHVRS_E/8gJVYHVRS_E"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午8:54:39 [UTC]",
+      "text": "兩份文件也請HR調整好了：\n1.  免責聲明 \n2. 服務提醒與注意事項",
+      "topic_id": "qfEnXD0Umjs",
+      "message_id": "AAAA6qq3vTU/qfEnXD0Umjs/qfEnXD0Umjs"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午8:57:34 [UTC]",
+      "text": "那螢幕截圖可以幫我在重新一次嗎",
+      "topic_id": "yVaZOLvMl1A",
+      "message_id": "AAAA6qq3vTU/yVaZOLvMl1A/yVaZOLvMl1A"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午8:58:17 [UTC]",
+      "text": "權限要調整成大家都看得到",
+      "topic_id": "ngjqOWI8oD0",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Wei WU(吳晨瑋)",
+          "email": "weiwu@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "兩份文件也請HR調整好了：\n1.  免責聲明 \n2. 服務提醒與注意事項"
+      },
+      "message_id": "AAAA6qq3vTU/ngjqOWI8oD0/ngjqOWI8oD0"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:00:04 [UTC]",
+      "text": "https://drive.google.com/drive/folders/1cTxwAO9wVoCZ_Auhi1E5jakPEw_zQQAX?usp\u003ddrive_link",
+      "annotations": [
+        {
+          "start_index": 0,
+          "length": 87,
+          "drive_metadata": {
+            "id": "1cTxwAO9wVoCZ_Auhi1E5jakPEw_zQQAX",
+            "title": "HR Chatbot上架資料",
+            "thumbnail_url": ""
+          }
+        }
+      ],
+      "topic_id": "5tyjNjfPupw",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "那螢幕截圖可以幫我在重新一次嗎"
+      },
+      "message_id": "AAAA6qq3vTU/5tyjNjfPupw/5tyjNjfPupw"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:00:12 [UTC]",
+      "text": "好我請HR調整",
+      "topic_id": "jXYkKgh2cDw",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "權限要調整成大家都看得到"
+      },
+      "message_id": "AAAA6qq3vTU/jXYkKgh2cDw/jXYkKgh2cDw"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:01:03 [UTC]",
+      "text": "icon是舊的，沒關係嗎?",
+      "topic_id": "O0HHVu17MW0",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Wei WU(吳晨瑋)",
+          "email": "weiwu@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "https://drive.google.com/drive/folders/1cTxwAO9wVoCZ_Auhi1E5jakPEw_zQQAX?usp\u003ddrive_link",
+        "annotations": [
+          {
+            "start_index": 0,
+            "length": 87,
+            "drive_metadata": {
+              "id": "1cTxwAO9wVoCZ_Auhi1E5jakPEw_zQQAX",
+              "title": "HR Chatbot上架資料",
+              "thumbnail_url": ""
+            }
+          }
+        ]
+      },
+      "message_id": "AAAA6qq3vTU/O0HHVu17MW0/O0HHVu17MW0"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:16:40 [UTC]",
+      "text": "HR 會再重新截圖, 上述文件已先調整為橘子集團可閱讀權限",
+      "topic_id": "hFOar-ebpiQ",
+      "message_id": "AAAA6qq3vTU/hFOar-ebpiQ/hFOar-ebpiQ"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:17:32 [UTC]",
+      "text": "免責聲明我還是沒有權限閱讀耶",
+      "topic_id": "9jnshRng5Cg",
+      "message_id": "AAAA6qq3vTU/9jnshRng5Cg/9jnshRng5Cg"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:17:43 [UTC]",
+      "text": "我已經先上架了https://workspace.google.com/u/0/marketplace/app/hr%E5%B7%A5%E5%85%B7%E4%BA%BA/6239638854",
+      "annotations": [
+        {
+          "start_index": 7,
+          "length": 89,
+          "url_metadata": {
+            "title": "",
+            "snippet": "",
+            "image_url": "",
+            "url": {
+              "private_do_not_access_or_else_safe_url_wrapped_value": "https://workspace.google.com/u/0/marketplace/app/hr%E5%B7%A5%E5%85%B7%E4%BA%BA/6239638854"
+            }
+          }
+        }
+      ],
+      "topic_id": "BL7OGrrj0S0",
+      "message_id": "AAAA6qq3vTU/BL7OGrrj0S0/BL7OGrrj0S0"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:17:51 [UTC]",
+      "text": "資料在修改就可以",
+      "topic_id": "OOwLPf786jE",
+      "message_id": "AAAA6qq3vTU/OOwLPf786jE/OOwLPf786jE"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:20:55 [UTC]",
+      "text": "已更新icon",
+      "topic_id": "iHpwl871svU",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "icon是舊的，沒關係嗎?"
+      },
+      "message_id": "AAAA6qq3vTU/iHpwl871svU/iHpwl871svU"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:22:24 [UTC]",
+      "text": "好的，已經更新了",
+      "topic_id": "TzYhw8-Llsc",
+      "message_id": "AAAA6qq3vTU/TzYhw8-Llsc/TzYhw8-Llsc"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:22:25 [UTC]",
+      "text": "https://workspace.google.com/marketplace/app/hr%E5%B7%A5%E5%85%B7%E4%BA%BA/6239638854",
+      "annotations": [
+        {
+          "start_index": 0,
+          "length": 85,
+          "url_metadata": {
+            "title": "",
+            "snippet": "",
+            "image_url": "",
+            "url": {
+              "private_do_not_access_or_else_safe_url_wrapped_value": "https://workspace.google.com/marketplace/app/hr%E5%B7%A5%E5%85%B7%E4%BA%BA/6239638854"
+            }
+          }
+        }
+      ],
+      "topic_id": "LRkFBlBoVkg",
+      "message_id": "AAAA6qq3vTU/LRkFBlBoVkg/LRkFBlBoVkg"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:22:45 [UTC]",
+      "text": "感謝 ❤️",
+      "topic_id": "k9r0rpUiL9s",
+      "message_id": "AAAA6qq3vTU/k9r0rpUiL9s/k9r0rpUiL9s"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:23:36 [UTC]",
+      "text": "這階段是已經開放給全集團了嗎？",
+      "topic_id": "gRm050qC3_0",
+      "message_id": "AAAA6qq3vTU/gRm050qC3_0/gRm050qC3_0"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:23:44 [UTC]",
+      "text": "我這邊點都是正常的，你們看看有沒有錯誤的地方",
+      "topic_id": "yhkiyyov7-k",
+      "message_id": "AAAA6qq3vTU/yhkiyyov7-k/yhkiyyov7-k"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:23:54 [UTC]",
+      "text": "對，上架就開放了",
+      "topic_id": "BHYzGipCyEY",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Penny LO(羅珮瑜)",
+          "email": "pennylo@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "這階段是已經開放給全集團了嗎？"
+      },
+      "message_id": "AAAA6qq3vTU/BHYzGipCyEY/BHYzGipCyEY"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:24:19 [UTC]",
+      "text": "好的～～ 我們請HR檢視內容沒問題 就可發公告信了 🫡",
+      "topic_id": "eipn1vvEQi4",
+      "message_id": "AAAA6qq3vTU/eipn1vvEQi4/eipn1vvEQi4"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月1日 星期一上午9:24:42 [UTC]",
+      "text": "好",
+      "topic_id": "_fIYFbYzeRg",
+      "message_id": "AAAA6qq3vTU/_fIYFbYzeRg/_fIYFbYzeRg"
+    },
+    {
+      "message_state": "DELETED",
+      "deleted_date": "2024年7月1日 星期一上午9:30:26 [UTC]",
+      "topic_id": "nq0AXfG9igs",
+      "deletion_metadata": {
+        "deletion_type": "CREATOR"
+      },
+      "message_id": "AAAA6qq3vTU/nq0AXfG9igs/nq0AXfG9igs"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月2日 星期二凌晨3:32:45 [UTC]",
+      "text": "今天中午HR chat就會發出公告信囉！若有遇到服務異常狀況再請協助轉述到群組 若針對問題答覆有疑慮再請同仁協助填寫問題回報表單 (https://forms.gle/hykcvrMas94poSME7) 感謝",
+      "topic_id": "RR2aHfaaTSY",
+      "message_id": "AAAA6qq3vTU/RR2aHfaaTSY/RR2aHfaaTSY"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2024年7月2日 星期二凌晨3:33:03 [UTC]",
+      "text": "好的，謝謝",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "🙏"
+          },
+          "reactor_emails": [
+            "pennylo@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "6RKWm2OVapw",
+      "message_id": "AAAA6qq3vTU/6RKWm2OVapw/6RKWm2OVapw"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年2月19日 星期三凌晨3:57:54 [UTC]",
+      "text": "@Angus WANG(王俊程) 午安，先前上在集團服務的HR chat 未來預期整合行政單位bot於同一隻，請款時是否能拆成HR及行政單位兩個單位平攤費用呢",
+      "topic_id": "X4P9ss0-h4Q",
+      "message_id": "AAAA6qq3vTU/X4P9ss0-h4Q/X4P9ss0-h4Q"
+    },
+    {
+      "creator": {
+        "name": "Angus WANG(王俊程)",
+        "email": "anguswang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年2月19日 星期三凌晨4:02:58 [UTC]",
+      "text": "月底我跟他們的月溝通會議，會跟他們說明，後續再回覆你",
+      "topic_id": "EGp8Ustw7oE",
+      "message_id": "AAAA6qq3vTU/EGp8Ustw7oE/EGp8Ustw7oE"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年2月19日 星期三凌晨4:03:24 [UTC]",
+      "text": "好的 感謝 🙂",
+      "topic_id": "EGp8Ustw7oE",
+      "message_id": "AAAA6qq3vTU/EGp8Ustw7oE/FXMFt47329c"
+    },
+    {
+      "creator": {
+        "name": "Angus WANG(王俊程)",
+        "email": "anguswang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年2月19日 星期三凌晨4:03:27 [UTC]",
+      "text": "我覺得應該沒太大的問題，費用上也不是太高",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "🫡"
+          },
+          "reactor_emails": [
+            "pennylo@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "49QECTbV6l8",
+      "message_id": "AAAA6qq3vTU/49QECTbV6l8/49QECTbV6l8"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年2月19日 星期三凌晨4:22:00 [UTC]",
+      "text": "有收到會想更換成GKE架構，在費用上會比現行多。\n目前GCE，1個月是5100左右。\n換成GKE後，試算費用大約落在6100-7500每個月\n以上是以目前performance來預測。",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "anguswang@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "49QECTbV6l8",
+      "message_id": "AAAA6qq3vTU/49QECTbV6l8/SQbQoOVO3jc"
+    },
+    {
+      "creator": {
+        "name": "York CHIEN(簡友琳)",
+        "email": "yorkchien@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年9月25日 星期四上午8:08:07 [UTC]",
+      "text": "嗨 @Hortin WANG(王誌偉) \n我們後續AI agent 相關的推進會用這個channel溝通\n再麻煩協助拉MIS這邊相關的人員進來了",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👍"
+          },
+          "reactor_emails": [
+            "hortinwang@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "FnRmeW68BYQ",
+      "message_id": "AAAA6qq3vTU/FnRmeW68BYQ/FnRmeW68BYQ"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年9月25日 星期四上午8:10:48 [UTC]",
+      "text": "哦，我在裡面",
+      "topic_id": "-fRWYfERxR0",
+      "message_id": "AAAA6qq3vTU/-fRWYfERxR0/-fRWYfERxR0"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年9月25日 星期四上午8:19:01 [UTC]",
+      "text": "spc在跟我說，要開GKE autopoilet還是訂定固定的spc?",
+      "topic_id": "9LI9eIk6Lpc",
+      "message_id": "AAAA6qq3vTU/9LI9eIk6Lpc/9LI9eIk6Lpc"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年9月25日 星期四上午8:23:27 [UTC]",
+      "text": "然後是如果要接it小幫手，最終要吐甚麼格式或scheme給你們，我需要在開發加進去。",
+      "topic_id": "muDPWLw2hgY",
+      "message_id": "AAAA6qq3vTU/muDPWLw2hgY/muDPWLw2hgY"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年9月30日 星期二清晨5:25:29 [UTC]",
+      "text": "我們在正準備spec文件, 預計週五前提供 🙏",
+      "topic_id": "mGUH0WMCSPQ",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "spc在跟我說，要開GKE autopoilet還是訂定固定的spc?"
+      },
+      "message_id": "AAAA6qq3vTU/mGUH0WMCSPQ/mGUH0WMCSPQ"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:13:35 [UTC]",
+      "text": "Updated room membership.",
+      "topic_id": "dQW-WB5ucps",
+      "message_id": "AAAA6qq3vTU/dQW-WB5ucps/dQW-WB5ucps"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:19:58 [UTC]",
+      "text": "Hi @Johnny LIN(林育廷) \n目前規劃將橘幫辦chatbot的對話紀錄寫入數據中心gcp專案，以利後續建置自動化分析報表，想確認這段要怎麼推進？",
+      "topic_id": "pmeofbwVP50",
+      "message_id": "AAAA6qq3vTU/pmeofbwVP50/pmeofbwVP50"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:20:36 [UTC]",
+      "text": "甚麼意思?",
+      "topic_id": "FNVazCfJoWg",
+      "message_id": "AAAA6qq3vTU/FNVazCfJoWg/FNVazCfJoWg"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:21:01 [UTC]",
+      "text": "我不太懂你的意思",
+      "topic_id": "KSyI1Jxr-h4",
+      "message_id": "AAAA6qq3vTU/KSyI1Jxr-h4/KSyI1Jxr-h4"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:21:59 [UTC]",
+      "text": "橘幫辦對話紀錄跟數據中心專案都不是我能控制，需要我在哪方面協助@@",
+      "topic_id": "y7LAgjDNGDs",
+      "message_id": "AAAA6qq3vTU/y7LAgjDNGDs/y7LAgjDNGDs"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:24:50 [UTC]",
+      "text": "了解, 我請我們SRE協助說明, 主要是以為權限控管由你這負責",
+      "topic_id": "y7LAgjDNGDs",
+      "message_id": "AAAA6qq3vTU/y7LAgjDNGDs/akVn8t0Yej8"
+    },
+    {
+      "creator": {
+        "name": "Hazel JIANG(蔣翰宗)",
+        "email": "hazeljiang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:27:21 [UTC]",
+      "text": "簡單說明一下目前情況：\n我們目前打算在橘幫辦下新增一個功能收集對話紀錄，並且寫回我們自己的專案上\n但是因為橘幫辦的機器目前是 MIS 在管理，這部分網路應該不是直接能打通的？\n想確認一下目前網路上如果要把資料送出來會怎麼走比較好",
+      "topic_id": "zkbwrprw9Co",
+      "message_id": "AAAA6qq3vTU/zkbwrprw9Co/zkbwrprw9Co"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:32:54 [UTC]",
+      "text": "通常會是走VPN Peering內網互聯，不知道你們有沒有設定過？\n這個會符合你們的需求嗎？",
+      "topic_id": "zkbwrprw9Co",
+      "message_id": "AAAA6qq3vTU/zkbwrprw9Co/pMIdZQG6z1g"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:37:11 [UTC]",
+      "text": "或是\n橘幫辦本來就對外，可以直接寫router+驗證傳到你們的機器上\n這樣的方式就不是我能協助了",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "😮"
+          },
+          "reactor_emails": [
+            "hazeljiang@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "zkbwrprw9Co",
+      "message_id": "AAAA6qq3vTU/zkbwrprw9Co/3Bs_GsQmNqQ"
+    },
+    {
+      "creator": {
+        "name": "Hazel JIANG(蔣翰宗)",
+        "email": "hazeljiang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:38:24 [UTC]",
+      "text": "橘幫辦的機器設定本來就可以直接出外網嗎",
+      "topic_id": "zkbwrprw9Co",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "或是\n橘幫辦本來就對外，可以直接寫router+驗證傳到你們的機器上\n這樣的方式就不是我能協助了"
+      },
+      "message_id": "AAAA6qq3vTU/zkbwrprw9Co/ozRsc_pw2xk"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:39:22 [UTC]",
+      "text": "橘幫辦main不對外，但他們前面還有一層google function用來router是對外的",
+      "topic_id": "zkbwrprw9Co",
+      "message_id": "AAAA6qq3vTU/zkbwrprw9Co/n6oeeTj2MLQ"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:40:26 [UTC]",
+      "text": "google chat app一定要對外呀😂",
+      "topic_id": "zkbwrprw9Co",
+      "message_id": "AAAA6qq3vTU/zkbwrprw9Co/QVsIRaYgUnw"
+    },
+    {
+      "creator": {
+        "name": "Hazel JIANG(蔣翰宗)",
+        "email": "hazeljiang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:41:48 [UTC]",
+      "text": "我思考一下哦，因為這樣的話好像還是得從 main 送資料出來",
+      "topic_id": "zkbwrprw9Co",
+      "message_id": "AAAA6qq3vTU/zkbwrprw9Co/R_jol9Op7q4"
+    },
+    {
+      "creator": {
+        "name": "Hazel JIANG(蔣翰宗)",
+        "email": "hazeljiang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:41:55 [UTC]",
+      "text": "思考思考思考！",
+      "topic_id": "zkbwrprw9Co",
+      "message_id": "AAAA6qq3vTU/zkbwrprw9Co/CuhbDqG1MQo"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:43:15 [UTC]",
+      "text": "最簡單的方式就是那台google function web flask開發一個route可以打，把資料拿出來這樣，不過就驗證要做好就是了",
+      "topic_id": "zkbwrprw9Co",
+      "message_id": "AAAA6qq3vTU/zkbwrprw9Co/UapzPhHFIsM"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:44:31 [UTC]",
+      "text": "如果要用VPN Peering比較麻煩一點，專案連接會遇到兩邊vpc ip段不能衝突，且兩邊都要設定一遍(peering設定+防火牆設定)",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👍"
+          },
+          "reactor_emails": [
+            "hazeljiang@gamania.com",
+            "pennylo@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "zkbwrprw9Co",
+      "message_id": "AAAA6qq3vTU/zkbwrprw9Co/1VoibIh1Ifw"
+    },
+    {
+      "creator": {
+        "name": "Hazel JIANG(蔣翰宗)",
+        "email": "hazeljiang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:48:40 [UTC]",
+      "text": "好像可以先走這個方式，我們內部再接續討論，感謝建議�",
+      "annotations": [
+        {
+          "type": "CUSTOM_EMOJI",
+          "start_index": 25,
+          "length": 1,
+          "chip_render_type": "DO_NOT_RENDER",
+          "custom_emoji_metadata": {
+            "custom_emoji": {
+              "shortcode": ":thank:",
+              "state": "EMOJI_ENABLED",
+              "creator_user_id": {
+                "name": "Omer WENG(翁宗瑋)",
+                "email": "omerweng@gamania.com",
+                "user_type": "Human"
+              },
+              "owner_customer_id": "0rgajda",
+              "create_time": "2025年8月26日 星期二凌晨4:48:52 [UTC]",
+              "content_type": "image/png"
+            }
+          }
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👍"
+          },
+          "reactor_emails": [
+            "pennylo@gamania.com",
+            "johnnylin@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "zkbwrprw9Co",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "最簡單的方式就是那台google function web flask開發一個route可以打，把資料拿出來這樣，不過就驗證要做好就是了"
+      },
+      "message_id": "AAAA6qq3vTU/zkbwrprw9Co/awuIhXmKflQ"
+    },
+    {
+      "creator": {
+        "name": "Hazel JIANG(蔣翰宗)",
+        "email": "hazeljiang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二上午8:29:35 [UTC]",
+      "text": "更新一下現況：\n跟 @Wei WU(吳晨瑋) 確認過目前有 cronjob 會每天定時把聊天記錄送到 HR google drive 去，會在這邊同時拷貝一份送回我們專案的 gcs 上儲存～\n就不走 cloud function 或是 VPN peering 直送了",
+      "reactions": [
+        {
+          "emoji": {
+            "custom_emoji": {
+              "shortcode": ":blob-yes:",
+              "state": "EMOJI_ENABLED",
+              "creator_user_id": {
+                "name": "Anonymous User",
+                "user_type": "Unknown"
+              },
+              "owner_customer_id": "0rgajda",
+              "create_time": "2023年3月31日 星期五凌晨3:45:22 [UTC]",
+              "content_type": "image/png"
+            }
+          },
+          "reactor_emails": [
+            "weiwu@gamania.com"
+          ]
+        },
+        {
+          "emoji": {
+            "unicode": "👍"
+          },
+          "reactor_emails": [
+            "johnnylin@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "zkbwrprw9Co",
+      "message_id": "AAAA6qq3vTU/zkbwrprw9Co/h66gjtgeq1E"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:29:22 [UTC]",
+      "text": "所以意思是要把對話紀錄，傳到另一個專案中，是嗎？",
+      "topic_id": "6OwMdjn_e-U",
+      "message_id": "AAAA6qq3vTU/6OwMdjn_e-U/6OwMdjn_e-U"
+    },
+    {
+      "creator": {
+        "name": "Hazel JIANG(蔣翰宗)",
+        "email": "hazeljiang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月1日 星期三清晨7:29:40 [UTC]",
+      "text": "對的",
+      "topic_id": "xg_ApPXMnZ8",
+      "message_id": "AAAA6qq3vTU/xg_ApPXMnZ8/xg_ApPXMnZ8"
+    },
+    {
+      "message_state": "DELETED",
+      "deleted_date": "2025年10月1日 星期三清晨7:32:09 [UTC]",
+      "topic_id": "AoJGFfKEXuM",
+      "deletion_metadata": {
+        "deletion_type": "CREATOR"
+      },
+      "message_id": "AAAA6qq3vTU/AoJGFfKEXuM/AoJGFfKEXuM"
+    },
+    {
+      "message_state": "DELETED",
+      "deleted_date": "2025年10月1日 星期三清晨7:32:05 [UTC]",
+      "topic_id": "E0GnaGYVtu4",
+      "deletion_metadata": {
+        "deletion_type": "CREATOR"
+      },
+      "message_id": "AAAA6qq3vTU/E0GnaGYVtu4/E0GnaGYVtu4"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月2日 星期四凌晨3:05:43 [UTC]",
+      "text": "@Johnny LIN(林育廷)請參閱 AI Agent 資源與專案建置的規格書, 若有問題我們隨時討論 感謝 cc @Wei WU(吳晨瑋) \n\nGCP spec for orchestrator agent system and mcp server",
+      "annotations": [
+        {
+          "start_index": 74,
+          "length": 53,
+          "drive_metadata": {
+            "id": "1XkNQC0yjP3-eNv9zpxP9br2ToSbmJyol6FsFKN93piI",
+            "title": "GCP spec for orchestrator agent system and mcp server",
+            "thumbnail_url": ""
+          },
+          "interaction_data": {
+            "url": {
+              "private_do_not_access_or_else_safe_url_wrapped_value": "https://docs.google.com/document/d/1XkNQC0yjP3-eNv9zpxP9br2ToSbmJyol6FsFKN93piI/edit?tab\u003dt.0"
+            }
+          }
+        }
+      ],
+      "topic_id": "qvlE24J0zKk",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "spc在跟我說，要開GKE autopoilet還是訂定固定的spc?"
+      },
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/qvlE24J0zKk"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月3日 星期五上午8:11:12 [UTC]",
+      "text": "需要OpenAI Model？Azure嗎？",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/IZ6r24xf6fA"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月3日 星期五上午8:29:12 [UTC]",
+      "text": "對 這邊是希望可以統一都用集團這邊申請的 API Key，這樣如果之後有需要計費也比較方便。 Azure openai 的可以",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "johnnylin@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/qmtxxAnzrkU"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月3日 星期五上午8:30:03 [UTC]",
+      "text": "順便確認一下我記得 azure 的api key 是會綁模型的對嗎？不能任意切換到新的模型",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/BrE2dkyNStk"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月3日 星期五上午8:30:50 [UTC]",
+      "text": "不能，key能共用，但模型需要建立才能用",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/dB6kmgmzQnw"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月3日 星期五上午8:32:16 [UTC]",
+      "text": "那可以key先開 然後我們第一版上線的 orchestrator agent要開哪個version的模型我們再討論一下 下週二給你結論",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/GONglcvGegg"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月3日 星期五上午8:32:18 [UTC]",
+      "text": "感恩",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/Rx6St2NZ-yU"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月3日 星期五上午8:33:45 [UTC]",
+      "text": "好，\n我會跟gcp 一起給你們",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/8ioXtDFGc-I"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月3日 星期五上午8:34:05 [UTC]",
+      "text": "感謝！",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/msaXsKS82N4"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二上午8:04:45 [UTC]",
+      "text": "都開好了",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/_vhhXPpSVt4"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二上午8:04:56 [UTC]",
+      "text": "你們再看一下",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/DewUj6DWurk"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二上午8:05:26 [UTC]",
+      "text": "文件黃底文字是我寫上的",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/p5o0TzCicj0"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二上午8:05:35 [UTC]",
+      "text": "ok 感謝 我們再確認一下～",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👍"
+          },
+          "reactor_emails": [
+            "johnnylin@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/cvPT1Mn_dGk"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二上午8:15:42 [UTC]",
+      "text": "azure openai 的部分可以先幫我們開 gpt-4.1-mini 這個模型嗎？",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/I7n9JvWkq90"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二上午8:16:23 [UTC]",
+      "text": "好，那名稱呢?模型部屬的名稱而已",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/sU0UO8oMNc0"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二上午8:16:37 [UTC]",
+      "text": "你們call api會需要",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/pLq3TEw1OXg"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二上午8:17:29 [UTC]",
+      "text": "用 ghq-bdds-agent- 這個prefix",
+      "annotations": [
+        {
+          "start_index": 2,
+          "length": 15,
+          "format_metadata": {
+            "format_type": "MONOSPACE"
+          }
+        }
+      ],
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/E__6cpw3Nd4"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二上午8:17:44 [UTC]",
+      "text": "ghq-bdds-agent-gpt-4.1-mini 這樣",
+      "annotations": [
+        {
+          "start_index": 0,
+          "length": 27,
+          "format_metadata": {
+            "format_type": "MONOSPACE"
+          }
+        }
+      ],
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/O7GE8vwdBI0"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二上午8:19:53 [UTC]",
+      "text": "ok也寫上去文件了",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/GvPBLHlqHOk"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二上午8:20:54 [UTC]",
+      "text": "ok 感謝",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/biuEhmJWr5I"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二上午8:22:39 [UTC]",
+      "text": "我先調每分鐘權杖數速率限制(TPM)1 M (每分鐘對應的要求數 (RPM) \u003d 1 K)\n最大是150M per location (但japan-east目前只有這個專案再用)",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/FL-QptPQ6yg"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二上午8:24:36 [UTC]",
+      "text": "ok",
+      "topic_id": "qvlE24J0zKk",
+      "message_id": "AAAA6qq3vTU/qvlE24J0zKk/dAAcQbEH6u8"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二清晨6:51:46 [UTC]",
+      "text": "可以把這份文件，鎖定共用人員 + 開我編輯權限嗎？我直接在上面寫上你們需要的key",
+      "topic_id": "d0z5MgC86FM",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Penny LO(羅珮瑜)",
+          "email": "pennylo@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "@Johnny LIN(林育廷)請參閱 AI Agent 資源與專案建置的規格書, 若有問題我們隨時討論 感謝 cc @Wei WU(吳晨瑋) \n\nGCP spec for orchestrator agent system and mcp server",
+        "annotations": [
+          {
+            "start_index": 74,
+            "length": 53,
+            "drive_metadata": {
+              "id": "1XkNQC0yjP3-eNv9zpxP9br2ToSbmJyol6FsFKN93piI",
+              "title": "GCP spec for orchestrator agent system and mcp server",
+              "thumbnail_url": ""
+            },
+            "interaction_data": {
+              "url": {
+                "private_do_not_access_or_else_safe_url_wrapped_value": "https://docs.google.com/document/d/1XkNQC0yjP3-eNv9zpxP9br2ToSbmJyol6FsFKN93piI/edit?tab\u003dt.0"
+              }
+            }
+          }
+        ]
+      },
+      "message_id": "AAAA6qq3vTU/d0z5MgC86FM/d0z5MgC86FM"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月7日 星期二清晨7:06:29 [UTC]",
+      "text": "開好囉",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "johnnylin@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "d0z5MgC86FM",
+      "message_id": "AAAA6qq3vTU/d0z5MgC86FM/j5dadAMqxNU"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月8日 星期三凌晨3:31:06 [UTC]",
+      "text": "MCP Server Management Tutorial 請參考 bot 包一層MCP Server殼的教學文件，若有問題再請隨時提出 感謝 cc @Wei WU(吳晨瑋)",
+      "annotations": [
+        {
+          "start_index": 0,
+          "length": 30,
+          "drive_metadata": {
+            "id": "1h_yKmYawKqKugRNbYGzm-o6xs2KNeQS_CnbXaL2gqjE",
+            "title": "MCP Server Management Tutorial",
+            "thumbnail_url": ""
+          },
+          "interaction_data": {
+            "url": {
+              "private_do_not_access_or_else_safe_url_wrapped_value": "https://docs.google.com/document/d/1h_yKmYawKqKugRNbYGzm-o6xs2KNeQS_CnbXaL2gqjE/edit?tab\u003dt.0#heading\u003dh.dio63ioytwgl"
+            }
+          }
+        }
+      ],
+      "topic_id": "uAluk75gSNg",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "然後是如果要接it小幫手，最終要吐甚麼格式或scheme給你們，我需要在開發加進去。"
+      },
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/uAluk75gSNg"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月8日 星期三凌晨3:47:35 [UTC]",
+      "text": "MCP Server Template跟Demo網址是公司的gitlab嗎?",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/33nFDh8DEFw"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月8日 星期三凌晨4:15:41 [UTC]",
+      "text": "啊 這裡gitlab是數據中心的 我想一下應該怎麼釋出會比較好",
+      "topic_id": "uAluk75gSNg",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "MCP Server Template跟Demo網址是公司的gitlab嗎?"
+      },
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/iYPoYl7EXro"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月13日 星期一上午8:13:13 [UTC]",
+      "text": "gitlab權限的問題，目前 MCP Server codebase 我們是放在數據中心自己的gitlab，會在未來兩週陸續 migrate 到集團的 gitlab，完成後會再開權限給 MIS 參考使用，需要再請 MIS 提供需要權限的 email 名單",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "johnnylin@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/jQ1hJGBvd5U"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:00:47 [UTC]",
+      "text": "在等待你們的demo文件的同時，我想詢問一下。\nshort term memory是你們這邊控管嗎？\n我看了一下文件message只傳了{\"text\": str}而不是list，所以request只會有文字，我們這邊會需要控管短期記憶？這攸關各個agent輸出的精確度。\n\n如果我們這邊要控管，request就會要求使用者的唯一識別碼(ex: space name)，來存/取我這邊的記憶。\n\n或是你們要控管request就要傳message list給我們。",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/8ZgBTIbjnMY"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:04:11 [UTC]",
+      "text": "假設只靠一句str給各agent...我擔心agent答非所問",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/bIU_QaSbIfI"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:05:17 [UTC]",
+      "text": "不曉得你們有沒有討論到這點？\n我想知道你們假想的agent是甚麼樣的情況？可能跟我的不太一樣？🤔",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/wUMRUGB0uY4"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:21:16 [UTC]",
+      "text": "我們這邊設計是會有memory cache，然後各個下游chatbot本身應該也會有自己的memory才對\n\n我想問題應該是當發生第一個request導到chatbot A，第二個導到chatbot B，這時候給B的request是否要帶完整chat history或是先改寫好的request text？",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/G5cKG6T8uaE"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:24:24 [UTC]",
+      "text": "如果給 chatbot agent 的 request 預期要帶有整體歷史對話資訊，那我覺得在orchestrator這先用memory去改寫當前request text，再往後丟給各chatbot agent應該比較簡單？（chatbot agent的接口就不用改一樣收一個text就好）",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/V_g_CLjvsNg"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:26:02 [UTC]",
+      "text": "也是可以，但先改寫就開發的人要知道怎麼改。\n如果是帶整個對話紀錄，就是給AI判斷。\n兩種做法都各有利弊",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/D6F_45j7GL0"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:26:51 [UTC]",
+      "text": "下游agent要記錄的話，request是不是要加入來源識別碼?\n我這邊的作法是紀錄user_id + space_id，因為同一個user可能會有不同的space",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/0uJ8yaJNpV0"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:28:11 [UTC]",
+      "text": "agent這邊需要知道是來自新的對話，還是舊的對話",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/h0QuvExzqPo"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:28:29 [UTC]",
+      "text": "加入thread_id之類的",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/xE21ua4-nYA"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:30:26 [UTC]",
+      "text": "目前是會帶sender資訊，裡面可以用user_id去識別。不過這部分我們這可以再修改，一開始沒有考慮到同user_id會有不同space和session的問題",
+      "topic_id": "uAluk75gSNg",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "下游agent要記錄的話，request是不是要加入來源識別碼?\n我這邊的作法是紀錄user_id + space_id，因為同一個user可能會有不同的space"
+      },
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/nHKVpVtN3UI"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:33:10 [UTC]",
+      "text": "恩恩，只帶sender下游會不知道這request是來自新session，還是舊session。\n舊session我就要從記錄中提取插入來回覆上游。\n新session就不要這麼做。",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "weiwu@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/PycDoH8NI9A"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:37:00 [UTC]",
+      "text": "最簡單的方式？\n直接傳你們改寫好的prompt，或是整段messages。\n下游不做任何short term？每一次都是新session",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/YvyIbvtIRfo"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:45:25 [UTC]",
+      "text": "對其實如果上游orchestrator往後丟的text都是完整對話或經過記憶改寫過的，理論上下游agent可以完全不用做memory",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/LV8VAcfRHdI"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:49:07 [UTC]",
+      "text": "需要討論看看，這會需要修改mcp🤣",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/XInNkcmEgkY"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:49:42 [UTC]",
+      "text": "然後另一個問題\nts是unix time?",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/IsSvEiA6Rsw"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:50:13 [UTC]",
+      "text": "對",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/ltCRsClE2yk"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:50:21 [UTC]",
+      "text": "ms",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/zIg8vZPoyzc"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月16日 星期四上午8:50:22 [UTC]",
+      "text": "好",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/BmfwvD-1OuI"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月3日 星期一凌晨3:23:50 [UTC]",
+      "text": "我想問不曉得範例轉移的狀況？\n我有寫一版MCP Server但不確定是否正確",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/4nIsBuQQaTA"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月3日 星期一凌晨3:50:08 [UTC]",
+      "text": "我們目前程式碼差不多搬好了，這週會完成demo mcp 和 agent 的部署再一並釋出。\n\n另外想問一下專案repo共享目前是只要加入Johnny就好了嗎？ 以及如果demo要串IT小幫手目前是否有文件可以參考？",
+      "topic_id": "uAluk75gSNg",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "我想問不曉得範例轉移的狀況？\n我有寫一版MCP Server但不確定是否正確"
+      },
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/DXPsfIIFNRY"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月3日 星期一凌晨3:52:03 [UTC]",
+      "text": "對，加入我就好。\n文件是指甚麼內容？你們怎麼接IT小幫手的文件嗎？\n我以為是照著你們的規範走，我給url就好",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/gPG8c80-Aow"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月3日 星期一凌晨4:05:44 [UTC]",
+      "text": "喔喔對 就是api url",
+      "topic_id": "uAluk75gSNg",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "對，加入我就好。\n文件是指甚麼內容？你們怎麼接IT小幫手的文件嗎？\n我以為是照著你們的規範走，我給url就好"
+      },
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/BWFBNZ0-E38"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月7日 星期五上午8:22:16 [UTC]",
+      "text": "我看了一下好像沒有寫authorization，需要寫嗎?\nmcp 好像會暴露在外網",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/11VnGLvfls0"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一凌晨3:47:55 [UTC]",
+      "text": "認證需要配合client端，所以要問一下\n還是我們先接通之後再來嘗試加入認證？",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/nORa6lsY2yE"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一凌晨3:56:15 [UTC]",
+      "text": "sorry 上週沒看到訊息 我覺得backend這的tuning可以等我們功能邏輯先串起來後再來調整就好了",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "johnnylin@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/-0GZtEkUHkg"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一凌晨3:57:31 [UTC]",
+      "text": "好的",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/WxPPGmpZByI"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一凌晨4:22:00 [UTC]",
+      "text": "我這周會給你URL再一起測看看",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/9AXuJBlXl3s"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一清晨5:22:36 [UTC]",
+      "text": "好 感謝",
+      "topic_id": "uAluk75gSNg",
+      "message_id": "AAAA6qq3vTU/uAluk75gSNg/UsN6a7SLU-8"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月30日 星期四凌晨3:06:57 [UTC]",
+      "text": "我想問，例如橘幫辦這種是行政+HR兩部門的機器人，\n那你們有設想在orchestrator中會打算分兩個mcp tool？還是也是1個tool？\n我想這個問題是不是也會影響orchestrator判斷跟回應（最近在看handoff交互方式想到這個問題）",
+      "topic_id": "r9Mv2sKDRcE",
+      "message_id": "AAAA6qq3vTU/r9Mv2sKDRcE/r9Mv2sKDRcE"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月30日 星期四凌晨3:39:38 [UTC]",
+      "text": "我們目前都是依照 ㄧ個chatbot實體(api endpoint)一個tool 去開發，所以橘幫辦是算一個 tool。 但我覺得你說的方法也可行，用兩個tool後面都是接橘幫辦endpoint，在tool description 可以幫hr 和行政各自寫，或許在orchestration表現會比較好",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "johnnylin@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "r9Mv2sKDRcE",
+      "message_id": "AAAA6qq3vTU/r9Mv2sKDRcE/w8ddBwyhT7E"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年10月30日 星期四凌晨3:40:25 [UTC]",
+      "text": "這部分我們還沒有大量測過query的分流效果，如果之後測架構表現不好，你講的做法就會是滿好的優化方向我覺得",
+      "topic_id": "r9Mv2sKDRcE",
+      "message_id": "AAAA6qq3vTU/r9Mv2sKDRcE/LSh_WrwoHeI"
+    },
+    {
+      "message_state": "DELETED",
+      "deleted_date": "2025年11月10日 星期一清晨6:01:57 [UTC]",
+      "topic_id": "lzSWDEDN1W8",
+      "deletion_metadata": {
+        "deletion_type": "CREATOR"
+      },
+      "message_id": "AAAA6qq3vTU/lzSWDEDN1W8/lzSWDEDN1W8"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一清晨6:03:10 [UTC]",
+      "text": "IT小幫手 MCP API URL\nhttps://ghq-itsd-ai-prod.gamania.com/itsd/mcp\n\n備註：目前無記憶需要client端處理\n看看有甚麼問題再跟我說，我用MCP測試正常。\n不確定requeset, response是否符合規範。\nIT小幫手回覆稍慢，大約會落在6-20s內，建議設定timeout怕有執行上的錯誤沒有返回。\nIT小幫手MCP呼叫範例",
+      "annotations": [
+        {
+          "start_index": 184,
+          "length": 12,
+          "drive_metadata": {
+            "id": "1LOco2ugWgzh-WyJkhKtp_EbQXzmnR5BPeGHPM0Z7xW4",
+            "title": "IT小幫手MCP呼叫範例",
+            "thumbnail_url": ""
+          },
+          "interaction_data": {
+            "url": {
+              "private_do_not_access_or_else_safe_url_wrapped_value": "https://docs.google.com/document/d/1LOco2ugWgzh-WyJkhKtp_EbQXzmnR5BPeGHPM0Z7xW4/edit?tab\u003dt.0"
+            }
+          }
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "🆗"
+          },
+          "reactor_emails": [
+            "weiwu@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "LXOtyLomynQ",
+      "message_id": "AAAA6qq3vTU/LXOtyLomynQ/LXOtyLomynQ"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一清晨6:21:06 [UTC]",
+      "text": "可以提供一個直接 CURL request 範例嗎？",
+      "topic_id": "LXOtyLomynQ",
+      "message_id": "AAAA6qq3vTU/LXOtyLomynQ/E7K2TXROpQ4"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一清晨6:22:34 [UTC]",
+      "text": "我看看",
+      "topic_id": "LXOtyLomynQ",
+      "message_id": "AAAA6qq3vTU/LXOtyLomynQ/bsokPSFLNyo"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一清晨6:22:53 [UTC]",
+      "text": "我是用Python測的，curl我要看一下",
+      "reactions": [
+        {
+          "emoji": {
+            "custom_emoji": {
+              "shortcode": ":caposhake:",
+              "state": "EMOJI_ENABLED",
+              "creator_user_id": {
+                "name": "Hazel JIANG(蔣翰宗)",
+                "email": "hazeljiang@gamania.com",
+                "user_type": "Human"
+              },
+              "owner_customer_id": "0rgajda",
+              "create_time": "2025年9月15日 星期一上午8:12:33 [UTC]",
+              "content_type": "image/gif"
+            }
+          },
+          "reactor_emails": [
+            "weiwu@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "LXOtyLomynQ",
+      "message_id": "AAAA6qq3vTU/LXOtyLomynQ/fCbKC9sgLdA"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一清晨7:06:15 [UTC]",
+      "text": "新增了👍",
+      "topic_id": "LXOtyLomynQ",
+      "message_id": "AAAA6qq3vTU/LXOtyLomynQ/33OjWNub1tc"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一清晨7:51:05 [UTC]",
+      "text": "可以了 感謝",
+      "topic_id": "LXOtyLomynQ",
+      "message_id": "AAAA6qq3vTU/LXOtyLomynQ/JSRcawRFwJQ"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一上午9:00:39 [UTC]",
+      "text": "@全部 \nDears, \n鑒於長官們要在冬策上報告此計畫。\n想詢問以下：\n1. 目前開發進度？\n2. 預計規劃及上線時間？\n謝謝",
+      "topic_id": "9rUCmOjW9sQ",
+      "message_id": "AAAA6qq3vTU/9rUCmOjW9sQ/9rUCmOjW9sQ"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一上午9:04:48 [UTC]",
+      "text": "我這邊會先出一份時程規劃，明天內部討論一下給你回覆",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "johnnylin@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "9rUCmOjW9sQ",
+      "message_id": "AAAA6qq3vTU/9rUCmOjW9sQ/UIUE5bVaEnc"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一上午9:06:59 [UTC]",
+      "text": "目前具體進度是agent和mcp工具開發和測試環境部署都完成， 基本剩下實際串接橘幫辦和 IT 小幫手後確定分流正確性，以及部署服務到正式環境",
+      "topic_id": "9rUCmOjW9sQ",
+      "message_id": "AAAA6qq3vTU/9rUCmOjW9sQ/KkpjgIHkwbg"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一上午9:17:01 [UTC]",
+      "text": "好的，再麻煩",
+      "topic_id": "9rUCmOjW9sQ",
+      "message_id": "AAAA6qq3vTU/9rUCmOjW9sQ/6mOZAubCS5I"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一上午9:40:20 [UTC]",
+      "text": "未來機器人的串接與程式碼的維護，負責的還是你們嗎？\n我們負責機器環境的維護？",
+      "topic_id": "9rUCmOjW9sQ",
+      "message_id": "AAAA6qq3vTU/9rUCmOjW9sQ/mi-bocDgakU"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月10日 星期一上午9:41:16 [UTC]",
+      "text": "應該不太可能，開發完後就能所有機器人能串接？每新增串接就要微調分流機制吧？",
+      "topic_id": "9rUCmOjW9sQ",
+      "message_id": "AAAA6qq3vTU/9rUCmOjW9sQ/6t9RX-BY1fY"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月13日 星期四凌晨2:32:51 [UTC]",
+      "text": "@Wei WU(吳晨瑋) \n不好意思，不曉得今日是否得到回覆？\n關於長官要在冬策上報告的相關訊息\n謝謝你們",
+      "topic_id": "9rUCmOjW9sQ",
+      "message_id": "AAAA6qq3vTU/9rUCmOjW9sQ/3_zqGQrodS8"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月13日 星期四凌晨3:31:09 [UTC]",
+      "text": "今天會給回覆，我們還在討論一些分工和時程再稍等一下",
+      "topic_id": "9rUCmOjW9sQ",
+      "message_id": "AAAA6qq3vTU/9rUCmOjW9sQ/ET_FiaH4ebk"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月13日 星期四清晨5:29:31 [UTC]",
+      "text": "時程規劃\n11/25 基礎API串接與部署完成：\n提供已部署橘幫辦及IT小幫手的 mcp-server API\n提供已串接 mcp-server API 的 Orchestrator Agent API\n11/28 內部分流正確性測試\n提供分流測試報告\n\n分工項目\n分工部分先維持上次會議討論結果，但如果之後有遇到維運困難，我們可以另外約會議討論分工模式。\nData Team：負責 agent 設計與 package 開發與文件。協助初版服務串接、部署及後續技術支援。\nMIS：雲端專案與機器資源管理。熟悉 agent 專案後，負責後續維運及新服務串接部署。",
+      "annotations": [
+        {
+          "start_index": 0,
+          "length": 4,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 25,
+          "length": 31,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 25,
+          "length": 77,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 56,
+          "length": 46,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 118,
+          "length": 9,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 118,
+          "length": 9,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 128,
+          "length": 4,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 179,
+          "length": 57,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 179,
+          "length": 101,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 236,
+          "length": 44,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        }
+      ],
+      "topic_id": "9rUCmOjW9sQ",
+      "message_id": "AAAA6qq3vTU/9rUCmOjW9sQ/lFpAc62Urfs"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月13日 星期四清晨6:16:02 [UTC]",
+      "text": "確認上線scope定義, 橘幫辦先替換成agent版上線還是要等IT小幫手一起做完在一起上？\n\n若是後者, 我們提供對應API後, 也需請MIS評估後續作業時間 才能準確估上線時間",
+      "topic_id": "9rUCmOjW9sQ",
+      "message_id": "AAAA6qq3vTU/9rUCmOjW9sQ/I5abGQwMAQM"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月13日 星期四清晨6:24:16 [UTC]",
+      "text": "我不確定你說的IT小幫手做完是指什麼東西做完？\n\n上線時間的話，可以先訂在測試報告後初版上線讓特定人員可以嘗試及反饋的時間",
+      "topic_id": "9rUCmOjW9sQ",
+      "message_id": "AAAA6qq3vTU/9rUCmOjW9sQ/aVxOJBbKYaM"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月13日 星期四清晨6:33:02 [UTC]",
+      "text": "了解, 那可以先把第一版上線定義為PROD環境的內部測試\n\n何時要開放給全部同仁使用依第一版測試結果後評估正式上線時間",
+      "topic_id": "9rUCmOjW9sQ",
+      "message_id": "AAAA6qq3vTU/9rUCmOjW9sQ/Q1NsOfVP068"
+    },
+    {
+      "message_state": "DELETED",
+      "deleted_date": "2025年11月20日 星期四清晨5:06:44 [UTC]",
+      "topic_id": "9rUCmOjW9sQ",
+      "deletion_metadata": {
+        "deletion_type": "CREATOR"
+      },
+      "message_id": "AAAA6qq3vTU/9rUCmOjW9sQ/C3nJTWv0sOM"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月20日 星期四清晨5:14:39 [UTC]",
+      "text": "\n@全部 \n目前雙方時程計畫如下：\nPhase 1\n1-1階段. Orchestrator 部屬及文件完畢\n時程11/30\nMIS這邊待11/30開發釋出後，預計7天內部屬完畢，並同時實作試試看把IT小幫手串接。\n此階段橘幫辦也會納入串接。\n入口將由MIS協助部屬另一支google chat應用程式，並非由橘幫辦取代，待Orchestrator Release後橘幫辦則會下架；IT小幫手仍至部門使用；Gamania ChatGPT則下架。\n1-2階段. 內部測試\n時程12/31\n11/28 BDD會預先進行內部分流測試，並提供報告。\nMIS負責IT小幫手的準確率測試。\n原橘幫辦開發團隊負責橘幫辦相關測試。\nIT小幫手測項將包含原內部資訊查詢、calendar free/busy查詢、內部文件查詢、google search及網頁URL讀取等，純text in \u0026 out功能。\n橘幫辦測項將包含文件查找、google search功能，純text in \u0026 out功能。\n1-3階段. 調整\n時程1-2階段+14 - 30天\n針對測試結果討論及調整。\n1-4階段. 調整後測試\n時程1-2階段+14 - 30天\n原先2階段測試+開放非開發之特定人員使用測試。\n1-2至1-5階段變數較無法預期，僅規劃猜測時間。\nfinal. Release \n時程26/03\n上線開放測試\n\nPhase 2\n2-1. IT小幫手額外功能整合\n時程26Q1-Q2\nfinal. Release\n時程26/05\n\n權責分工項目\nBDD：程式碼部分，API開發與除錯、API技轉文件。\nMIS：雲端專案及機器管理、未來維運與新服務串接及接洽、非程式碼相關錯誤判斷與除錯等。",
+      "annotations": [
+        {
+          "start_index": 33,
+          "length": 20,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 33,
+          "length": 20,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294198070
+          }
+        },
+        {
+          "start_index": 54,
+          "length": 168,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 54,
+          "length": 7,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 54,
+          "length": 7,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294951175
+          }
+        },
+        {
+          "start_index": 54,
+          "length": 8,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 62,
+          "length": 45,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 107,
+          "length": 14,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 121,
+          "length": 101,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 229,
+          "length": 4,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294198070
+          }
+        },
+        {
+          "start_index": 229,
+          "length": 4,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 234,
+          "length": 8,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 234,
+          "length": 207,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 234,
+          "length": 7,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 234,
+          "length": 7,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294951175
+          }
+        },
+        {
+          "start_index": 242,
+          "length": 28,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 270,
+          "length": 18,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 288,
+          "length": 19,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 307,
+          "length": 87,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 394,
+          "length": 47,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 448,
+          "length": 2,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 448,
+          "length": 2,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294198070
+          }
+        },
+        {
+          "start_index": 451,
+          "length": 17,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 451,
+          "length": 30,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 451,
+          "length": 16,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294951175
+          }
+        },
+        {
+          "start_index": 451,
+          "length": 16,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 468,
+          "length": 13,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 488,
+          "length": 5,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 488,
+          "length": 5,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294198070
+          }
+        },
+        {
+          "start_index": 494,
+          "length": 17,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 494,
+          "length": 16,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 494,
+          "length": 16,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294951175
+          }
+        },
+        {
+          "start_index": 494,
+          "length": 41,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 511,
+          "length": 24,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 535,
+          "length": 25,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4280391411
+          }
+        },
+        {
+          "start_index": 568,
+          "length": 8,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294198070
+          }
+        },
+        {
+          "start_index": 569,
+          "length": 7,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 577,
+          "length": 7,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294951175
+          }
+        },
+        {
+          "start_index": 577,
+          "length": 7,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 577,
+          "length": 8,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 577,
+          "length": 15,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 585,
+          "length": 7,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 606,
+          "length": 11,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294198070
+          }
+        },
+        {
+          "start_index": 618,
+          "length": 10,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 618,
+          "length": 10,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 618,
+          "length": 9,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294951175
+          }
+        },
+        {
+          "start_index": 618,
+          "length": 9,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 635,
+          "length": 7,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294198070
+          }
+        },
+        {
+          "start_index": 636,
+          "length": 6,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 643,
+          "length": 8,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 643,
+          "length": 7,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 643,
+          "length": 7,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294951175
+          }
+        },
+        {
+          "start_index": 643,
+          "length": 8,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 659,
+          "length": 71,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 659,
+          "length": 28,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 687,
+          "length": 43,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        }
+      ],
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/prDJ9WyEsXk",
+      "message_labels": [
+        {
+          "label_type": "PINNED",
+          "creator": {
+            "name": "Johnny LIN(林育廷)",
+            "email": "johnnylin@gamania.com",
+            "user_type": "Human"
+          }
+        }
+      ]
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月21日 星期五凌晨3:15:35 [UTC]",
+      "text": "在與雙方主管討論完，以及我能提供的資訊中，發現我們雙方有些資訊上的落差，雙方都在被動的等待彼此的進度，因此想藉此同步一下雙方的資訊，以及未來各階段的目標與問題。",
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/qGkD13y-gSk"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月21日 星期五凌晨4:19:53 [UTC]",
+      "text": "我們權責分工為\n數據中心負責 agent 開發及效果測試部分\n各別 bot 則回歸原始開發人員負責\nMIS 負責部署/上線後新服務串接/維運部分",
+      "annotations": [
+        {
+          "start_index": 8,
+          "length": 64,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 8,
+          "length": 23,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 31,
+          "length": 19,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 50,
+          "length": 22,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        }
+      ],
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/8pgDIKRSt8w"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月21日 星期五凌晨4:20:57 [UTC]",
+      "text": "專案目標和規劃部分：\n\n階段一： Orchestrator 部署與文件\n會，橘幫辦也會串接\n可以，prod 環境的 agent 可以由 MIS 串上 IT 小幫手。\n不會，橘幫辦等 orchestrator 正式上線後應會直接下架。\n\n階段二：內部測試\n橘幫辦會由數據中心測試\n功能測試目前 orchestrator 只支援 text in text out ，其他部分目前尚無法支援\n橘幫辦會測試文件查找、google search功能。\n\nFinal release 對應測試與調整時程，建議抓 26Q2",
+      "annotations": [
+        {
+          "start_index": 36,
+          "length": 10,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 36,
+          "length": 81,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 46,
+          "length": 37,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 83,
+          "length": 34,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 127,
+          "length": 94,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 127,
+          "length": 12,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 139,
+          "length": 54,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 193,
+          "length": 28,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        }
+      ],
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/C5kQ8tDOMlk"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月21日 星期五凌晨4:40:33 [UTC]",
+      "text": "那部署目前的進度是否要調整？還是照原定11/31前釋出給我這邊接接看？",
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/3SPwafwp1fI"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月21日 星期五凌晨4:54:36 [UTC]",
+      "text": "進度不用調整，我們一樣11/31前可以釋出",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "johnnylin@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/38I82TehhTY"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月21日 星期五清晨5:45:33 [UTC]",
+      "text": "前端的部分是否與現行一樣google chat？\n因此我這邊是不是要協助建立google chat的部屬？",
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/nIKs2YdwQ54"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月21日 星期五清晨5:53:26 [UTC]",
+      "text": "對",
+      "topic_id": "prDJ9WyEsXk",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "前端的部分是否與現行一樣google chat？\n因此我這邊是不是要協助建立google chat的部屬？"
+      },
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/oaJb0XeVmCM"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月21日 星期五清晨6:06:02 [UTC]",
+      "text": "好，那我修改一下置頂訊息，大家共同同步一下。\n如果有甚麼錯誤再提出，我在修改。",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "🆗"
+          },
+          "reactor_emails": [
+            "weiwu@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/bdNBAC-pwLU"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月21日 星期五上午8:42:28 [UTC]",
+      "text": "@Wei WU(吳晨瑋) 如果報告26Q2範圍有點太長，建議抓4月呢？大概會抓這個時間的原因？\n我知道orchestratro變數蠻大的，但我需要跟長官報告想知道原因",
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/UlsRnnA-Kms"
+    },
+    {
+      "creator": {
+        "name": "York CHIEN(簡友琳)",
+        "email": "yorkchien@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月21日 星期五上午8:49:37 [UTC]",
+      "text": "@Hortin WANG(王誌偉) @Johnny LIN(林育廷) 這邊建議如果對合作模式及時程方面還有比較多不確定點的話，\n可以直接起約一個會議雙方再確認一下\n這樣大家對於各自要做的事情跟時間排程會更明確",
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/wg4oXLTXgEo"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月21日 星期五上午8:51:56 [UTC]",
+      "text": "目前大概理解清楚，只剩下這個需要再問一下",
+      "topic_id": "prDJ9WyEsXk",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "@Wei WU(吳晨瑋) 如果報告26Q2範圍有點太長，建議抓4月呢？大概會抓這個時間的原因？\n我知道orchestratro變數蠻大的，但我需要跟長官報告想知道原因"
+      },
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/jwNqhq2aI1w"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月21日 星期五上午9:07:56 [UTC]",
+      "text": "4月我覺得ok 上面抓Q2也是考量1-1到1-4階段時程加一加也是差不多Q1底了",
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/lWIkFRvvadY"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月26日 星期三清晨7:01:38 [UTC]",
+      "text": "不曉得您們有沒有收到新的訊息？\n說要把IT小幫手這邊的額外功能，非text in and out的功能也要接上",
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/HddgmxdXia8"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月26日 星期三清晨7:03:48 [UTC]",
+      "text": "1. 目前是否有實作或開發的困難點？\n2. 是否需要我提供輸出的資訊，讓你們設計接口規範？\n3. 時程方面final是否需要調整？\n謝謝",
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/THWCGe4nKZw"
+    },
+    {
+      "creator": {
+        "name": "Chasel SU(蘇緯倫)",
+        "email": "chaselsu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月26日 星期三清晨7:08:17 [UTC]",
+      "text": "附上之前的討論，我們內部還要討論一下，全部接上時程規劃是一定會改變。但是我想是可以分階段release給集團的\n我們會提個proposal",
+      "attached_files": [
+        {
+          "original_name": "Image_20251126_150606_710.jpeg",
+          "export_name": "File-Image_20251126_150606_710.jpeg"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "🙏🏻"
+          },
+          "reactor_emails": [
+            "hortinwang@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/KyLEPKXN4Ck"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月26日 星期三清晨7:08:42 [UTC]",
+      "text": "好的謝謝",
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/TIr3cWGYKSw"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月26日 星期三上午9:50:45 [UTC]",
+      "text": "我們先分階段進行，預期時程調整為數據中心在 12/31 前測試並交付 HR/行政/總務 + 額外一隻文字bot 的 orchestrator 及 MCP API服務，MIS協助於 26Q1 將這隻 orchestrator上線\n\n26Q1-Q2 進行IT小幫手功能整合與測試，預計Q2底前上線",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👍"
+          },
+          "reactor_emails": [
+            "anguswang@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/4LuHElbF5TY"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月26日 星期三上午9:58:02 [UTC]",
+      "text": "我這邊沒甚麼問題，但額外功能的部分，一階段功能觸發時可以先給user傳送一段訊息，讓有需求的user去使用IT小幫手？",
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/pn5clN6MO8Q"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月26日 星期三上午10:07:39 [UTC]",
+      "text": "這實作ok，看是要先埋一個for IT小幫手的temp回應在orchstrator，或是MIS直接提供mcp接口，然後統一回應上面的範本？",
+      "topic_id": "prDJ9WyEsXk",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "我這邊沒甚麼問題，但額外功能的部分，一階段功能觸發時可以先給user傳送一段訊息，讓有需求的user去使用IT小幫手？"
+      },
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/opK2FAXYdj8"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月26日 星期三上午10:09:13 [UTC]",
+      "text": "讓我想一下怎麼做比較好。\n同時我這邊的mcp server也需要改一下，把這些功能拿掉，免得出現執行但又無法顯示的狀況。",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "🆗"
+          },
+          "reactor_emails": [
+            "weiwu@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/Eg-Bo19UBaQ"
+    },
+    {
+      "creator": {
+        "name": "Hortin WANG(王誌偉)",
+        "email": "hortinwang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月26日 星期三上午10:09:14 [UTC]",
+      "text": "感謝大數據AI團隊\n若此項有任何需討論項目，請隨時聯繫我",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "🙏"
+          },
+          "reactor_emails": [
+            "weiwu@gamania.com",
+            "chaselsu@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "prDJ9WyEsXk",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Chasel SU(蘇緯倫)",
+          "email": "chaselsu@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "附上之前的討論，我們內部還要討論一下，全部接上時程規劃是一定會改變。但是我想是可以分階段release給集團的\n我們會提個proposal",
+        "attached_files": [
+          {
+            "original_name": "Image_20251126_150606_710.jpeg",
+            "export_name": "File-Image_20251126_150606_710.jpeg"
+          }
+        ]
+      },
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/jTVkuMMRllM"
+    },
+    {
+      "creator": {
+        "name": "Hortin WANG(王誌偉)",
+        "email": "hortinwang@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月27日 星期四凌晨2:34:35 [UTC]",
+      "text": "請問這部分有機會在哪個月份執行?",
+      "topic_id": "prDJ9WyEsXk",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Wei WU(吳晨瑋)",
+          "email": "weiwu@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "這實作ok，看是要先埋一個for IT小幫手的temp回應在orchstrator，或是MIS直接提供mcp接口，然後統一回應上面的範本？"
+      },
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/bxIAvhgppG4"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月27日 星期四凌晨2:35:19 [UTC]",
+      "text": "預計在1月底進行",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "hortinwang@gamania.com"
+          ]
+        },
+        {
+          "emoji": {
+            "unicode": "🙏🏻"
+          },
+          "reactor_emails": [
+            "hortinwang@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/rKpM5vaXv7U"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年12月3日 星期三凌晨2:04:20 [UTC]",
+      "text": "Hi, 不曉得是否有相關部屬及API文件，可以先看？",
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/cxKOod0QrXA"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年12月3日 星期三凌晨2:20:54 [UTC]",
+      "text": "有，目前有測試環境的可以先給，我們整理一下",
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/EM0bAoj1FAk"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年12月3日 星期三凌晨2:21:20 [UTC]",
+      "text": "好的謝謝",
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/wI4ygF6hE54"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年12月3日 星期三清晨6:20:44 [UTC]",
+      "text": "Orchestration Agent API 串接文件：https://gamania-group.atlassian.net/wiki/x/UwCzWQ\n目前提供 DEV 環境，功能包含橘幫辦、Hidol助手、IT小幫手的文字問答。\n防火牆目前 Allow 公司、公司VPN、ghq-bdds-agent-prod 專案下的 gke-tw-nat-config 存取，如果有需要其他設定可以再提出",
+      "annotations": [
+        {
+          "start_index": 0,
+          "length": 200,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 0,
+          "length": 79,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 79,
+          "length": 40,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 119,
+          "length": 81,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        }
+      ],
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/jtXF29oBzq4"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年12月9日 星期二清晨7:09:58 [UTC]",
+      "text": "我嘗試測試了一下，mcp request好像只丟給我{\u0027params\u0027: {\u0027message\u0027: \u0027 \u0027}}\n要求不是\n{\n                \"bot_character\": \"itsd_agent\",\n                \"ts\": int(time.time() * 1000),\n                \"sender\": {\n                    \"user_id\": \"johnnylin@gamania.com\",\n                    \"nickname\": \"John Lin\",\n                },\n                \"message\": {\n                    \"text\": \"該怎麼重置密碼?\",\n                },\n            },\n\n這樣嗎？\n\n然後出錯Orchestrator會籠統的回答😅",
+      "annotations": [
+        {
+          "start_index": 78,
+          "length": 15,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        },
+        {
+          "start_index": 95,
+          "length": 12,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        },
+        {
+          "start_index": 125,
+          "length": 4,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        },
+        {
+          "start_index": 131,
+          "length": 3,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4283215696
+          }
+        },
+        {
+          "start_index": 135,
+          "length": 4,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4283215696
+          }
+        },
+        {
+          "start_index": 172,
+          "length": 8,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        },
+        {
+          "start_index": 204,
+          "length": 9,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        },
+        {
+          "start_index": 215,
+          "length": 23,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        },
+        {
+          "start_index": 260,
+          "length": 10,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        },
+        {
+          "start_index": 272,
+          "length": 10,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        },
+        {
+          "start_index": 319,
+          "length": 9,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        },
+        {
+          "start_index": 352,
+          "length": 6,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        },
+        {
+          "start_index": 360,
+          "length": 10,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        }
+      ],
+      "topic_id": "prDJ9WyEsXk",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Wei WU(吳晨瑋)",
+          "email": "weiwu@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "Orchestration Agent API 串接文件：https://gamania-group.atlassian.net/wiki/x/UwCzWQ\n目前提供 DEV 環境，功能包含橘幫辦、Hidol助手、IT小幫手的文字問答。\n防火牆目前 Allow 公司、公司VPN、ghq-bdds-agent-prod 專案下的 gke-tw-nat-config 存取，如果有需要其他設定可以再提出",
+        "annotations": [
+          {
+            "start_index": 0,
+            "length": 79,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST_ITEM"
+            }
+          },
+          {
+            "start_index": 0,
+            "length": 200,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST"
+            }
+          },
+          {
+            "start_index": 79,
+            "length": 40,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST_ITEM"
+            }
+          },
+          {
+            "start_index": 119,
+            "length": 81,
+            "format_metadata": {
+              "format_type": "BULLETED_LIST_ITEM"
+            }
+          }
+        ]
+      },
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/L7X28j5lV3o"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年12月9日 星期二上午9:48:15 [UTC]",
+      "text": "我大概了解了一下這個問題應該是文件上的意思歧異，之前給的MCP server management上的suggest chatbot api request指的是 mcp server 要串的chatbot建議的格式，不是mcp server本身input output的格式。 but 我同意應該把ts, sender這些資訊也加上去，這樣最原始的chatbot才有辦法log資訊（或做memory） 這部分我們再做調整，但應該不影響現階段orchestrator的使用",
+      "topic_id": "prDJ9WyEsXk",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "我嘗試測試了一下，mcp request好像只丟給我{\u0027params\u0027: {\u0027message\u0027: \u0027 \u0027}}\n要求不是\n{\n                \"bot_character\": \"itsd_agent\",\n                \"ts\": int(time.time() * 1000),\n                \"sender\": {\n                    \"user_id\": \"johnnylin@gamania.com\",\n                    \"nickname\": \"John Lin\",\n                },\n                \"message\": {\n                    \"text\": \"該怎麼重置密碼?\",\n                },\n            },\n\n這樣嗎？\n\n然後出錯Orchestrator會籠統的回答😅",
+        "annotations": [
+          {
+            "start_index": 78,
+            "length": 15,
+            "format_metadata": {
+              "format_type": "FONT_COLOR",
+              "font_color": 4288585374
+            }
+          },
+          {
+            "start_index": 95,
+            "length": 12,
+            "format_metadata": {
+              "format_type": "FONT_COLOR",
+              "font_color": 4288585374
+            }
+          },
+          {
+            "start_index": 125,
+            "length": 4,
+            "format_metadata": {
+              "format_type": "FONT_COLOR",
+              "font_color": 4288585374
+            }
+          },
+          {
+            "start_index": 131,
+            "length": 3,
+            "format_metadata": {
+              "format_type": "FONT_COLOR",
+              "font_color": 4283215696
+            }
+          },
+          {
+            "start_index": 135,
+            "length": 4,
+            "format_metadata": {
+              "format_type": "FONT_COLOR",
+              "font_color": 4283215696
+            }
+          },
+          {
+            "start_index": 172,
+            "length": 8,
+            "format_metadata": {
+              "format_type": "FONT_COLOR",
+              "font_color": 4288585374
+            }
+          },
+          {
+            "start_index": 204,
+            "length": 9,
+            "format_metadata": {
+              "format_type": "FONT_COLOR",
+              "font_color": 4288585374
+            }
+          },
+          {
+            "start_index": 215,
+            "length": 23,
+            "format_metadata": {
+              "format_type": "FONT_COLOR",
+              "font_color": 4288585374
+            }
+          },
+          {
+            "start_index": 260,
+            "length": 10,
+            "format_metadata": {
+              "format_type": "FONT_COLOR",
+              "font_color": 4288585374
+            }
+          },
+          {
+            "start_index": 272,
+            "length": 10,
+            "format_metadata": {
+              "format_type": "FONT_COLOR",
+              "font_color": 4288585374
+            }
+          },
+          {
+            "start_index": 319,
+            "length": 9,
+            "format_metadata": {
+              "format_type": "FONT_COLOR",
+              "font_color": 4288585374
+            }
+          },
+          {
+            "start_index": 352,
+            "length": 6,
+            "format_metadata": {
+              "format_type": "FONT_COLOR",
+              "font_color": 4288585374
+            }
+          },
+          {
+            "start_index": 360,
+            "length": 10,
+            "format_metadata": {
+              "format_type": "FONT_COLOR",
+              "font_color": 4288585374
+            }
+          }
+        ]
+      },
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/K4itM8JttRo"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年12月9日 星期二上午9:51:30 [UTC]",
+      "text": "那我這邊需要把ts, sender資訊改成option嗎？",
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/jDO4s3dH9yw"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年12月9日 星期二上午9:54:13 [UTC]",
+      "text": "我目前是必要參數，這樣request會出錯",
+      "topic_id": "prDJ9WyEsXk",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Wei WU(吳晨瑋)",
+          "email": "weiwu@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "我大概了解了一下這個問題應該是文件上的意思歧異，之前給的MCP server management上的suggest chatbot api request指的是 mcp server 要串的chatbot建議的格式，不是mcp server本身input output的格式。 but 我同意應該把ts, sender這些資訊也加上去，這樣最原始的chatbot才有辦法log資訊（或做memory） 這部分我們再做調整，但應該不影響現階段orchestrator的使用"
+      },
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/Mi4ay7Su_Pc"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年12月9日 星期二上午11:01:55 [UTC]",
+      "text": "你說IT小幫手的mcp嗎？不用，我們這邊用config可以調整打到IT小幫手的本身會帶ts, sender這些資訊",
+      "topic_id": "prDJ9WyEsXk",
+      "message_id": "AAAA6qq3vTU/prDJ9WyEsXk/xxhJQsAtML4"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月21日 星期五清晨6:17:39 [UTC]",
+      "topic_id": "z1kHuWJoo2o",
+      "message_id": "AAAA6qq3vTU/z1kHuWJoo2o/z1kHuWJoo2o"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月27日 星期四清晨5:42:44 [UTC]",
+      "text": "第一階段\nIT小幫手與gamania chatGPT加入功能：\n通用\n內部文件查找\n自我介紹（連動google docs）\nURL網頁查看（fetch）\nAWS官方文件查找\nMicrosoft Learn官方文件查找\ngoogle calendar 行事曆時間查找\ngoogle people 集團內部人員查找\ngoogle search from gemini 搜尋引擎功能\n橘幫辦加入功能：\n內部文件查找\ngoogle search功能\n\n第二階段\n額外功能整合：\n非text in \u0026 out能驅動與驅動後無法純用text顯示。\n上傳檔案功能（包含文件、音檔及圖片等辨識）需額外處理下載及轉譯。\n生成圖片功能（生成及編輯圖片、流程圖等）純text能輸出URL，但無法直接使用text在chat上預覽。\n服務信箱郵件功能，額外互動無法純text輸出入。",
+      "annotations": [
+        {
+          "start_index": 32,
+          "length": 157,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 32,
+          "length": 3,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 35,
+          "length": 7,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 42,
+          "length": 20,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 62,
+          "length": 15,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 77,
+          "length": 10,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 87,
+          "length": 22,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 109,
+          "length": 24,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 133,
+          "length": 23,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 156,
+          "length": 33,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 198,
+          "length": 7,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 198,
+          "length": 23,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 205,
+          "length": 16,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 235,
+          "length": 32,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294951175
+          }
+        },
+        {
+          "start_index": 268,
+          "length": 33,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 268,
+          "length": 110,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 289,
+          "length": 10,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294198070
+          }
+        },
+        {
+          "start_index": 301,
+          "length": 53,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 321,
+          "length": 31,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294198070
+          }
+        },
+        {
+          "start_index": 354,
+          "length": 24,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 363,
+          "length": 14,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294198070
+          }
+        }
+      ],
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/HL_en6hOqcM"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月27日 星期四清晨5:49:02 [UTC]",
+      "text": "@Wei WU(吳晨瑋) 關於第一階段額外功能的處理。\n上傳檔案部分，接收到參數的是orchestrator，\n因此可能需要你們多開發收到上傳檔案的參數時，\n帶入預設的text temp告知使用者，轉導至特定應用程式處理需求。\n\n這邊需要注意的是，使用者若再訊息欄中輸入google服務的URL（例如docs, sheet）也會被當成上傳參數（google chat參數欄位共用問題）\n\n這邊看有沒有困難點？在第一階段實作，輸出預設的text temp告知使用者的部分",
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/BUWv1ENOTl4"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月27日 星期四清晨5:51:18 [UTC]",
+      "text": "除上傳檔案部分，其餘皆是IT驅動，我這邊將會改system prompt及tool calling。\n由API來的request取消這些功能，且提示AI無這些功能並以訊息方式告知轉導；由IT小幫手應用程式(chat)來的則啟用。",
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/OIkxkmQBz54"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月27日 星期四清晨6:31:06 [UTC]",
+      "text": "這樣是IT小幫手還是有部分文字功能要在第一版串上去的意思？  還是只是 mcp 先串但分流到 IT小幫手的一律文字建議轉導？\n\norchestrator 這是可以多加一個 uploadFile 欄位，google chat 收到的 file 就塞這欄位，orchestrator看到有uploadFile有值且是分流IT小幫手，就文字建議轉導。技術上沒困難但要額外時間修改",
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/mlNXSWfNEFI"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月27日 星期四清晨6:33:58 [UTC]",
+      "text": "是你說的\"orchestrator看到有uploadFile有值且是分流IT小幫手，就文字建議轉導\"這樣\n想評估，是否能在第一階段上線前修改完成？",
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/8cJY_bBKnY0"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月27日 星期四清晨6:48:51 [UTC]",
+      "text": "第一階段上線前（26Q1）可以加上去，但照昨天更新的時程規劃，年底交付的那隻還不會做這個更動，只會基於現有架構先提供文字輸入文字輸出",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "johnnylin@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/t7cSCyTrdwE"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年12月31日 星期三凌晨4:21:27 [UTC]",
+      "text": "@Johnny LIN(林育廷) https://gamania-group.atlassian.net/wiki/spaces/GA/pages/1504903251/GHQ+Orchestrator+Agent\n這版已經有先把上傳檔案的接口(Request Parameters: content) 開發完成, 讓你們可先試行串接IT小幫手(文字版), 若有問題再跟我們說 感謝\ncc @Wayne LIN(林崇恩) @Ryan LAI(賴彥良)",
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/YtOyuoeGyKg"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月5日 星期一凌晨2:05:43 [UTC]",
+      "text": "早安，這份文件只有說到怎麼呼叫Agent沒有說到怎麼串接IT小幫手到orchestrator有其他文件提到嗎？\n然後上傳檔案的接口context是否有範例？我這邊看到是Dict[str, Any] 但dict schema裡面是不是有固定要提供的key value?\n\n另外想詢問機器人輸入/輸出文字bot (google chat)目前的進度\n謝謝您們。",
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/VhXsuR2Cx-A"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月5日 星期一凌晨3:12:28 [UTC]",
+      "text": "1. 串接IT小幫手到orchestrator 部分文件我們稍後補上\n\n2. context 資料格式原設計是讓各bot開放客製化定義, 這段我們內部再討論是否要先定義一些情境\n\n3. 因是使用集團的chat, 需請你們協助  串接google chat 目前狀態是已可使用呼叫Agent API (若有理解錯誤再請跟我們說) 🙏",
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/7i3tJD5FAS8"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月5日 星期一凌晨3:13:56 [UTC]",
+      "text": "0.0 google chat部分是我們負責嗎？我這邊的理解是你們會一併開發",
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/odluU-yJlKs"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月5日 星期一凌晨3:14:58 [UTC]",
+      "text": "MIS x 數據中心串接討論群\n\"我們先分階段進行，預期時程調整為數據中心在 12/31 前測試並交付 HR/行政/總務 + 額外一隻文字bot 的 orchestrator 及 MCP API服務，MIS協助於 26Q1 將這隻 orchestrator上線\n\n26Q1-Q2 進行IT小幫手功能整合與測試，預計Q2底前上線\"",
+      "annotations": [
+        {
+          "start_index": 0,
+          "length": 15,
+          "interaction_data": {
+            "url": {
+              "private_do_not_access_or_else_safe_url_wrapped_value": "https://chat.google.com/room/AAAA6qq3vTU/prDJ9WyEsXk/4LuHElbF5TY?cls\u003d10"
+            }
+          },
+          "group_metadata": {
+            "group_id": {
+              "space_id": {
+                "space_id": "AAAA6qq3vTU"
+              }
+            },
+            "message_id": {
+              "parent_id": {
+                "topic_id": {
+                  "topic_id": "prDJ9WyEsXk",
+                  "group_id": {
+                    "space_id": {
+                      "space_id": "AAAA6qq3vTU"
+                    }
+                  }
+                }
+              },
+              "message_id": "4LuHElbF5TY"
+            }
+          }
+        }
+      ],
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/GjPzgQEZHvI"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月5日 星期一凌晨3:15:16 [UTC]",
+      "text": "這段訊息是我理解錯誤嗎？額外文字bot不是指google chat...",
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/HzS37puOAyw"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月5日 星期一凌晨3:26:31 [UTC]",
+      "text": "是否部署即可？",
+      "attached_files": [
+        {
+          "original_name": "截圖 2026-01-05 上午11.15.12 (1).png",
+          "export_name": "File-截圖 2026-01-05 上午11.15.12 (1).png"
+        }
+      ],
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/xC1lgFyiPPA"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月5日 星期一凌晨3:27:12 [UTC]",
+      "text": "甚麼意思@@",
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/Lm_OVx-gO0g"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月5日 星期一凌晨3:29:40 [UTC]",
+      "text": "google chat 接 agent這個部分，雙方有理解上的錯誤，對嗎？\n我們這邊以為是你們也一起開發，但你們以為是只有orchestrator agent開發",
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/8t1BoTRHbuQ"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月5日 星期一凌晨3:36:32 [UTC]",
+      "text": "� 我拉個小會議雙邊確認下狀況  讓專案可以順利進行",
+      "annotations": [
+        {
+          "type": "CUSTOM_EMOJI",
+          "start_index": 0,
+          "length": 1,
+          "chip_render_type": "DO_NOT_RENDER",
+          "custom_emoji_metadata": {
+            "custom_emoji": {
+              "shortcode": ":facepalm-cat:",
+              "state": "EMOJI_ENABLED",
+              "creator_user_id": {
+                "name": "Anonymous User",
+                "user_type": "Unknown"
+              },
+              "owner_customer_id": "0rgajda",
+              "create_time": "2022年12月16日 星期五凌晨4:54:48 [UTC]",
+              "content_type": "image/png"
+            }
+          }
+        }
+      ],
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/cpSMYoXb4Lk"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月5日 星期一凌晨3:38:48 [UTC]",
+      "text": "好的",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "🙏"
+          },
+          "reactor_emails": [
+            "pennylo@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/1pYOPiQbSGY"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月5日 星期一清晨6:51:42 [UTC]",
+      "text": "{\n                \"contentName\": \"螢幕擷取畫面 2024-05-27 145634.png\",\n                \"contentType\": \"image/png\",\n                \"attachmentDataRef\": {\n                    \"resourceName\": \"ClxzcGFjZXMvOUVjVTFNQUFBQUUvbWVzc2FnZXMvd1R0VThUTUQ4RWcud1R0VThUTUQ4RWcvYXR0YWNobWVudHMvQUFUVWYtSjVXUm1lQjYtN3JNdFdyUV9tdlJuRw\u003d\u003d\"\n                }\n            }",
+      "annotations": [
+        {
+          "start_index": 33,
+          "length": 30,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        },
+        {
+          "start_index": 96,
+          "length": 11,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        },
+        {
+          "start_index": 184,
+          "length": 130,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        }
+      ],
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/SQYYLwdAyDo"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月5日 星期一清晨6:52:11 [UTC]",
+      "text": "{\n                \"name\": \"spaces/9EcU1MAAAAE/messages/QleHfn2JAi0.QleHfn2JAi0/attachments/AATUf-KzopY4RcsAISC1m3s1aRTl\",\n                \"driveDataRef\": {\n                    \"driveFileId\": \"1arqPL7OUrjyQILfYsFr5l9gaEkNq9Nbf3HVLK0Lw5Rs\"\n                }\n            }",
+      "annotations": [
+        {
+          "start_index": 26,
+          "length": 94,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        },
+        {
+          "start_index": 191,
+          "length": 46,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4288585374
+          }
+        }
+      ],
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/bdUEerGknLY"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月6日 星期二凌晨2:32:14 [UTC]",
+      "text": "昨天會議討論\n1. 上傳檔案功能priority為第一順位。\n2. request context key value共識是直接傳google chat的key-value，所以context建議先固定，我建議是：\ncontext: {\n    attachment: [\n        # 這個是chat直接上傳的來源\n        {\n         \"contentName:\"\",\n         \"contentType:\"\",  # MimeType\n         \"attachmentDataRef: {\n              \"resourceName\":\"\"  # id\n            }\n        },\n        # 這個是從Drive上的來源\n        {\n         \"name\":\"\",\n         \"driveDataRef\": {\n             \"driveFileId\": \"\"  # id\n            }\n        }\n    ]\n3. 前端google chat由ITSD這邊負責開發。\n\n然後是\nResponse疑問跟建議\n1. status有沒有除success外的狀態？是enum嗎？\n2. timestamp 不使用unix嗎？這邊變ISO，但request卻使用unix是為什麼0.0",
+      "annotations": [
+        {
+          "start_index": 108,
+          "length": 370,
+          "format_metadata": {
+            "format_type": "MONOSPACE_BLOCK"
+          }
+        }
+      ],
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/gFT3Z4oUH6A"
+    },
+    {
+      "creator": {
+        "name": "Ryan LAI(賴彥良)",
+        "email": "ryanlai@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月6日 星期二凌晨3:30:30 [UTC]",
+      "text": "class ResponseStatus(str, Enum):\n\n    SUCCESS \u003d \u0027success\u0027\n    PARTIAL \u003d \u0027partial\u0027\n    ERROR \u003d \u0027error\u0027\n    TIMEOUT \u003d \u0027timeout\u0027\n\n1. response 的設計如上，其中 partial 對應到多 agent 情境只有部分 agent 成功的情形。\n\n2. timestamp 因為 pydantic JSON serialize 自動轉換成 ISO 格式，未來應對齊 api 統一使用 UNIX 格式。",
+      "annotations": [
+        {
+          "start_index": 0,
+          "length": 126,
+          "format_metadata": {
+            "format_type": "MONOSPACE_BLOCK"
+          }
+        }
+      ],
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/vkqCkCF-dlE"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月6日 星期二凌晨3:31:38 [UTC]",
+      "text": "在幫我寫在文件上，感謝",
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/TUbghq-wDeU"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月6日 星期二凌晨3:31:52 [UTC]",
+      "text": "還是我也能修改文件?",
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/95BTBYJwai8"
+    },
+    {
+      "creator": {
+        "name": "Ryan LAI(賴彥良)",
+        "email": "ryanlai@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月6日 星期二凌晨3:34:19 [UTC]",
+      "text": "我稍後補上 \u003e\u003c",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "🙏"
+          },
+          "reactor_emails": [
+            "pennylo@gamania.com"
+          ]
+        },
+        {
+          "emoji": {
+            "unicode": "👍"
+          },
+          "reactor_emails": [
+            "johnnylin@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/qDEqeWp-ze0"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月6日 星期二清晨7:53:48 [UTC]",
+      "text": "我新增了deployment: ghq-bdds-agent-gpt-5.2-chat，可以試試看，我覺得更聰明且更快",
+      "reactions": [
+        {
+          "emoji": {
+            "custom_emoji": {
+              "shortcode": ":okay:",
+              "state": "EMOJI_ENABLED",
+              "creator_user_id": {
+                "name": "Anonymous User",
+                "user_type": "Unknown"
+              },
+              "owner_customer_id": "0rgajda",
+              "create_time": "2023年9月5日 星期二凌晨2:26:55 [UTC]",
+              "content_type": "image/png"
+            }
+          },
+          "reactor_emails": [
+            "ryanlai@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/1gPo7eMh-Ec"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月7日 星期三凌晨3:35:10 [UTC]",
+      "text": "我突然想到關於上傳檔案分析功能\n1. 文件、語音，我可以從前端完成轉成文字，在送給後段agent直接做路由及回答？\n\n2.如果可以，但上傳圖片視覺的部分，沒辦法這樣做。\n圖片視覺可能要路由本身有視覺可能才行？\n例如：使用者上傳一張帶有行政資訊的圖片，問說這些資訊可以找誰？\n這樣路由需要有視覺功能，才能正確路由給行政小幫手回答",
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/euw9VeRCgg0"
+    },
+    {
+      "creator": {
+        "name": "Ryan LAI(賴彥良)",
+        "email": "ryanlai@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月7日 星期三凌晨4:28:58 [UTC]",
+      "text": "這部分的實作細節感覺可以日後討論，想像上 orchestrator 的確需要足夠的 context 才能正確路由，所以必要情況下確實需要圖片辨識的功能。\n\n我們這個 sprint 會先定義好 orchestrator api 以及 orchestrator \u003c-\u003e MCP 的介面，會再找 @Johnny LIN(林育廷) 討論，等雙方對 input / output 都有共識後再討論下一步實作如何 �",
+      "annotations": [
+        {
+          "type": "CUSTOM_EMOJI",
+          "start_index": 201,
+          "length": 1,
+          "chip_render_type": "DO_NOT_RENDER",
+          "custom_emoji_metadata": {
+            "custom_emoji": {
+              "shortcode": ":pepecool:",
+              "state": "EMOJI_ENABLED",
+              "creator_user_id": {
+                "name": "Uber WANG(王有伯)",
+                "email": "uberwang@gamania.com",
+                "user_type": "Human"
+              },
+              "owner_customer_id": "0rgajda",
+              "create_time": "2023年11月13日 星期一上午10:17:35 [UTC]",
+              "content_type": "image/png"
+            }
+          }
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "johnnylin@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/Z2EjWcrKAl4"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月7日 星期三凌晨4:42:18 [UTC]",
+      "text": "文件及語音，我可以先在前端實現。\n後續就在持續討論",
+      "reactions": [
+        {
+          "emoji": {
+            "custom_emoji": {
+              "shortcode": ":cat01:",
+              "state": "EMOJI_ENABLED",
+              "creator_user_id": {
+                "name": "Anonymous User",
+                "user_type": "Unknown"
+              },
+              "owner_customer_id": "0rgajda",
+              "create_time": "2024年5月31日 星期五凌晨1:47:11 [UTC]",
+              "content_type": "image/png"
+            }
+          },
+          "reactor_emails": [
+            "ryanlai@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "HL_en6hOqcM",
+      "message_id": "AAAA6qq3vTU/HL_en6hOqcM/KQ5JfrOPmFY"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月27日 星期四清晨6:12:47 [UTC]",
+      "topic_id": "XcHP9c_vOY0",
+      "message_id": "AAAA6qq3vTU/XcHP9c_vOY0/XcHP9c_vOY0"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年11月27日 星期四清晨6:13:05 [UTC]",
+      "topic_id": "3hX9Npb0x6E",
+      "message_id": "AAAA6qq3vTU/3hX9Npb0x6E/3hX9Npb0x6E"
+    },
+    {
+      "creator": {
+        "name": "Wei WU(吳晨瑋)",
+        "email": "weiwu@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2025年12月18日 星期四清晨6:37:37 [UTC]",
+      "text": "Updated room membership.",
+      "topic_id": "07B8JG5Ao2Y",
+      "message_id": "AAAA6qq3vTU/07B8JG5Ao2Y/07B8JG5Ao2Y"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月7日 星期三上午10:11:27 [UTC]",
+      "text": "本串BUG討論",
+      "topic_id": "dv-8Vy7Vs6E",
+      "message_id": "AAAA6qq3vTU/dv-8Vy7Vs6E/dv-8Vy7Vs6E"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月7日 星期三上午10:11:53 [UTC]",
+      "text": "我只是問他\"本周的菜單\"，他回覆完全沒照response給，給了一串bytes",
+      "attached_files": [
+        {
+          "original_name": "image.png",
+          "export_name": "File-image.png"
+        }
+      ],
+      "topic_id": "dv-8Vy7Vs6E",
+      "message_id": "AAAA6qq3vTU/dv-8Vy7Vs6E/RDBfdnRF-ac"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月8日 星期四凌晨2:15:00 [UTC]",
+      "text": "已解決",
+      "topic_id": "dv-8Vy7Vs6E",
+      "quoted_message_metadata": {
+        "creator": {
+          "name": "Johnny LIN(林育廷)",
+          "email": "johnnylin@gamania.com",
+          "user_type": "Human"
+        },
+        "text": "我只是問他\"本周的菜單\"，他回覆完全沒照response給，給了一串bytes",
+        "attached_files": [
+          {
+            "original_name": "image.png",
+            "export_name": "File-image.png"
+          }
+        ]
+      },
+      "message_id": "AAAA6qq3vTU/dv-8Vy7Vs6E/CGpxsz7BDUs"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月12日 星期一凌晨2:45:36 [UTC]",
+      "text": "@Ryan LAI(賴彥良) @Wayne LIN(林崇恩) 文件的response是不是有修改？然後目前server的response還是舊的？\n我呼叫了但對不上文件的key\n\nserver給我的是agent_response: str\n文件上寫的是agent_responses: Dict跟integrated_response: str",
+      "attached_files": [
+        {
+          "original_name": "image.png",
+          "export_name": "File-image.png"
+        }
+      ],
+      "topic_id": "dv-8Vy7Vs6E",
+      "message_id": "AAAA6qq3vTU/dv-8Vy7Vs6E/i5oN9260nMg"
+    },
+    {
+      "creator": {
+        "name": "Ryan LAI(賴彥良)",
+        "email": "ryanlai@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月12日 星期一凌晨2:58:52 [UTC]",
+      "text": "我們根據上週討論提的需求，新增 google chat 支援，以及調整 UNIX timestamp 等實作。\n\n目前有先更新文件， MR 還在 code review 中，等到上線會通知您 ~",
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "👌"
+          },
+          "reactor_emails": [
+            "johnnylin@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "dv-8Vy7Vs6E",
+      "message_id": "AAAA6qq3vTU/dv-8Vy7Vs6E/OE3TCybl1kI"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月16日 星期五上午8:49:56 [UTC]",
+      "text": "目前前端已經搞定，可以嘗試從chat測試",
+      "attached_files": [
+        {
+          "original_name": "image.png",
+          "export_name": "File-image.png"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "unicode": "🙏"
+          },
+          "reactor_emails": [
+            "pennylo@gamania.com"
+          ]
+        }
+      ],
+      "topic_id": "m8suxLeAQ8Y",
+      "message_id": "AAAA6qq3vTU/m8suxLeAQ8Y/m8suxLeAQ8Y"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月16日 星期五上午8:58:58 [UTC]",
+      "text": "1/22 會議討論項目：\n針對agnet多輪詢答功能的實現(舉例：使用者想要查IT資料與HR資料並將資料製作成流程建議。此舉利需先查找雙方資料後才能再次進行流程建議回答。有順序性)\n前端參考來源格式訂定。若IT回URL；HR回FAQ文字，參考來源提供則不一致，可能導致舉例使用者想查看原始檔案，卻只有IT提供，讓使用者誤認為AI最終回答歸屬於IT，而找錯人詢問相關問題。\nOrachstrator是否會看mcp description? 我看/admin/analytics是寫死的",
+      "annotations": [
+        {
+          "start_index": 13,
+          "length": 78,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 13,
+          "length": 228,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 91,
+          "length": 95,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 186,
+          "length": 55,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        }
+      ],
+      "topic_id": "SCRGYVWSS94",
+      "message_id": "AAAA6qq3vTU/SCRGYVWSS94/SCRGYVWSS94"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月16日 星期五上午9:01:28 [UTC]",
+      "text": "收到 我列在討論項目",
+      "topic_id": "SCRGYVWSS94",
+      "message_id": "AAAA6qq3vTU/SCRGYVWSS94/EwGIWtdu4i0"
+    },
+    {
+      "creator": {
+        "name": "Wayne LIN(林崇恩)",
+        "email": "waynelin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月16日 星期五上午9:01:07 [UTC]",
+      "text": "Updated room membership.",
+      "topic_id": "2USnJ4NnSGc",
+      "message_id": "AAAA6qq3vTU/2USnJ4NnSGc/2USnJ4NnSGc"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月16日 星期五上午9:07:59 [UTC]",
+      "text": "\n轉介行政那邊的提問, 想在chatbot新增兩個功能\n是否可能串通權限並寫入電子簽核系統之申請表單？\n是否有權限串接企業內部的行事曆 API？\n\n情境一：對話式引導申請（行政服務申請單流程）\n行政目標： 減少同仁填表時的疑惑，並省去重複輸入基本資料的時間。\n操作流程：\n同仁在 Chat 輸入：「我要申請坐姿矯正椅」。\n橘幫辦主動詢問：「請問是哪一種椅款？」（此過程即在收集資訊）。\n關鍵動作： 機器人收集完畢後，產出一個「預填好的表單連結」或「確認卡片」。\n希望 MIS 評估： 「現有的電子簽核系統（BPM）是否支援透過 API 建立草稿單據？」\n情境二：即時資源查詢與預約（會議室、同仁行程）\n行政目標： 消除反覆切換行事曆查看空檔的動作，達成「一句話訂好會議」。\n操作流程：\n同仁詢問：「下午兩點還有哪間會議室有空？」或「幫我找大家都有空的時間」。\n橘幫辦即時抓取Google Calendar 或UCMS的資料。\n橘幫辦回覆：「目前 301, 302 還有空，是否直接幫您預約？」\n希望 MIS 評估： 「橘幫辦是否有權限串接企業內部的行事曆 API？」",
+      "annotations": [
+        {
+          "start_index": 28,
+          "length": 45,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 28,
+          "length": 24,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 52,
+          "length": 21,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 73,
+          "length": 23,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 97,
+          "length": 5,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 130,
+          "length": 147,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 130,
+          "length": 5,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 130,
+          "length": 6,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 136,
+          "length": 25,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 161,
+          "length": 32,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 193,
+          "length": 5,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 193,
+          "length": 38,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 231,
+          "length": 46,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 231,
+          "length": 10,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 277,
+          "length": 23,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 301,
+          "length": 5,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 337,
+          "length": 5,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 337,
+          "length": 6,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 337,
+          "length": 146,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 343,
+          "length": 37,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 380,
+          "length": 33,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 413,
+          "length": 34,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 447,
+          "length": 10,
+          "format_metadata": {
+            "format_type": "BOLD"
+          }
+        },
+        {
+          "start_index": 447,
+          "length": 36,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        }
+      ],
+      "topic_id": "4CNgnrlyWYI",
+      "message_id": "AAAA6qq3vTU/4CNgnrlyWYI/4CNgnrlyWYI"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月16日 星期五上午9:18:10 [UTC]",
+      "text": "是否可能串通權限並寫入電子簽核系統之申請表單？\n    這需要與開發部配合，但目前開發部的情況未知，可能需要主管們回覆，我這邊收到的是暫時不接任何新開發。\n\n是否有權限串接企業內部的行事曆 API？\n IT小幫手已經實現查詢calendar free/busy的功能，但暫時無法時間創建活動(或指開會議)。因為calendar對於活動有太多選項與參數，若給AI做可能達不到預想要求，導致又要去網頁上人工改活動內容，目前尚未想到好方法呈現。\n會議室須配合UCMS跟Calendar，我上次有問過，這兩邊存在同步上gap，可能需要先解決才能知道會議室狀態該以哪邊為基準。",
+      "annotations": [
+        {
+          "start_index": 24,
+          "length": 53,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294951175
+          }
+        },
+        {
+          "start_index": 100,
+          "length": 120,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        },
+        {
+          "start_index": 100,
+          "length": 183,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST"
+          }
+        },
+        {
+          "start_index": 100,
+          "length": 119,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294951175
+          }
+        },
+        {
+          "start_index": 220,
+          "length": 63,
+          "format_metadata": {
+            "format_type": "FONT_COLOR",
+            "font_color": 4294951175
+          }
+        },
+        {
+          "start_index": 220,
+          "length": 63,
+          "format_metadata": {
+            "format_type": "BULLETED_LIST_ITEM"
+          }
+        }
+      ],
+      "topic_id": "4CNgnrlyWYI",
+      "message_id": "AAAA6qq3vTU/4CNgnrlyWYI/vMZyvuU2184"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月16日 星期五上午9:18:38 [UTC]",
+      "text": "以上為我目前接收到的訊息，也可以在1/22會議上再討論",
+      "topic_id": "4CNgnrlyWYI",
+      "message_id": "AAAA6qq3vTU/4CNgnrlyWYI/pl2mW6_8rAs"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月16日 星期五上午9:19:47 [UTC]",
+      "text": "好的 🙏",
+      "topic_id": "4CNgnrlyWYI",
+      "message_id": "AAAA6qq3vTU/4CNgnrlyWYI/x4lB5fgOSSk"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月16日 星期五上午9:22:23 [UTC]",
+      "text": "目前這兩題應不是bot能直接達到的功能, 只要還是系統串接 \n我在請行政評估有需要再跟你們主管直接接洽",
+      "topic_id": "4CNgnrlyWYI",
+      "message_id": "AAAA6qq3vTU/4CNgnrlyWYI/wfV1h1oLUlo"
+    },
+    {
+      "creator": {
+        "name": "Johnny LIN(林育廷)",
+        "email": "johnnylin@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月16日 星期五上午9:26:46 [UTC]",
+      "text": "\"是否有權限串接企業內部的行事曆 API？\"\n這題可能要跟橘幫辦團隊評估？應該是要把功能做在橘幫辦?",
+      "topic_id": "4CNgnrlyWYI",
+      "message_id": "AAAA6qq3vTU/4CNgnrlyWYI/n3tdecSbYlA"
+    },
+    {
+      "creator": {
+        "name": "Penny LO(羅珮瑜)",
+        "email": "pennylo@gamania.com",
+        "user_type": "Human"
+      },
+      "created_date": "2026年1月16日 星期五上午9:38:08 [UTC]",
+      "text": "可能要確認行事曆是屬於哪個單位負責",
+      "topic_id": "4CNgnrlyWYI",
+      "message_id": "AAAA6qq3vTU/4CNgnrlyWYI/fzSwL3wHkNk"
+    }
+  ]
+}

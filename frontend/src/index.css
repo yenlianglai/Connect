@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #d4d4d4; /* Neutral grey text */
+  background-color: #171717; /* Dark background */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Responsive font sizes */
+  font-size: 14px;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1536px) {
+  :root {
+    font-size: 18px;
+  }
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #171717;
+}
+
+#root {
+  width: 100%;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+@media (min-width: 1024px) {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+  border-radius: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
+}
+
+/* Obsidian/Heptabase Style Panels */
+.app-panel {
+  background: #1a1a1a;
+  border: 1px solid #2d2d2d;
+}
+
+.app-sidebar {
+  background: #111111;
+  border-right: 1px solid #2d2d2d;
+}
+
+.glass-panel {
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Simple transition for switching modes */
+.view-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-slide-in {
+  animation: slideInRight 0.3s ease-out forwards;
+}
+
+/* Notion-like Editor Styles */
+.notion-editor-container {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.dark-editor .prose {
+  max-width: none !important;
+}
+
+/* Explicit Markdown Rendering Fixes */
+.mdxeditor .prose h1 {
+  display: block !important;
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1rem !important;
+  line-height: 1.2 !important;
+}
+
+.mdxeditor .prose h2 {
+  display: block !important;
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  color: #e2e8f0 !important;
+  margin-top: 1.25rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.mdxeditor .prose h3 {
+  display: block !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #cbd5e1 !important;
+}
+
+.mdxeditor .prose blockquote {
+  display: block !important;
+  border-left: 4px solid #475569 !important;
+  background: #141414 !important;
+  padding: 1rem 1.5rem !important;
+  margin: 1.5rem 0 !important;
+  font-style: italic !important;
+  color: #94a3b8 !important;
+  border-radius: 0 8px 8px 0 !important;
+}
+
+.mdxeditor .prose p {
+  margin-bottom: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Toolbar & UI Overrides */
+.mdxeditor.dark-theme {
+  --tw-prose-body: #a3a3a3;
+  --tw-prose-headings: #d4d4d4;
+  --tw-prose-links: #818cf8;
+  --tw-prose-bold: #d4d4d4;
+  --tw-prose-counters: #595959;
+  --tw-prose-bullets: #595959;
+  --tw-prose-hr: #2d2d2d;
+  --tw-prose-quotes: #94a3b8;
+  --tw-prose-quote-borders: #475569;
+}
+
+.mdxeditor-toolbar {
+  background-color: #1a1a1a !important;
+  border-bottom: 1px solid #2d2d2d !important;
+  color: #d4d4d4 !important;
+  }
+
+.mdxeditor-toolbar button {
+  color: #8c8c8c !important;
+}
+
+.mdxeditor-toolbar button:hover {
+  background-color: #262626 !important;
+  color: #d4d4d4 !important;
+  }
+
+.mdxeditor-toolbar button[aria-pressed="true"] {
+  background-color: #2d2d2d !important;
+  color: #818cf8 !important;
+}
