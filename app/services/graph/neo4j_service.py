@@ -33,30 +33,36 @@ class OllamaEmbedder:
 
     def embed_query(self, text: str) -> list[float]:
         """Embed a single string and return normalized vector."""
+        # Handle empty or whitespace-only strings
+        if not text or not text.strip():
+            logger.warning("Empty text provided to embedder, returning zero vector")
+            return [0.0] * self.dimension
+
         try:
             with httpx.Client(timeout=60.0) as client:
                 response = client.post(
                     f"{self.base_url}/api/embeddings",
                     json={
                         "model": self.model,
-                        "prompt": text,
+                        "prompt": text.strip(),  # Strip whitespace
                     },
                 )
                 response.raise_for_status()
                 result = response.json()
-                
+
                 # Extract embedding vector
                 embedding_values = result.get("embedding", [])
                 if not embedding_values:
+                    logger.error(f"Empty embedding returned from Ollama for text: {text[:100]}...")
                     raise ValueError("Empty embedding returned from Ollama")
-                
+
                 embedding_np = np.array(embedding_values)
-                
+
                 # Normalize the vector
                 norm = np.linalg.norm(embedding_np)
                 if norm > 0:
                     embedding_np = embedding_np / norm
-                
+
                 # If dimension doesn't match, pad or truncate
                 if len(embedding_np) != self.dimension:
                     if len(embedding_np) < self.dimension:
@@ -65,8 +71,8 @@ class OllamaEmbedder:
                         embedding_np = np.concatenate([embedding_np, padding])
                     else:
                         # Truncate
-                        embedding_np = embedding_np[:self.dimension]
-                
+                        embedding_np = embedding_np[: self.dimension]
+
                 return embedding_np.tolist()
         except Exception as e:
             logger.error(f"Ollama embedding failed: {e}")
@@ -122,10 +128,10 @@ class GraphService:
     LABEL_KNOWLEDGE = "Knowledge"
     LABEL_CATEGORY = "Category"
     LABEL_SESSION = "Session"
-    
+
     INDEX_KNOWLEDGE = "knowledge_vector_index"
     INDEX_CATEGORY = "category_vector_index"
-    
+
     REL_BELONGS_TO = "BELONGS_TO"
     REL_SUB_CATEGORY_OF = "SUB_CATEGORY_OF"
     REL_RELATED = "RELATED"
@@ -135,7 +141,7 @@ class GraphService:
         url = uri or settings.NEO4J_URI
         self.driver = AsyncGraphDatabase.driver(url, auth=auth)
         self.sync_driver = GraphDatabase.driver(url, auth=auth)
-        
+
         # Select embedder based on LLM_PROVIDER
         if settings.LLM_PROVIDER == "ollama":
             self.embedder = OllamaEmbedder()
@@ -211,24 +217,25 @@ class GraphService:
         timestamps: dict[str, datetime],
     ):
         """General node creation/update helper."""
+
         async def _create(tx):
             set_clauses = []
             params = {"id": node_id}
-            
+
             # Build SET clauses for properties
             for key, value in properties.items():
                 if value is not None:
                     set_clauses.append(f"node.{key} = ${key}")
                     params[key] = value
-            
+
             # Handle timestamps
             for ts_key, ts_value in timestamps.items():
                 if ts_value:
                     set_clauses.append(f"node.{ts_key} = datetime(${ts_key})")
                     params[ts_key] = ts_value.isoformat()
-            
+
             set_str = ", ".join(set_clauses)
-            
+
             query = (
                 f"MERGE (node:{label} {{id: $id}}) "
                 f"ON CREATE SET {set_str.replace('node.', 'node.')} "
@@ -247,41 +254,37 @@ class GraphService:
     ) -> list[KnowledgeNode]:
         """
         Performs hybrid Vector + Graph search (GraphRAG) on Knowledge nodes.
-        
+
         Args:
             query_text: The search query
             category_id: Optional category ID to filter results (None = entire graph)
             limit: Maximum number of results to return
             hops: Graph traversal depth (0 = no traversal, just vector search)
-            
+
         Returns:
             List of KnowledgeNode objects, sorted by relevance
         """
         try:
             retrieval_query = self._build_retrieval_query(hops, category_id)
             retriever = self._create_retriever(retrieval_query)
-            
+
             search_result = retriever.search(
-                query_text=query_text,
-                top_k=limit,
-                query_params={"category_id": category_id}
+                query_text=query_text, top_k=limit, query_params={"category_id": category_id}
             )
-            
+
             nodes = self._parse_search_results(search_result, hops)
             logger.debug(f"GraphRAG search returned {len(nodes)} nodes")
-            
+
             return nodes
-            
+
         except Exception as e:
             logger.error(f"GraphRAG search failed: {e}", exc_info=True)
             return []
 
     def _build_retrieval_query(self, hops: int, category_id: str | None) -> str:
         """Builds the Cypher retrieval query based on traversal depth and category filter."""
-        category_filter = (
-            "($category_id IS NULL OR (node)-[:BELONGS_TO]->(:Category {id: $category_id}))"
-        )
-        
+        category_filter = "($category_id IS NULL OR (node)-[:BELONGS_TO]->(:Category {id: $category_id}))"
+
         if hops > 0:
             return (
                 f"OPTIONAL MATCH (node)-[*1..{hops}]-(neighbor) "
@@ -290,11 +293,7 @@ class GraphService:
                 "RETURN DISTINCT node, neighbor"
             )
         else:
-            return (
-                f"MATCH (node:{self.LABEL_KNOWLEDGE}) "
-                f"WHERE {category_filter} "
-                "RETURN node"
-            )
+            return f"MATCH (node:{self.LABEL_KNOWLEDGE}) WHERE {category_filter} RETURN node"
 
     def _create_retriever(self, retrieval_query: str) -> VectorCypherRetriever:
         """Creates a VectorCypherRetriever instance with the given query."""
@@ -310,19 +309,19 @@ class GraphService:
         """Parses search results into KnowledgeNode objects."""
         nodes_dict = {}
         keys_to_check = ["node", "neighbor"] if hops > 0 else ["node"]
-        
+
         for item in search_result.items:
             record_data = item.metadata
-            
+
             for key in keys_to_check:
                 node_data = record_data.get(key)
-                
+
                 if not node_data or not isinstance(node_data, dict):
                     continue
-                
+
                 if "id" not in node_data or "content" not in node_data:
                     continue
-                
+
                 node_id = node_data.get("id")
                 if node_id and node_id not in nodes_dict:
                     try:
@@ -331,7 +330,7 @@ class GraphService:
                     except Exception as e:
                         logger.warning(f"Failed to parse KnowledgeNode {node_id}: {e}")
                         continue
-        
+
         return list(nodes_dict.values())
 
     def _cleanup_node_data(self, node_data: dict):
@@ -346,7 +345,7 @@ class GraphService:
     async def create_relationship(self, rel: Relationship):
         """Creates a relationship between two nodes."""
         edge_label = self._map_relationship_type_to_label(rel.relationship_type)
-        
+
         async def _create(tx):
             query = (
                 "MATCH (a {id: $source_id}) "
@@ -362,7 +361,9 @@ class GraphService:
                 query,
                 source_id=rel.source_id,
                 target_id=rel.target_id,
-                rel_type=rel.relationship_type.value if hasattr(rel.relationship_type, "value") else rel.relationship_type,
+                rel_type=rel.relationship_type.value
+                if hasattr(rel.relationship_type, "value")
+                else rel.relationship_type,
                 reasoning=rel.reasoning,
                 confidence=rel.confidence,
                 created_at=rel.created_at.isoformat(),
@@ -382,12 +383,9 @@ class GraphService:
 
     async def create_manual_link(self, source_id: str, target_id: str, rel_type: str):
         """Creates a manual relationship between two nodes."""
+
         async def _create(tx):
-            query = (
-                f"MATCH (a {{id: $source_id}}), (b {{id: $target_id}}) "
-                f"MERGE (a)-[r:{rel_type}]->(b) "
-                "RETURN r"
-            )
+            query = f"MATCH (a {{id: $source_id}}), (b {{id: $target_id}}) MERGE (a)-[r:{rel_type}]->(b) RETURN r"
             await tx.run(query, source_id=source_id, target_id=target_id)
 
         async with self.driver.session() as session:
@@ -395,11 +393,9 @@ class GraphService:
 
     async def delete_manual_link(self, source_id: str, target_id: str, rel_type: str):
         """Removes a specific relationship between two nodes."""
+
         async def _delete(tx):
-            query = (
-                f"MATCH (a {{id: $source_id}})-[r:{rel_type}]-(b {{id: $target_id}}) "
-                "DELETE r"
-            )
+            query = f"MATCH (a {{id: $source_id}})-[r:{rel_type}]-(b {{id: $target_id}}) DELETE r"
             await tx.run(query, source_id=source_id, target_id=target_id)
 
         async with self.driver.session() as session:
@@ -407,6 +403,7 @@ class GraphService:
 
     async def get_relationships(self, node_id: str) -> list[dict[str, Any]]:
         """Retrieves all outgoing relationships for a specific node."""
+
         async def _get(tx):
             query = (
                 "MATCH (n {id: $id})-[r]->(target) "
@@ -429,33 +426,32 @@ class GraphService:
 
     # ========== Node Queries ==========
 
-    async def get_nodes_by_label(
-        self, label: str, filters: dict[str, Any] | None = None
-    ) -> list[dict[str, Any]]:
+    async def get_nodes_by_label(self, label: str, filters: dict[str, Any] | None = None) -> list[dict[str, Any]]:
         """
         General method to retrieve nodes by label with optional filters.
-        
+
         Args:
             label: Node label (e.g., "Knowledge", "Category")
             filters: Optional dict of property filters (e.g., {"session_id": "abc"})
-            
+
         Returns:
             List of node dictionaries
         """
+
         async def _get(tx):
             where_clauses = []
             params = {}
-            
+
             if filters:
                 for key, value in filters.items():
                     where_clauses.append(f"n.{key} = ${key}")
                     params[key] = value
-            
+
             where_str = f"WHERE {' AND '.join(where_clauses)}" if where_clauses else ""
-            
+
             query = f"MATCH (n:{label}) {where_str} RETURN n"
             result = await tx.run(query, **params)
-            
+
             nodes = []
             async for record in result:
                 node_data = dict(record["n"])
@@ -468,13 +464,12 @@ class GraphService:
 
     async def get_nodes_by_session(self, session_id: str) -> list[KnowledgeNode]:
         """Retrieves all Knowledge nodes from a specific session."""
-        nodes_data = await self.get_nodes_by_label(
-            self.LABEL_KNOWLEDGE, filters={"session_id": session_id}
-        )
+        nodes_data = await self.get_nodes_by_label(self.LABEL_KNOWLEDGE, filters={"session_id": session_id})
         return [KnowledgeNode(**data) for data in nodes_data]
 
     async def get_category_nodes(self, category_id: str) -> list[KnowledgeNode]:
         """Retrieves all Knowledge nodes belonging to a specific category."""
+
         async def _get(tx):
             query = (
                 f"MATCH (n:{self.LABEL_KNOWLEDGE})-[:{self.REL_BELONGS_TO}]->"
@@ -494,6 +489,7 @@ class GraphService:
 
     async def get_sub_categories(self, parent_id: str) -> list[Category]:
         """Retrieves direct sub-categories of a parent category."""
+
         async def _get(tx):
             query = (
                 f"MATCH (c:{self.LABEL_CATEGORY})-[:{self.REL_SUB_CATEGORY_OF}]->"
@@ -516,7 +512,7 @@ class GraphService:
         if not node_ids:
             return []
 
-        async def _get(tx):
+        async def _get(tx, node_ids, limit):
             query = (
                 f"MATCH (n:{self.LABEL_KNOWLEDGE})-[:{self.REL_RELATED}]-(neighbor:{self.LABEL_KNOWLEDGE}) "
                 "WHERE n.id IN $node_ids AND NOT neighbor.id IN $node_ids "
@@ -536,6 +532,7 @@ class GraphService:
 
     async def get_node_category(self, node_id: str) -> str | None:
         """Finds the category ID a Knowledge node belongs to."""
+
         async def _get(tx):
             query = (
                 f"MATCH (k:{self.LABEL_KNOWLEDGE} {{id: $nid}})-[:{self.REL_BELONGS_TO}]->(c:{self.LABEL_CATEGORY}) "
@@ -550,6 +547,7 @@ class GraphService:
 
     async def get_node_parent(self, category_id: str) -> str | None:
         """Finds the parent category ID for a given category."""
+
         async def _get(tx):
             query = (
                 f"MATCH (c:{self.LABEL_CATEGORY} {{id: $cid}})-[:{self.REL_SUB_CATEGORY_OF}]->(p:{self.LABEL_CATEGORY}) "
@@ -564,29 +562,28 @@ class GraphService:
 
     # ========== Node Updates ==========
 
-    async def update_node_properties(
-        self, node_id: str, label: str, properties: dict[str, Any]
-    ):
+    async def update_node_properties(self, node_id: str, label: str, properties: dict[str, Any]):
         """
         General method to update node properties.
-        
+
         Args:
             node_id: The node ID
             label: Node label (e.g., "Knowledge", "Category")
             properties: Dict of properties to update
         """
+
         async def _update(tx):
             set_clauses = []
             params = {"id": node_id, "now": datetime.now(UTC).isoformat()}
-            
+
             for key, value in properties.items():
                 if value is not None:
                     set_clauses.append(f"n.{key} = ${key}")
                     params[key] = value
-            
+
             set_clauses.append("n.updated_at = datetime($now)")
             set_str = ", ".join(set_clauses)
-            
+
             query = f"MATCH (n:{label} {{id: $id}}) SET {set_str}"
             await tx.run(query, **params)
 
@@ -602,27 +599,27 @@ class GraphService:
             properties["description"] = description
         if tags is not None:
             properties["tags"] = tags
-        
+
         # Update properties and embedding in a single transaction
         async def _update(tx):
             # Update properties
             set_clauses = ["n.updated_at = datetime($now)"]
             params = {"id": node_id, "now": datetime.now(UTC).isoformat()}
-            
+
             for key, value in properties.items():
                 set_clauses.append(f"n.{key} = ${key}")
                 params[key] = value
-            
+
             set_str = ", ".join(set_clauses)
             await tx.run(f"MATCH (n:{self.LABEL_KNOWLEDGE} {{id: $id}}) SET {set_str}", **params)
-            
+
             # Re-embed
             try:
                 embedding = self.embedder.embed_query(content)
                 await tx.run(
                     f"MATCH (n:{self.LABEL_KNOWLEDGE} {{id: $id}}) SET n.embedding = $embedding",
                     id=node_id,
-                    embedding=embedding
+                    embedding=embedding,
                 )
             except Exception as e:
                 logger.error(f"Failed to update embedding: {e}")
@@ -637,16 +634,15 @@ class GraphService:
             properties["name"] = name
         if summary is not None:
             properties["summary"] = summary
-        
+
         if properties:
-            await self.update_node_properties(
-                category_id, self.LABEL_CATEGORY, properties
-            )
+            await self.update_node_properties(category_id, self.LABEL_CATEGORY, properties)
 
     # ========== Category Operations ==========
 
     async def increment_category_counter(self, category_id: str) -> int:
         """Increments the insert_counter for a category and returns the new value."""
+
         async def _inc(tx, cat_id: str):
             query = (
                 f"MATCH (c:{self.LABEL_CATEGORY} {{id: $id}}) "
@@ -662,12 +658,11 @@ class GraphService:
 
     async def reset_category_counter(self, category_id: str):
         """Resets the insert_counter for a category."""
-        await self.update_node_properties(
-            category_id, self.LABEL_CATEGORY, {"insert_counter": 0}
-        )
+        await self.update_node_properties(category_id, self.LABEL_CATEGORY, {"insert_counter": 0})
 
     async def category_exists(self, category_id: str) -> bool:
         """Checks if a category node exists."""
+
         async def _check(tx):
             query = f"MATCH (c:{self.LABEL_CATEGORY} {{id: $id}}) RETURN count(c) > 0 as exists"
             result = await tx.run(query, id=category_id)
@@ -679,12 +674,9 @@ class GraphService:
 
     async def get_dirty_categories(self, threshold: int) -> list[str]:
         """Returns IDs of categories that have exceeded the insert threshold."""
+
         async def _get(tx):
-            query = (
-                f"MATCH (c:{self.LABEL_CATEGORY}) "
-                "WHERE c.insert_counter >= $threshold "
-                "RETURN c.id as id"
-            )
+            query = f"MATCH (c:{self.LABEL_CATEGORY}) WHERE c.insert_counter >= $threshold RETURN c.id as id"
             result = await tx.run(query, threshold=threshold)
             return [record["id"] async for record in result]
 
@@ -695,6 +687,7 @@ class GraphService:
 
     async def ensure_session_node(self, session_id: str):
         """Ensures a Session node exists in the graph."""
+
         async def _create(tx):
             query = (
                 f"MERGE (s:{self.LABEL_SESSION} {{id: $id}}) "
@@ -708,11 +701,10 @@ class GraphService:
 
     async def link_to_session(self, node_id: str, session_id: str):
         """Links a node to a specific Session node."""
+
         async def _link(tx):
             query = (
-                "MATCH (n {id: $nid}) "
-                f"MATCH (s:{self.LABEL_SESSION} {{id: $sid}}) "
-                "MERGE (n)-[:EXTRACTED_FROM]->(s)"
+                f"MATCH (n {{id: $nid}}) MATCH (s:{self.LABEL_SESSION} {{id: $sid}}) MERGE (n)-[:EXTRACTED_FROM]->(s)"
             )
             await tx.run(query, nid=node_id, sid=session_id)
 
@@ -740,23 +732,23 @@ class GraphService:
             async for record in res:
                 node_data = dict(record["n"])
                 self._cleanup_node_data(node_data)
-                
+
                 # Determine type from labels
                 labels = record["labels"]
                 # Treat Fact nodes as knowledge nodes (legacy support)
                 node_type = "knowledge" if (self.LABEL_KNOWLEDGE in labels or "Fact" in labels) else "category"
-                
+
                 node_data["type"] = node_type
                 node_data["parent_id"] = record["parent_id"]
-                
+
                 # Determine cat0: color group
                 cat0_list = record["cat0_list"]
                 if cat0_list:
-                    l1_cats = [cid for cid in cat0_list if cid != 'cat_root']
-                    node_data["cat0"] = l1_cats[0] if l1_cats else 'cat_root'
+                    l1_cats = [cid for cid in cat0_list if cid != "cat_root"]
+                    node_data["cat0"] = l1_cats[0] if l1_cats else "cat_root"
                 else:
                     node_data["cat0"] = node_data.get("id") or "unknown"
-                
+
                 node_data["is_hot"] = node_data.get("id") in active_ids
                 nodes.append(node_data)
 
@@ -771,10 +763,10 @@ class GraphService:
             rels_res = await tx.run(rels_query)
             links = [
                 {
-                    "source": record["source"], 
-                    "target": record["target"], 
+                    "source": record["source"],
+                    "target": record["target"],
                     "edge_label": record["edge_label"],
-                    "type": record["type"]
+                    "type": record["type"],
                 }
                 async for record in rels_res
             ]
@@ -800,10 +792,7 @@ class GraphService:
         async with self.driver.session() as session:
             for nid in node_ids:
                 # Get the embedding for the target node
-                res = await session.run(
-                    f"MATCH (n:{self.LABEL_KNOWLEDGE} {{id: $id}}) RETURN n.embedding, n",
-                    id=nid
-                )
+                res = await session.run(f"MATCH (n:{self.LABEL_KNOWLEDGE} {{id: $id}}) RETURN n.embedding, n", id=nid)
                 record = await res.single()
                 if not record or not record["n.embedding"]:
                     continue
@@ -819,22 +808,17 @@ class GraphService:
                     "YIELD node, score "
                     f"WHERE node.id <> $id AND score > $threshold "
                 )
-                
+
                 if root_id:
                     search_query += (
                         f"AND EXISTS {{ (node)-[:{self.REL_BELONGS_TO}|{self.REL_SUB_CATEGORY_OF}*0..]->"
                         f"(:{self.LABEL_CATEGORY} {{id: $root_id}}) }} "
                     )
-                
+
                 search_query += "RETURN node, score LIMIT 1"
 
                 search_res = await session.run(
-                    search_query, 
-                    id=nid, 
-                    vector=target_vector, 
-                    top_k=limit, 
-                    threshold=threshold,
-                    root_id=root_id
+                    search_query, id=nid, vector=target_vector, top_k=limit, threshold=threshold, root_id=root_id
                 )
                 async for search_record in search_res:
                     node_b_data = dict(search_record["node"])
@@ -853,7 +837,7 @@ class GraphService:
 
         async def _merge(tx):
             merged_id = merged_node.id
-            
+
             # Redirect outgoing relationships (excluding BELONGS_TO)
             for source_id in [node_a_id, node_b_id]:
                 query = (
@@ -865,7 +849,7 @@ class GraphService:
                     f"SET new_r = properties(r)"
                 )
                 await tx.run(query, source_id=source_id, merged_id=merged_id)
-            
+
             # Redirect incoming relationships
             for target_id in [node_a_id, node_b_id]:
                 query = (
@@ -876,7 +860,7 @@ class GraphService:
                     f"SET new_r = properties(r)"
                 )
                 await tx.run(query, target_id=target_id, merged_id=merged_id)
-            
+
             # Inherit BELONGS_TO relationships
             query = (
                 f"MATCH (source:{self.LABEL_KNOWLEDGE})-[:{self.REL_BELONGS_TO}]->(cat:{self.LABEL_CATEGORY}) "
@@ -886,7 +870,7 @@ class GraphService:
                 f"MERGE (merged)-[:{self.REL_BELONGS_TO}]->(cat)"
             )
             await tx.run(query, ids=[node_a_id, node_b_id], merged_id=merged_id)
-            
+
             # Delete old nodes
             query = f"MATCH (n:{self.LABEL_KNOWLEDGE}) WHERE n.id IN $ids DETACH DELETE n"
             await tx.run(query, ids=[node_a_id, node_b_id])
@@ -899,6 +883,7 @@ class GraphService:
 
     async def get_existing_tags(self) -> list[str]:
         """Retrieves all unique tags present in the graph."""
+
         async def _get(tx):
             query = f"MATCH (n:{self.LABEL_KNOWLEDGE}) UNWIND n.tags as tag RETURN DISTINCT tag"
             result = await tx.run(query)
@@ -909,6 +894,7 @@ class GraphService:
 
     async def delete_node(self, node_id: str):
         """Safely deletes a node and all its relationships."""
+
         async def _delete(tx):
             await tx.run("MATCH (n {id: $id}) DETACH DELETE n", id=node_id)
 
@@ -917,6 +903,7 @@ class GraphService:
 
     async def get_children_of_category(self, category_id: str) -> list[Category | KnowledgeNode]:
         """Retrieves all direct children (categories and knowledge) of a category."""
+
         async def _get(tx):
             # Get sub-categories
             cat_query = (
@@ -929,7 +916,7 @@ class GraphService:
                 cat_data = dict(record["c"])
                 self._cleanup_node_data(cat_data)
                 categories.append(Category(**cat_data))
-            
+
             # Get knowledge nodes
             know_query = (
                 f"MATCH (k:{self.LABEL_KNOWLEDGE})-[:{self.REL_BELONGS_TO}]->"
@@ -941,7 +928,7 @@ class GraphService:
                 node_data = dict(record["k"])
                 self._cleanup_node_data(node_data)
                 knowledge.append(KnowledgeNode(**node_data))
-            
+
             return categories + knowledge
 
         async with self.driver.session() as session:

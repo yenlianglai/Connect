@@ -6,7 +6,7 @@
 
 ## What is Connect?
 
-> *"Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while. That's because they were able to connect experiences they've had and synthesize new things."*  
+> *"Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while. That's because they were able to connect experiences they've had and synthesize new things."*
 > — Steve Jobs
 
 Connect is named after this philosophy: **learning is not just retrieval—it's pattern recognition**. The system is designed for learners, researchers, and knowledge workers who understand that true understanding comes from seeing connections between ideas, not just storing information.
@@ -29,6 +29,8 @@ Think of Connect as your **pattern recognition engine**—an AI-powered system t
 
 ### Intelligent Knowledge Extraction
 - **Automatic extraction** of key concepts, facts, and insights from chat conversations
+- **Principle-based extraction**: Domain-agnostic, multi-layer extraction logic that works across all knowledge fields
+- **Anti-fragmentation**: Automatically consolidates related concepts into comprehensive nodes with concise titles
 - **Structured knowledge nodes** with rich metadata, tags, and relationships
 - **User persona tracking** for personal facts, preferences, and habits
 - **Category-based organization** with hierarchical taxonomy
@@ -92,7 +94,7 @@ Connect uses a **three-tier memory architecture** to balance speed, depth, and p
 - **Graph Database**: Neo4j 5.18+ with vector indexes
 - **Cache**: Redis 7+ with ZSET-based LRU
 - **Document Store**: MongoDB for session logs
-- **LLM Integration**: 
+- **LLM Integration**:
   - Google Gemini (Structured Output)
   - OpenAI GPT (configurable)
 - **Embeddings**: Gemini Embeddings (768 dimensions)
@@ -128,10 +130,10 @@ Connect uses a **three-tier memory architecture** to balance speed, depth, and p
    - Ollama support for local models
    - Multi-provider fallback strategies
 
-4. **MCP (Model Context Protocol) Support**
+4. **MCP (Model Context Protocol) Support** ✅
    - Standardized context exchange
-   - Interoperability with other tools
-   - Plugin ecosystem
+   - Interoperability with Cursor IDE
+   - Slash command integration (`/connect`)
 
 ---
 
@@ -171,7 +173,7 @@ Connect uses a **three-tier memory architecture** to balance speed, depth, and p
    NEO4J_PASSWORD=password
    REDIS_URL=redis://localhost:6379
    MONGODB_URL=mongodb://admin:password@localhost:27017/
-   MONGODB_DB_NAME=mnemo
+   MONGODB_DB_NAME=connect
    ```
 
 4. **Start backend**
@@ -186,7 +188,12 @@ Connect uses a **three-tier memory architecture** to balance speed, depth, and p
    npm run dev
    ```
 
-6. **Access the application**
+6. **Set up pre-commit hooks** (Optional, for developers)
+   ```bash
+   uv run pre-commit install
+   ```
+
+7. **Access the application**
    - Frontend: `http://localhost:5173`
    - Backend API: `http://localhost:8000`
    - Neo4j Browser: `http://localhost:7474`
@@ -202,11 +209,59 @@ Connect uses a **three-tier memory architecture** to balance speed, depth, and p
 
 ---
 
+## Cursor Integration (MCP)
+
+Connect provides an MCP (Model Context Protocol) server that integrates with Cursor IDE, allowing you to record insights and search your knowledge graph directly from your coding sessions.
+
+### Setup
+
+The MCP server is automatically configured in `.cursor/mcp.json`. Restart Cursor after cloning the repo to activate it.
+
+### Usage
+
+Use the `/connect` slash command in Cursor:
+
+```
+/connect This is my insight
+/connect This insight is about React in React
+/connect search React patterns
+```
+
+The AI orchestrator will:
+1. Filter and summarize your input
+2. Send it to Connect's extractor
+3. Categorize it using LLM-guided taxonomy navigation
+4. Create semantic relationships with existing knowledge
+
+### Viewing MCP Logs
+
+Since the MCP server runs as a separate process, its logs are written to `logs/mcp_server.log`.
+
+**Watch logs in real-time:**
+```bash
+cd scripts
+./watch_mcp_logs.sh
+```
+
+**Or view directly:**
+```bash
+tail -f logs/mcp_server.log
+```
+
+See `logs/README.md` for more details.
+
+---
+
 ## Documentation
 
 - **API Documentation**: Available at `/docs` when the backend is running
-- **Architecture Details**: See inline code documentation
-- **Development Guide**: Check `.cursor/skills/mnemo-coding-standards/SKILL.md` for coding standards
+- **Extraction System**:
+  - [Principle-based Extraction](docs/EXTRACTION_REFACTORING.md)
+  - [Refactoring Comparison](docs/REFACTORING_COMPARISON.md)
+  - [Anti-Fragmentation Strategy](docs/ANTI_FRAGMENTATION.md)
+- **Development**:
+  - [Pre-commit Hooks Setup](docs/PRE_COMMIT_SETUP.md)
+  - [Coding Standards](.cursor/skills/connect-coding-standards/SKILL.md)
 
 ---
 
@@ -218,7 +273,7 @@ Connect follows clean code principles:
 - Simplicity and generalization
 - Comprehensive error handling
 
-See the coding standards in `.cursor/skills/mnemo-coding-standards/SKILL.md` for detailed guidelines.
+See the coding standards in `.cursor/skills/connect-coding-standards/SKILL.md` for detailed guidelines.
 
 ---
 

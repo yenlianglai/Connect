@@ -124,7 +124,7 @@ async def test_memory_evolver_dirty_buffer_trigger(redis_svc, graph_svc):
     ):
         # 1. Increment buffer once
         await evolver.increment_dirty_buffer("node1")
-        assert evolver.is_running == False
+        assert not evolver.is_running
 
         # 2. Increment buffer second time (reaches threshold)
         # Mock LLM to return a "don't merge" decision for now

@@ -1,8 +1,8 @@
-import { useState, useMemo, useCallback, lazy, Suspense } from 'react';
+import { useState, useMemo, useCallback, useEffect, useRef, lazy, Suspense } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { Toaster, toast } from 'react-hot-toast';
 import { ChevronRight, Home, ChevronLeft, Menu, Network, Plus } from 'lucide-react';
-import { getGraphData, getAllSessions, triggerEvolution, deleteSession, extractContext, refreshMemory, type Node as MnemoNode, type GraphData } from './api';
+import { getGraphData, getAllSessions, triggerEvolution, deleteSession, extractContext, refreshMemory, type Node, type GraphData } from './api';
 import Chat from './components/Chat';
 import ChatSidebar from './components/ChatSidebar';
 import Sidebar from './components/Sidebar';
@@ -40,7 +40,7 @@ const filterGraphByFocus = (graphData: GraphData, currentFocusId: string): Graph
 
   const descendants = new Set<string>([currentFocusId]);
   const queue = [currentFocusId];
-  
+
   while (queue.length > 0) {
     const parentId = queue.shift()!;
     graphData.links.forEach(link => {
@@ -68,13 +68,13 @@ const filterGraphByFocus = (graphData: GraphData, currentFocusId: string): Graph
 function App() {
   const queryClient = useQueryClient();
   const [sessionId, setSessionId] = useState<string>('');
-  const [selectedNode, setSelectedNode] = useState<MnemoNode | null>(null);
+  const [selectedNode, setSelectedNode] = useState<Node | null>(null);
   const [activeTab, setActiveTab] = useState<'chat' | 'graph' | 'editor'>('chat');
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [isEvolvingSubtree, setIsEvolvingSubtree] = useState(false);
   const [focusStack, setFocusStack] = useState<string[]>(['cat_root']);
   const [retrievedNodeIds, setRetrievedNodeIds] = useState<string[]>([]);
-  
+
   // State for new recursive topic flow
   const [newTopicConfig, setNewTopicConfig] = useState<{ name: string; parentId: string } | null>(null);
 
@@ -83,8 +83,8 @@ function App() {
   const { data: graphData, isLoading: isGraphLoading } = useQuery({
     queryKey: ['graphData', sessionId],
     queryFn: () => getGraphData(sessionId),
-    refetchInterval: 30000, 
-    staleTime: 5000,
+    refetchInterval: activeTab === 'graph' ? 8000 : 30000,
+    staleTime: 3000,
   });
 
   const { data: sessionsData } = useQuery({
@@ -98,12 +98,41 @@ function App() {
     queryClient.invalidateQueries({ queryKey: ['sessions'] });
   }, [queryClient]);
 
+  // Refetch graph when switching to Graph tab so changes are visible
+  useEffect(() => {
+    if (activeTab === 'graph') {
+      queryClient.invalidateQueries({ queryKey: ['graphData'] });
+    }
+  }, [activeTab, queryClient]);
+
+  // Poll graph after extraction so new nodes appear without manual refresh
+  const extractionPollingRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const startExtractionPolling = useCallback(() => {
+    if (extractionPollingRef.current) clearInterval(extractionPollingRef.current);
+    let count = 0;
+    const maxPolls = 10;
+    extractionPollingRef.current = setInterval(() => {
+      queryClient.invalidateQueries({ queryKey: ['graphData'] });
+      count += 1;
+      if (count >= maxPolls && extractionPollingRef.current) {
+        clearInterval(extractionPollingRef.current);
+        extractionPollingRef.current = null;
+      }
+    }, 3000);
+  }, [queryClient]);
+  useEffect(() => () => {
+    if (extractionPollingRef.current) {
+      clearInterval(extractionPollingRef.current);
+      extractionPollingRef.current = null;
+    }
+  }, []);
+
   const focusedGraphData = useMemo(() => {
     if (!graphData) return null;
     return filterGraphByFocus(graphData, currentFocusId);
   }, [graphData, currentFocusId]);
 
-  const handleNodeClick = useCallback((node: MnemoNode) => {
+  const handleNodeClick = useCallback((node: Node) => {
     setSelectedNode(node);
     setActiveTab('editor');
   }, []);
@@ -142,7 +171,7 @@ function App() {
     setSessionId('');
     setSelectedNode(null);
     setNewTopicConfig(null);
-    setFocusStack(['cat_root']); 
+    setFocusStack(['cat_root']);
     setActiveTab('chat');
     setSidebarOpen(false);
   }, []);
@@ -165,7 +194,7 @@ function App() {
     }
   }, [refreshAllData]);
 
-  const handleStartSessionHere = useCallback((node: MnemoNode) => {
+  const handleStartSessionHere = useCallback((node: Node) => {
     setSessionId('');
     setSelectedNode(null);
     setNewTopicConfig({
@@ -234,8 +263,8 @@ function App() {
     refreshAllData();
   }, [refreshAllData]);
 
-  const availableCategories = useMemo(() => 
-    graphData?.nodes.filter(n => n.type === 'category') || [], 
+  const availableCategories = useMemo(() =>
+    graphData?.nodes.filter(n => n.type === 'category') || [],
     [graphData]
   );
 
@@ -267,7 +296,7 @@ function App() {
               >
                 <Menu size={20} />
               </button>
-              <h1 className="text-lg lg:text-xl font-semibold text-[#d4d4d4]">Mnemo</h1>
+              <h1 className="text-lg lg:text-xl font-semibold text-[#d4d4d4]">Connect</h1>
             </div>
 
             {/* Tab Switcher */}
@@ -304,23 +333,25 @@ function App() {
               <button
                 onClick={async () => {
                   if (!sessionId) {
-                    toast.error("No active session to extract from!");
+                    toast.error("Select a chat from the sidebar or send a message first to extract from.");
                     return;
                   }
                   const tid = toast.loading("Extracting...");
                   try {
                     await extractContext(sessionId);
-                    toast.success("Extraction scheduled!", { id: tid });
+                    toast.success("Extraction started. New nodes may appear in the Graph in a few moments.", { id: tid, duration: 5000 });
                     refreshAllData();
-                  } catch (error) {
-                    toast.error("Failed to trigger extraction", { id: tid });
+                    startExtractionPolling();
+                  } catch (error: unknown) {
+                    const msg = error instanceof Error ? error.message : (error as { response?: { data?: { detail?: string } } })?.response?.data?.detail ?? "Failed to trigger extraction";
+                    toast.error(msg, { id: tid });
                   }
                 }}
-                disabled={!sessionId}
+                title={!sessionId ? "Select a chat session first (sidebar) or send a message" : "Extract knowledge from this chat into the graph"}
                 className={cn(
                   "flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium transition-all",
                   "bg-[#262626] hover:bg-[#333333] text-[#d4d4d4] border border-[#333333]",
-                  !sessionId && "opacity-30 cursor-not-allowed"
+                  !sessionId && "opacity-50 cursor-not-allowed"
                 )}
               >
                 <Zap size={14} />

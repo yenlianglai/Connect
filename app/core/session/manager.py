@@ -36,7 +36,9 @@ class SessionManager:
         await self.collection.insert_one(session.model_dump(by_alias=True))
         return session
 
-    async def add_message(self, session_id: str, role: str, content: str, timestamp: datetime | None = None) -> SessionMessage:
+    async def add_message(
+        self, session_id: str, role: str, content: str, timestamp: datetime | None = None
+    ) -> SessionMessage:
         """Add a message to a session and update the updated_at timestamp."""
         message = self.format_message(role, content, timestamp)
         now = datetime.now(UTC)
@@ -62,16 +64,20 @@ class SessionManager:
     async def update_metadata(self, session_id: str, metadata: dict[str, Any]):
         """Updates the metadata for an existing session."""
         await self.collection.update_one(
-            {"_id": session_id},
-            {"$set": {"metadata": metadata, "updated_at": datetime.now(UTC)}}
+            {"_id": session_id}, {"$set": {"metadata": metadata, "updated_at": datetime.now(UTC)}}
         )
 
     async def get_all_sessions(self, limit: int = 10, skip: int = 0) -> list[Session]:
-        """List sessions with pagination."""
-        cursor = self.collection.find().skip(skip).limit(limit)
+        """List sessions with pagination. Excludes documents whose _id looks like a category (cat_*)."""
+        cursor = self.collection.find().skip(skip).limit(limit * 2)  # fetch extra to allow for filtering
         sessions = []
         async for doc in cursor:
+            sid = doc.get("_id", "")
+            if isinstance(sid, str) and sid.startswith("cat_"):
+                continue  # skip category IDs stored as session docs (e.g. from mistaken UI)
             sessions.append(Session(**doc))
+            if len(sessions) >= limit:
+                break
         return sessions
 
 

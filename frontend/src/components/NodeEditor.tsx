@@ -1,9 +1,9 @@
 import React from 'react';
 import TiptapEditor from './TiptapEditor';
-import { type Node as MnemoNode } from '../api';
+import { type Node } from '../api';
 
 interface NodeEditorProps {
-  selectedNode: MnemoNode | null;
+  selectedNode: Node | null;
   onNodeUpdated?: () => void;
   currentFocusId?: string;
   onSelectNode?: (nodeId: string) => void;

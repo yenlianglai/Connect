@@ -18,10 +18,10 @@ interface ChatSidebarProps {
   onToggle: () => void;
 }
 
-const ChatSidebar: React.FC<ChatSidebarProps> = ({ 
-  sessions, 
-  currentSessionId, 
-  onSelectSession, 
+const ChatSidebar: React.FC<ChatSidebarProps> = ({
+  sessions,
+  currentSessionId,
+  onSelectSession,
   onNewSession,
   onDeleteSession,
   isOpen,
@@ -37,7 +37,7 @@ const ChatSidebar: React.FC<ChatSidebarProps> = ({
     <>
       {/* Mobile overlay */}
       {isOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 z-40 lg:hidden"
           onClick={onToggle}
         />
@@ -82,7 +82,7 @@ const ChatSidebar: React.FC<ChatSidebarProps> = ({
                 const sid = session.session_id || (session as any)._id;
                 const isActive = currentSessionId === sid;
                 const title = getSessionTitle(session);
-                
+
                 return (
                   <div
                     key={sid}
@@ -97,21 +97,21 @@ const ChatSidebar: React.FC<ChatSidebarProps> = ({
                     {isActive && (
                       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-purple-500 rounded-r" />
                     )}
-                    
-                    <MessageSquare 
-                      size={18} 
+
+                    <MessageSquare
+                      size={18}
                       className={cn(
                         "shrink-0",
                         isActive ? "text-purple-400" : "text-[#595959] group-hover:text-[#8c8c8c]"
-                      )} 
+                      )}
                     />
-                    
+
                     <div className="flex-1 min-w-0">
                       <div className="text-sm font-medium truncate">{title}</div>
                       {session.updated_at && (
                         <div className="text-xs text-[#595959] mt-0.5">
-                          {new Date(session.updated_at).toLocaleDateString(undefined, { 
-                            month: 'short', 
+                          {new Date(session.updated_at).toLocaleDateString(undefined, {
+                            month: 'short',
                             day: 'numeric',
                             hour: 'numeric',
                             minute: '2-digit'

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "connect": {
+      "command": "uv",
+      "args": ["--directory", "/Users/ryanlai/code/Connect", "run", "python", "-m", "app.mcp_server"]
+    }
+  }
+}

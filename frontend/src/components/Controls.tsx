@@ -17,9 +17,9 @@ interface ControlsProps {
   onToggleWorkspace: () => void;
 }
 
-const Controls: React.FC<ControlsProps> = ({ 
-  sessionId, 
-  activeTab, 
+const Controls: React.FC<ControlsProps> = ({
+  sessionId,
+  activeTab,
   setActiveTab,
   showWorkspace,
   onToggleWorkspace
@@ -114,7 +114,7 @@ const Controls: React.FC<ControlsProps> = ({
 
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-1 p-1 bg-[#141414] rounded-lg border border-[#2d2d2d]">
-          <button 
+          <button
             onClick={() => { setActiveTab('chat'); if (!showWorkspace) onToggleWorkspace(); }}
             className={cn(
               "flex items-center gap-2 px-3 py-1.5 rounded-md transition-all text-[11px] font-bold uppercase tracking-wider",
@@ -125,7 +125,7 @@ const Controls: React.FC<ControlsProps> = ({
             <MessageSquare size={14} />
             <span>Chat</span>
           </button>
-          <button 
+          <button
             onClick={() => { setActiveTab('editor'); if (!showWorkspace) onToggleWorkspace(); }}
             className={cn(
               "flex items-center gap-2 px-3 py-1.5 rounded-md transition-all text-[11px] font-bold uppercase tracking-wider",
@@ -136,7 +136,7 @@ const Controls: React.FC<ControlsProps> = ({
             <FileEdit size={14} />
             <span>Note</span>
           </button>
-          <button 
+          <button
             onClick={() => { setActiveTab('sessions'); if (!showWorkspace) onToggleWorkspace(); }}
             className={cn(
               "flex items-center gap-2 px-3 py-1.5 rounded-md transition-all text-[11px] font-bold uppercase tracking-wider",
@@ -151,7 +151,7 @@ const Controls: React.FC<ControlsProps> = ({
 
         <div className="w-px h-6 bg-[#2d2d2d]" />
 
-        <button 
+        <button
           onClick={onToggleWorkspace}
           className={cn(
             "p-2 hover:bg-[#262626] rounded-md transition-all border border-[#2d2d2d]",

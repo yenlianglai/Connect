@@ -22,13 +22,13 @@ class ClusteringResult(BaseModel):
 
 
 EVOLVER_SYSTEM_PROMPT = """
-You are the Memory Evolver for Mnemo, an educational AI. 
+You are the Memory Evolver for Connect, an educational AI.
 Your task is to analyze two knowledge nodes and decide if they represent the same concept or experience.
 
 RULES FOR MERGING:
 1. If the nodes are the same concept (e.g., 'K8s' and 'Kubernetes'), set should_merge to True.
 2. If they are different but related, set should_merge to False.
-3. CONFLICT RESOLUTION: If the nodes contain conflicting information, synthesize a resolution. 
+3. CONFLICT RESOLUTION: If the nodes contain conflicting information, synthesize a resolution.
    - Newer information usually takes priority, but try to preserve context.
    - MERGED DESCRIPTION: Must be STRICTLY CONCISE (1-2 sentences, max 30 words).
    - MERGED CONTENT: This is where you keep all the technical details from both nodes.

@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 import { Editor } from '@tiptap/react';
 import axios from 'axios';
 
-const API_BASE_URL = 'http://127.0.0.1:8000';
+const API_BASE_URL = 'http://127.0.0.1:8001';
 
 interface AIGenerationOptions {
   prompt: string;
@@ -32,7 +32,7 @@ export const useAIGeneration = (editor: Editor | null) => {
       });
 
       const generatedText = response.data.text;
-      
+
       // Insert generated text at cursor position
       if (options.position !== undefined) {
         editor.chain().focus().insertContentAt(options.position, generatedText).run();

@@ -1,34 +1,34 @@
 import React, { useMemo } from 'react';
 import { X, Calendar, Info, Brain, Zap, RefreshCw, ChevronDown, Link as LinkIcon, MessageSquarePlus } from 'lucide-react';
-import { type Node as MnemoNode, type GraphData } from '../api';
+import { type Node, type GraphData } from '../api';
 
 interface SidebarProps {
-  selectedNode: MnemoNode | null;
+  selectedNode: Node | null;
   graphData: GraphData | null;
   onClose: () => void;
-  onSelectNode: (node: MnemoNode) => void;
+  onSelectNode: (node: Node) => void;
   onEvolveSubtree?: (categoryId: string) => void;
   isEvolving?: boolean;
-  onStartSessionHere?: (node: MnemoNode) => void;
+  onStartSessionHere?: (node: Node) => void;
   onNodeUpdated?: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ 
-  selectedNode, 
+const Sidebar: React.FC<SidebarProps> = ({
+  selectedNode,
   graphData,
-  onClose, 
+  onClose,
   onSelectNode,
-  onEvolveSubtree, 
+  onEvolveSubtree,
   isEvolving,
   onStartSessionHere
 }) => {
   // Organize connections into hierarchical (Children) and semantic (Horizontal)
   const connections = useMemo(() => {
     if (!graphData || !selectedNode) return { children: [], parents: [], semantic: [] };
-    
-    const children: { node: MnemoNode; type: string }[] = [];
-    const parents: { node: MnemoNode; type: string }[] = [];
-    const semantic: { node: MnemoNode; type: string }[] = [];
+
+    const children: { node: Node; type: string }[] = [];
+    const parents: { node: Node; type: string }[] = [];
+    const semantic: { node: Node; type: string }[] = [];
 
     graphData.links.forEach(l => {
       // 1. Vertical Logic (Hierarchy)
@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         const targetNode = graphData.nodes.find(n => n.id === l.target);
         if (targetNode) parents.push({ node: targetNode, type: l.edge_label });
       }
-      
+
       // 2. Semantic Logic (Horizontal)
       const isStructural = ['BELONGS_TO', 'SUB_CATEGORY_OF'].includes(l.edge_label);
       if (!isStructural) {
@@ -75,13 +75,13 @@ const Sidebar: React.FC<SidebarProps> = ({
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${
-              selectedNode.type === 'category' 
-                ? 'bg-blue-500/5 text-blue-400/80 border-blue-500/10' 
+              selectedNode.type === 'category'
+                ? 'bg-blue-500/5 text-blue-400/80 border-blue-500/10'
                 : 'bg-emerald-500/5 text-emerald-400/80 border-emerald-500/10'
             }`}>
               {selectedNode.type === 'category' ? `Category (L${selectedNode.level})` : 'Knowledge'}
             </span>
-            
+
             {selectedNode.type === 'category' && onEvolveSubtree && (
               <div className="flex gap-2">
                 {onStartSessionHere && (
@@ -202,7 +202,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               <span className="text-purple-400 font-medium">{selectedNode.insert_counter || 0} nodes</span>
             </div>
           )}
-          
+
           {selectedNode.type === 'knowledge' && (
             <div className="space-y-2">
               <div className="flex items-center justify-between text-[10px]">
@@ -210,9 +210,9 @@ const Sidebar: React.FC<SidebarProps> = ({
                 <span className="text-emerald-400 font-medium">{((selectedNode.worth_of_learning || 0) * 10).toFixed(1)}/10</span>
               </div>
               <div className="w-full h-1 bg-[#141414] rounded-full overflow-hidden">
-                <div 
-                  className="h-full bg-emerald-500/40" 
-                  style={{ width: `${(selectedNode.worth_of_learning || 0) * 100}%` }} 
+                <div
+                  className="h-full bg-emerald-500/40"
+                  style={{ width: `${(selectedNode.worth_of_learning || 0) * 100}%` }}
                 />
               </div>
             </div>

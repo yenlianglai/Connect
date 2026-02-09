@@ -17,10 +17,10 @@ interface SessionSidebarProps {
   isOpen?: boolean; // New prop for RWD control
 }
 
-const SessionSidebar: React.FC<SessionSidebarProps> = ({ 
-  sessions, 
-  currentSessionId, 
-  onSelectSession, 
+const SessionSidebar: React.FC<SessionSidebarProps> = ({
+  sessions,
+  currentSessionId,
+  onSelectSession,
   onNewSession,
   onDeleteSession,
   isOpen = true
@@ -51,18 +51,18 @@ const SessionSidebar: React.FC<SessionSidebarProps> = ({
           const sid = s.session_id || (s as any)._id;
           const isActive = currentSessionId === sid;
           return (
-            <div 
+            <div
               key={sid}
               className={cn(
                 "group relative w-full flex items-center gap-3 px-5 py-2.5 text-[11px] transition-all text-left",
-                isActive 
-                  ? "bg-[#262626] text-[#d4d4d4]" 
+                isActive
+                  ? "bg-[#262626] text-[#d4d4d4]"
                   : "text-[#8c8c8c] hover:bg-[#1a1a1a] hover:text-[#d4d4d4]"
               )}
             >
               {isActive && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-4 bg-purple-500 rounded-r" />}
-              
-              <button 
+
+              <button
                 onClick={() => onSelectSession(sid)}
                 className="flex-1 flex items-center gap-3 min-w-0"
               >
@@ -103,4 +103,3 @@ const SessionSidebar: React.FC<SessionSidebarProps> = ({
 };
 
 export default SessionSidebar;
-

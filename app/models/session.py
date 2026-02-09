@@ -1,7 +1,7 @@
 from datetime import UTC, datetime
 from typing import Any
 
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 
 from app.models.chat import ChatMessage
 

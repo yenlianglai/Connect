@@ -23,6 +23,7 @@ class ChatResponse(BaseModel):
 
 class CreateTopicRequest(BaseModel):
     """Request model for creating a new learning topic/session."""
+
     model_config = ConfigDict(from_attributes=True)
     topic_name: str
     parent_category_id: str = "cat_root"
@@ -31,6 +32,7 @@ class CreateTopicRequest(BaseModel):
 
 class CreateTopicResponse(BaseModel):
     """Response model for topic creation."""
+
     model_config = ConfigDict(from_attributes=True)
     session_id: str
     category_id: str  # The created category node ID (same as session_id)

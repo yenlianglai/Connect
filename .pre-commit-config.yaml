@@ -1,0 +1,46 @@
+# Pre-commit hooks configuration
+# See https://pre-commit.com for more information
+
+fail_fast: true  # Stop immediately on first failure
+
+repos:
+  # Standard pre-commit hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+
+  # Ruff linter and formatter (using uvx for version consistency)
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff-check
+        entry: uvx ruff check --fix --exit-non-zero-on-fix
+        language: system
+        types: [python]
+        pass_filenames: true
+      - id: ruff-format
+        name: ruff-format
+        entry: uvx ruff format
+        language: system
+        types: [python]
+        pass_filenames: true
+
+  # Unit tests (fast, no database required)
+  # Uncomment when tests/unit/ directory is created
+  # - repo: local
+  #   hooks:
+  #     - id: pytest-unit
+  #       name: pytest-unit
+  #       entry: uv run pytest tests/unit/ -x --tb=short
+  #       language: system
+  #       pass_filenames: false
+  #       always_run: true

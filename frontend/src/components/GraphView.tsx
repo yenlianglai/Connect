@@ -1,7 +1,7 @@
 import React, { useMemo, useRef, useCallback, useState } from 'react';
 import ForceGraph2D, { type ForceGraphMethods } from 'react-force-graph-2d';
 import { Network, Maximize2, Trash2, Link as LinkIcon, X, Link2Off } from 'lucide-react';
-import { type GraphData, type Node as MnemoNode, deleteNode, createLink, deleteLink } from '../api';
+import { type GraphData, type Node, deleteNode, createLink, deleteLink } from '../api';
 import { toast } from 'react-hot-toast';
 
 import { clsx, type ClassValue } from 'clsx';
@@ -37,7 +37,7 @@ function darkenColor(hex: string, percent: number): string {
 
 interface GraphViewProps {
   data: GraphData | null;
-  onNodeClick: (node: MnemoNode) => void;
+  onNodeClick: (node: Node) => void;
   onZoomInto: (categoryId: string) => void;
   onNodeUpdated?: () => void;
   currentFocusId?: string;
@@ -66,14 +66,14 @@ const EDGE_COLORS: Record<string, string> = {
   "PART_OF": "#475569",         // Slate 600
 };
 
-const GraphView: React.FC<GraphViewProps> = ({ 
-  data, 
-  onNodeClick, 
-  onZoomInto, 
-  onNodeUpdated, 
-  currentFocusId, 
+const GraphView: React.FC<GraphViewProps> = ({
+  data,
+  onNodeClick,
+  onZoomInto,
+  onNodeUpdated,
+  currentFocusId,
   activeSessionId,
-  retrievedNodeIds = [] 
+  retrievedNodeIds = []
 }) => {
   const fgRef = useRef<ForceGraphMethods | undefined>(undefined);
   const [linkingSource, setLinkingSource] = useState<any | null>(null);
@@ -89,7 +89,7 @@ const GraphView: React.FC<GraphViewProps> = ({
 
   const handleDeleteNode = useCallback(async (node: { id: string; name?: string; description?: string }) => {
     if (!confirm(`Delete node "${node.name || node.description}" and all its links?`)) return;
-    
+
     const tid = toast.loading('Deleting node...');
     try {
       await deleteNode(node.id);
@@ -105,14 +105,14 @@ const GraphView: React.FC<GraphViewProps> = ({
       toast.error("The Root node cannot be modified or deleted.");
       return;
     }
-    
+
     toast((t) => (
       <div className="flex flex-col gap-1 min-w-[140px]">
         <div className="text-[10px] font-bold text-[#595959] uppercase tracking-widest mb-1 px-1 border-b border-[#2d2d2d] pb-1">
           Node Actions
         </div>
         {node.type === 'category' && (
-          <button 
+          <button
             onClick={() => {
               toast.dismiss(t.id);
               onZoomInto(node.id);
@@ -123,7 +123,7 @@ const GraphView: React.FC<GraphViewProps> = ({
             Zoom Into Subtree
           </button>
         )}
-        <button 
+        <button
           onClick={() => {
             toast.dismiss(t.id);
             setLinkingSource(node);
@@ -136,7 +136,7 @@ const GraphView: React.FC<GraphViewProps> = ({
           <LinkIcon size={14} className="text-[#595959] group-hover:text-purple-400" />
           Start Linking
         </button>
-        <button 
+        <button
           onClick={() => {
             toast.dismiss(t.id);
             handleDeleteNode(node);
@@ -170,7 +170,7 @@ const GraphView: React.FC<GraphViewProps> = ({
         <div className="px-2 py-1.5 text-[10px] text-[#8c8c8c] italic border-b border-[#2d2d2d]/50 mb-1">
           {link.edge_label}
         </div>
-        <button 
+        <button
           onClick={async () => {
             toast.dismiss(t.id);
             if (!confirm(`Delete relationship "${link.edge_label}"?`)) return;
@@ -207,7 +207,7 @@ const GraphView: React.FC<GraphViewProps> = ({
 
   const finalizeLink = useCallback(async (relType: string) => {
     if (!linkingSource || !pendingLinkTarget) return;
-    
+
     const tid = toast.loading(`Creating ${relType} link...`);
     try {
       await createLink(linkingSource.id, pendingLinkTarget.id, relType);
@@ -236,7 +236,7 @@ const GraphView: React.FC<GraphViewProps> = ({
 
   const graphData = useMemo(() => {
     if (!data) return { nodes: [], links: [] };
-    
+
     return {
       nodes: data.nodes.map(n => {
         let color = CAT0_COLORS[n.cat0 || ""] || CAT0_COLORS["unknown"];
@@ -272,7 +272,7 @@ const GraphView: React.FC<GraphViewProps> = ({
   const getLinkDirectionalParticleSpeed = useCallback((link: { source: string | { id: string }; target: string | { id: string } }) => {
     const sourceId = getLinkNodeId(link.source);
     const targetId = getLinkNodeId(link.target);
-    return (sourceId === activeSessionId || targetId === activeSessionId) ? 0.005 : 0.003; 
+    return (sourceId === activeSessionId || targetId === activeSessionId) ? 0.005 : 0.003;
   }, [activeSessionId]);
 
   const getLinkDirectionalParticleColor = useCallback((link: { source: string | { id: string }; target: string | { id: string } }) => {
@@ -313,7 +313,7 @@ const GraphView: React.FC<GraphViewProps> = ({
   }
 
   return (
-    <div 
+    <div
       className="h-full w-full bg-[#0d0d0d] relative overflow-hidden"
       onMouseMove={handleMouseMove}
     >
@@ -369,7 +369,7 @@ const GraphView: React.FC<GraphViewProps> = ({
             setPendingLinkTarget(node);
             return;
           }
-          onNodeClick(node as MnemoNode);
+          onNodeClick(node as Node);
         }}
         onNodeDragEnd={(node: any) => {
           node.fx = node.x;
@@ -400,10 +400,10 @@ const GraphView: React.FC<GraphViewProps> = ({
           const isRetrieved = retrievedSet.has(node.id);
           const isHot = node.is_hot;
           const isHovered = hoverNode?.id === node.id;
-          
+
           let radius = (isCurrent ? 9 : node.type === 'category' ? 6 : 3.5);
           if (isActiveSession) radius = 8;
-          
+
           const t = Date.now() / 1000;
           const pulse = Math.sin(t * 3) * 0.8; // Slower, gentler pulse
           if (isRetrieved || isHot || isActiveSession) {
@@ -426,7 +426,7 @@ const GraphView: React.FC<GraphViewProps> = ({
             ctx.save();
             const glowRadius = radius + (isCurrent || isActiveSession ? 8 : 5) + pulse;
             const gradient = ctx.createRadialGradient(node.x, node.y, radius, node.x, node.y, glowRadius);
-            
+
             let color = '129, 140, 248'; // Indigo
             if (isActiveSession) color = '167, 139, 250'; // Violet
             if (isRetrieved) color = '34, 211, 238'; // Cyan
@@ -436,7 +436,7 @@ const GraphView: React.FC<GraphViewProps> = ({
             gradient.addColorStop(0, `rgba(${color}, 0.25)`);
             gradient.addColorStop(0.5, `rgba(${color}, 0.1)`);
             gradient.addColorStop(1, `rgba(${color}, 0)`);
-            
+
             ctx.fillStyle = gradient;
             ctx.beginPath();
             ctx.arc(node.x, node.y, glowRadius, 0, 2 * Math.PI);
@@ -455,14 +455,14 @@ const GraphView: React.FC<GraphViewProps> = ({
 
           // Node Body Gradient
           const nodeGradient = ctx.createRadialGradient(
-            node.x - radius * 0.3, 
-            node.y - radius * 0.3, 
-            radius * 0.1, 
-            node.x, 
-            node.y, 
+            node.x - radius * 0.3,
+            node.y - radius * 0.3,
+            radius * 0.1,
+            node.x,
+            node.y,
             radius
           );
-          
+
           // Lighten the top-left for a 3D sphere/glass effect
           nodeGradient.addColorStop(0, brightenColor(node.color, 40));
           nodeGradient.addColorStop(0.7, node.color);
@@ -472,7 +472,7 @@ const GraphView: React.FC<GraphViewProps> = ({
           ctx.arc(node.x, node.y, radius, 0, 2 * Math.PI, false);
           ctx.fillStyle = nodeGradient;
           ctx.fill();
-          
+
           // 3. Node Border / Ring
           ctx.beginPath();
           ctx.arc(node.x, node.y, radius, 0, 2 * Math.PI, false);
@@ -498,21 +498,21 @@ const GraphView: React.FC<GraphViewProps> = ({
             ctx.font = `${node.type === 'category' ? '600' : '400'} ${fontSize}px Inter, -apple-system, sans-serif`;
             ctx.textAlign = 'center';
             ctx.textBaseline = 'top';
-            
+
             const labelAlpha = hoverNode ? (node.id === hoverNode.id || isActiveSession || isNeighbor ? 1 : 0.1) : 0.8;
 
             ctx.globalAlpha = labelAlpha;
             // Subtle Shadow for legibility
             ctx.fillStyle = 'rgba(0,0,0,0.8)';
             ctx.fillText(label, node.x, node.y + radius + 3/globalScale);
-            
+
             ctx.fillStyle = isCurrent || isActiveSession ? '#ffffff' : isRetrieved ? '#22d3ee' : 'rgba(229, 231, 235, 0.9)';
             ctx.fillText(label, node.x, node.y + radius + 3/globalScale);
             ctx.globalAlpha = 1;
           }
         }}
       />
-      
+
       {pendingLinkTarget && (
         <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm animate-in fade-in duration-200">
           <div className="bg-[#1a1a1a] border border-[#2d2d2d] rounded-2xl p-6 shadow-2xl max-w-sm w-full space-y-4 text-center">
@@ -521,15 +521,15 @@ const GraphView: React.FC<GraphViewProps> = ({
                 <LinkIcon size={16} className="text-purple-400" />
                 Select Relationship
               </h3>
-              <button onClick={() => { 
+              <button onClick={() => {
                 if (linkingSource) { delete linkingSource.fx; delete linkingSource.fy; }
-                setLinkingSource(null); 
-                setPendingLinkTarget(null); 
+                setLinkingSource(null);
+                setPendingLinkTarget(null);
               }} className="p-1 text-[#595959] hover:text-[#d4d4d4]">
                 <X size={18} />
               </button>
             </div>
-            
+
             <p className="text-[11px] text-[#8c8c8c] leading-relaxed">
               Define the relationship from <br/>
               <span className="text-purple-400 font-bold underline decoration-purple-500/30 underline-offset-4">"{linkingSource?.name || linkingSource?.description}"</span> <br/>
@@ -543,15 +543,15 @@ const GraphView: React.FC<GraphViewProps> = ({
                 { type: 'PREREQUISITE_FOR', label: 'Flow: Prerequisite For', color: 'bg-rose-500/10 text-rose-400 border-rose-500/20', allowed: true },
                 { type: 'SOLVES', label: 'Problem: Solves', color: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20', allowed: true },
                 { type: 'PART_OF', label: 'Composition: Part Of', color: 'bg-slate-500/10 text-slate-400 border-slate-500/20', allowed: true },
-                { 
-                  type: 'SUB_CATEGORY_OF', 
-                  label: 'Vertical: Sub-Category Of', 
+                {
+                  type: 'SUB_CATEGORY_OF',
+                  label: 'Vertical: Sub-Category Of',
                   color: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
                   allowed: linkingSource.type === 'category' && pendingLinkTarget.type === 'category'
                 },
-                { 
-                  type: 'BELONGS_TO', 
-                  label: 'Vertical: Belongs To Category', 
+                {
+                  type: 'BELONGS_TO',
+                  label: 'Vertical: Belongs To Category',
                   color: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
                   allowed: linkingSource.type !== 'category' && pendingLinkTarget.type === 'category'
                 },
@@ -575,7 +575,7 @@ const GraphView: React.FC<GraphViewProps> = ({
       )}
 
       <div className="absolute top-4 right-4 flex flex-col gap-2">
-        <button 
+        <button
           onClick={handleCenter}
           className="p-2.5 bg-[#1f1f1f] hover:bg-[#262626] border border-[#333333] rounded-lg text-[#8c8c8c] hover:text-[#d4d4d4] transition-all shadow-lg"
           title="Center Graph"

@@ -24,14 +24,14 @@ import DragHandle from '@tiptap/extension-drag-handle';
 import Dropcursor from '@tiptap/extension-dropcursor';
 import Gapcursor from '@tiptap/extension-gapcursor';
 import { createLowlight, all } from 'lowlight';
-import { 
-  Save, FileText, Sparkles, Hash, Plus, X, Info, Trash2, 
+import {
+  Save, FileText, Sparkles, Hash, Plus, X, Info, Trash2,
   Bold, Italic, Underline as UnderlineIcon, Strikethrough, Code,
   List, ListOrdered, Quote, Heading1, Heading2, Heading3,
   Image as ImageIcon, Table as TableIcon,
   AlignLeft, AlignCenter, Undo, Redo
 } from 'lucide-react';
-import { type Node as MnemoNode, updateKnowledgeNode, updateCategoryNode, createKnowledgeNode, deleteNode } from '../api';
+import { type Node, updateKnowledgeNode, updateCategoryNode, createKnowledgeNode, deleteNode } from '../api';
 import { toast } from 'react-hot-toast';
 import { useAIGeneration } from '../hooks/useAIGeneration';
 import { marked } from 'marked';
@@ -41,19 +41,19 @@ import './TiptapStyles.css';
 const lowlight = createLowlight(all);
 
 interface TiptapEditorProps {
-  selectedNode: MnemoNode | null;
+  selectedNode: Node | null;
   onNodeUpdated?: () => void;
   currentFocusId?: string;
   onSelectNode?: (nodeId: string) => void;
   onNodeDeleted?: () => void;
 }
 
-const TiptapEditor: React.FC<TiptapEditorProps> = ({ 
-  selectedNode, 
-  onNodeUpdated, 
-  currentFocusId, 
-  onSelectNode, 
-  onNodeDeleted 
+const TiptapEditor: React.FC<TiptapEditorProps> = ({
+  selectedNode,
+  onNodeUpdated,
+  currentFocusId,
+  onSelectNode,
+  onNodeDeleted
 }) => {
   const [title, setTitle] = useState('');
   const [tags, setTags] = useState<string[]>([]);
@@ -161,7 +161,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
           event.preventDefault();
           const cmdCount = slashCommands.length;
           const currentIndex = selectedSlashIndexRef.current;
-          const newIndex = event.key === 'ArrowDown' 
+          const newIndex = event.key === 'ArrowDown'
             ? (currentIndex + 1) % cmdCount
             : (currentIndex - 1 + cmdCount) % cmdCount;
           setSelectedSlashIndex(newIndex);
@@ -185,11 +185,11 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
       const { state } = editor;
       const { selection } = state;
       const { $from } = selection;
-      
+
       // Get text from the current line
       const lineStart = $from.start();
       const lineText = state.doc.textBetween(lineStart, $from.pos, '');
-      
+
       if (lineText.endsWith('/') && lineText.length > 0) {
         // Get cursor position for menu placement
         const coords = editor.view.coordsAtPos($from.pos);
@@ -210,10 +210,10 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
       const { state } = editor;
       const { selection } = state;
       const { $from } = selection;
-      
+
       const lineStart = $from.start();
       const lineText = state.doc.textBetween(lineStart, $from.pos, '');
-      
+
       if (lineText.endsWith('/') && lineText.length > 0) {
         const coords = editor.view.coordsAtPos($from.pos);
         setSlashMenuPos({ top: coords.top + window.scrollY, left: coords.left + window.scrollX });
@@ -243,11 +243,11 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
     if (selectedNode && editor) {
       setTitle(selectedNode.name || selectedNode.description || '');
       setTags(selectedNode.tags || []);
-      
-      const initialContent = selectedNode.type === 'category' 
-        ? selectedNode.summary 
+
+      const initialContent = selectedNode.type === 'category'
+        ? selectedNode.summary
         : selectedNode.content;
-      
+
       if (initialContent) {
         try {
           // Check if content looks like HTML
@@ -299,14 +299,14 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
   const handleSave = async () => {
     if (!selectedNode || !editor) return;
     setIsSaving(true);
-    
+
     try {
       // Save as HTML (can be converted to markdown on backend if needed)
       const htmlContent = editor.getHTML();
-      
+
       // Optionally convert to markdown for storage
       // const markdownContent = turndownService.turndown(htmlContent);
-      
+
       if (selectedNode.type === 'category') {
         await updateCategoryNode(selectedNode.id, title, htmlContent);
       } else {
@@ -323,7 +323,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
 
   const handleDelete = async () => {
     if (!selectedNode) return;
-    
+
     if (selectedNode.id === 'cat_root') {
       toast.error('Cannot delete the root node');
       return;
@@ -369,12 +369,12 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
   // Slash command handlers
   const insertBlock = useCallback((type: string) => {
     if (!editor) return;
-    
+
     setShowSlashMenu(false);
     setSelectedSlashIndex(0);
     showSlashMenuRef.current = false;
     selectedSlashIndexRef.current = 0;
-    
+
     // Remove the "/" character
     editor.commands.deleteRange({
       from: editor.state.selection.$from.pos - 1,
@@ -483,8 +483,8 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
         <div className="flex justify-between items-center gap-6">
           <div className="flex-1 flex items-center gap-4 min-w-0">
             <div className={`shrink-0 p-2.5 rounded-xl border ${
-              selectedNode.type === 'category' 
-                ? 'bg-blue-500/10 border-blue-500/20 text-blue-400' 
+              selectedNode.type === 'category'
+                ? 'bg-blue-500/10 border-blue-500/20 text-blue-400'
                 : 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400'
             }`}>
               {selectedNode.type === 'category' ? <Hash size={20} /> : <Sparkles size={20} />}
@@ -500,7 +500,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
                 <div className="text-[10px] text-[#595959] uppercase tracking-tighter font-mono mr-2">
                   ID: {selectedNode.id} • {selectedNode.type}
                 </div>
-                
+
                 {selectedNode.type === 'knowledge' && (
                   <>
                     {tags.map(tag => (
@@ -649,7 +649,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
         {selectedNode.type === 'knowledge' ? (
           <>
             <EditorContent editor={editor} />
-            
+
             {/* Slash Command Menu */}
             {showSlashMenu && (
               <div
@@ -669,12 +669,12 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
                       onClick={() => insertBlock(cmd.type)}
                       disabled={cmd.ai && aiGeneration.isGenerating}
                       className={`w-full flex items-center gap-3 px-3 py-2 rounded text-left text-sm transition-colors ${
-                        isSelected 
-                          ? 'bg-purple-500/20 border border-purple-500/30' 
+                        isSelected
+                          ? 'bg-purple-500/20 border border-purple-500/30'
                           : 'hover:bg-[#262626]'
                       } ${
-                        cmd.ai 
-                          ? 'text-purple-400 hover:text-purple-300' 
+                        cmd.ai
+                          ? 'text-purple-400 hover:text-purple-300'
                           : 'text-[#d4d4d4] hover:text-white'
                       } ${aiGeneration.isGenerating && cmd.ai ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
@@ -702,7 +702,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
                 className="w-full h-[400px] bg-[#0d0d0d] border border-[#2d2d2d] rounded-xl p-6 text-sm text-[#a3a3a3] leading-relaxed focus:outline-none focus:border-purple-500/50 transition-all resize-none"
               />
             </div>
-            
+
             <div className="p-4 rounded-xl bg-blue-500/5 border border-blue-500/10 space-y-3">
               <div className="flex items-center gap-2 text-blue-400">
                 <Info size={14} />

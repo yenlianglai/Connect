@@ -1,0 +1,100 @@
+---
+description: Use Connect MCP to record or search knowledge
+globs:
+alwaysApply: false
+---
+
+# /connect Command
+
+When the user types `/connect`, use the Connect MCP server tools:
+
+## Command Variations
+
+### 1. `/connect` (no arguments)
+**Means**: Summarize learnings from the current session and record them
+
+**Your process:**
+1. Review the entire conversation/session
+2. Extract one or more valuable learnings (code patterns, solutions, insights)
+3. Summarize each as an **insightful document**—a coherent paragraph with context, reasoning, and takeaway (not a single sentence or bullet)
+4. Optionally infer a category hint from the document (e.g., if discussing React, hint: "React")
+5. Call `quick_record` once per document
+6. Tell the user how many insights were recorded
+
+### 2. `/connect <specific insight>`
+**Means**: Record this specific insight
+
+**Your process:**
+1. Filter: Is it worth learning?
+2. Summarize into an **insightful document** (context + key idea + why it matters)
+3. Optionally infer category from the document
+4. Call `quick_record` once
+
+### 3. `/connect search <query>`
+**Means**: Search the knowledge graph
+
+**Your process:**
+1. Call `retrieve_knowledge` with the query
+
+### 4. `/connect <insight> in <category>`
+**Means**: Record insight with a category hint
+
+**Your process:**
+1. Filter & summarize the insight into an insightful document
+2. Extract the category hint (natural language like "React", "business", "Python")
+3. Call `quick_record(insight, category="...")`
+
+## Important: AI-First Filtering
+
+**Division of Labor:**
+- **YOU (Claude Sonnet)**: Filter for learning value + Summarize into **insightful documents**
+- **Extractor (Ollama)**: Navigate taxonomy + Categorize + Create relationships
+
+**Your job before calling `quick_record`:**
+1. Analyze if the content contains something worth learning
+2. Extract the core insight/pattern and **write it as a short document**, not a fragment: include context, the main idea, and why it matters (a few sentences or a small structured note).
+3. Avoid one-line bullets or single-sentence fragments—Connect works best with coherent, self-contained documents the extractor can categorize and relate.
+4. Pass the document to the extractor; it handles categorization and relationships.
+
+## Tool Mapping
+
+| Command | Your Action | Tool | Extractor Does |
+|---------|-------------|------|----------------|
+| `/connect` (alone) | 1. Review session<br/>2. Extract learnings<br/>3. Summarize each as an insightful document<br/>4. Call tool per document | `quick_record` (multiple) | Navigate taxonomy<br/>Categorize<br/>Create relationships |
+| `/connect <text>` | 1. Check if worth learning<br/>2. Write as insightful document (context + idea + why)<br/>3. Call once | `quick_record` (once) | Navigate taxonomy<br/>Categorize<br/>Create relationships |
+| `/connect search <query>` | Pass query directly | `retrieve_knowledge` | N/A |
+
+## Examples
+
+### Example 1: Session Summary
+User: `/connect`
+
+Your process:
+1. Review conversation: "We set up MCP server, changed Docker ports, created quick_record tool..."
+2. Extract learnings and write each as an **insightful document** (not one-liners):
+3. Call `quick_record` once per document with full context:
+
+   **Document 1 (MCP):**
+   `quick_record("For Cursor IDE integration, MCP's stdio transport is simpler and more reliable than SSE when running the server locally. Stdio avoids CORS and port configuration; the IDE spawns the server process and talks over stdin/stdout. Prefer stdio for local dev unless you need remote or multi-client access.")`
+
+   **Document 2 (Docker):**
+   `quick_record("To avoid port conflicts with system services (e.g. default MongoDB 27017, Redis 6379), use non-standard ports in Docker Compose (e.g. 27117, 6479). Document the mapping in README so the team knows which host port corresponds to which service. This reduces 'address already in use' errors on shared machines.")`
+
+   **Document 3 (Architecture):**
+   `quick_record("In a two-stage pipeline (AI orchestrator + local extractor), having the AI pre-filter and summarize content into coherent documents before calling the extractor reduces load on the local LLM and improves extraction quality. The extractor then focuses on taxonomy and relationships instead of parsing raw chat.")`
+
+4. Report: "Recorded 3 insights from this session to Connect"
+
+### Example 2: Specific Insight
+User: `/connect I discovered that lazy loading components with React.lazy() and Suspense really helps with the initial bundle size`
+
+Your process:
+1. Worth learning? ✓
+2. Summarize as an **insightful document** (context + idea + why it matters):
+   `quick_record("React.lazy() with Suspense lets you code-split components so they load only when needed. This reduces initial bundle size and improves Time to Interactive, especially for routes or heavy components. Wrap lazy components in Suspense and provide a fallback; use for below-the-fold or conditional UI rather than critical above-the-fold content.")`
+
+### Example 3: Search
+User: `/connect search React performance`
+
+Your process:
+1. Call `retrieve_knowledge("React performance")` directly

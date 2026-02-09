@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://127.0.0.1:8000';
+const API_BASE_URL = 'http://127.0.0.1:8001';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -76,12 +76,12 @@ export const createTopic = async (data: CreateTopicRequest): Promise<CreateTopic
 };
 
 export const chat = async (
-  message: string, 
+  message: string,
   session_id: string, // Required - session must exist
   category_ids?: string[] // Optional category IDs to scope search
 ): Promise<ChatResponse> => {
-  const response = await api.post('/chat', { 
-    message, 
+  const response = await api.post('/chat', {
+    message,
     session_id,
     category_ids
   });
@@ -131,7 +131,7 @@ export const chatStream = async (
 
   while (true) {
     const { done, value } = await reader.read();
-    
+
     if (done) break;
 
     buffer += decoder.decode(value, { stream: true });
@@ -142,7 +142,7 @@ export const chatStream = async (
       if (line.startsWith('data: ')) {
         try {
           const data: StreamChunk = JSON.parse(line.slice(6));
-          
+
           if (data.type === 'metadata') {
             onMetadata?.({
               session_id: data.session_id || session_id,
@@ -250,4 +250,3 @@ export const deleteSession = async (session_id: string) => {
 };
 
 export default api;
-

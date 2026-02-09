@@ -2,9 +2,9 @@ services:
   # 1. MongoDB - For Session DB
   mongodb:
     image: mongo:latest
-    container_name: mnemo-mongodb
+    container_name: connect-mongodb
     ports:
-      - "27017:27017"
+      - "27117:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
@@ -14,9 +14,9 @@ services:
   # 2. Mongo Express - UI for MongoDB
   mongo-express:
     image: mongo-express:latest
-    container_name: mnemo-mongo-express
+    container_name: connect-mongo-express
     ports:
-      - "8082:8081"
+      - "8182:8081"
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: admin
       ME_CONFIG_MONGODB_ADMINPASSWORD: password
@@ -29,22 +29,22 @@ services:
   # 3. Postgres - For general relational data/logs
   postgres:
     image: postgres:16-alpine
-    container_name: mnemo-postgres
+    container_name: connect-postgres
     ports:
-      - "5432:5432"
+      - "5532:5432"
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: mnemo
+      POSTGRES_DB: connect
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
   # 4. Redis - For Short-term Memory Cache
   redis:
     image: redis:7-alpine
-    container_name: mnemo-redis
+    container_name: connect-redis
     ports:
-      - "6379:6379"
+      - "6479:6379"
     command: redis-server --save 60 1 --loglevel warning
     volumes:
       - redis_data:/data
@@ -52,10 +52,10 @@ services:
   # 5. Neo4j - For Long-term Memory Graph
   neo4j:
     image: neo4j:5.18.1
-    container_name: mnemo-neo4j
+    container_name: connect-neo4j
     ports:
-      - "7474:7474" # HTTP
-      - "7687:7687" # Bolt
+      - "7574:7474" # HTTP
+      - "7787:7687" # Bolt
     environment:
       NEO4J_AUTH: neo4j/password
       NEO4J_PLUGINS: '["apoc"]' # Useful for memory evolution logic
@@ -69,4 +69,3 @@ volumes:
   redis_data:
   neo4j_data:
   neo4j_logs:
-
